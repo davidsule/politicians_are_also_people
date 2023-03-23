@@ -8,7 +8,7 @@ import numpy as np
 from collections import defaultdict
 from dotenv import load_dotenv
 import matplotlib.pyplot as plt
-from src.preprocessing import prepare_data
+from src.preprocessing import prepare_data, prepare_all_crossre
 from src.classification import load_classifier
 from src.classification.embeddings import TransformerEmbeddings
 
@@ -17,16 +17,17 @@ load_dotenv()
 def parse_arguments():
 
     arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument('--train_path', help='Path to training data')
-    arg_parser.add_argument('--dev_path', help='Path to the dev data')
-    arg_parser.add_argument('--test_path', help='Path to the test data')
+    #arg_parser.add_argument('--train_path', help='Path to training data')
+    #arg_parser.add_argument('--dev_path', help='Path to the dev data')
+    #arg_parser.add_argument('--test_path', help='Path to the test data')
     arg_parser.add_argument('--exp_path', help='Path to the experiment directory')
+    arg_parser.add_argument('--data_path', help='Path to folder containing data', default='crossre_data')
 
     arg_parser.add_argument('-lm', '--language_model', type=str, default='bert-base-cased')
     arg_parser.add_argument('-po', '--prediction_only', action='store_true', default=False, help='Set flag to run prediction on the validation data and exit (default: False)')
 
-    arg_parser.add_argument('-e', '--epochs', type=int, default=50, help='Maximum number of epochs (default: 50)')
-    arg_parser.add_argument('-bs', '--batch_size', type=int, default=32, help='Maximum number of sentences per batch (default: 32)')
+    arg_parser.add_argument('-e', '--epochs', type=int, default=5, help='Maximum number of epochs (default: 50)')
+    arg_parser.add_argument('-bs', '--batch_size', type=int, default=64, help='Maximum number of sentences per batch (default: 32)')
     arg_parser.add_argument('-lr', '--learning_rate', type=float, default=2e-5, help='Learning rate (default: 2e-5)')
     arg_parser.add_argument('-es', '--early_stop', type=int, default=3, help='Maximum number of epochs without improvement (default: 3)')
     arg_parser.add_argument('-rs', '--seed', type=int, help='Seed for probabilistic components')
@@ -199,12 +200,12 @@ if __name__ == '__main__':
 
     # setup data
     if args.prediction_only:
-        test_data = prepare_data(args.test_path, label_types, args.batch_size)
+        test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test')
         logging.info(f"Loaded {test_data} (test).")
     else:
-        train_data = prepare_data(args.train_path, label_types, args.batch_size)
+        train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train')
         logging.info(f"Loaded {train_data} (train).")
-        dev_data = prepare_data(args.dev_path, label_types, args.batch_size)
+        dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev')
         logging.info(f"Loaded {dev_data} (dev).")
 
     # load embedding model
