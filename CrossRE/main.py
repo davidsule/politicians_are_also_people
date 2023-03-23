@@ -21,7 +21,7 @@ def parse_arguments():
     #arg_parser.add_argument('--dev_path', help='Path to the dev data')
     #arg_parser.add_argument('--test_path', help='Path to the test data')
     arg_parser.add_argument('--exp_path', help='Path to the experiment directory')
-    arg_parser.add_argument('--data_path', help='Path to folder containing data', default='crossre_data')
+    arg_parser.add_argument('--data_path', help='Path to folder containing data', default='crossre_data/')
 
     arg_parser.add_argument('-lm', '--language_model', type=str, default='bert-base-cased')
     arg_parser.add_argument('-po', '--prediction_only', action='store_true', default=False, help='Set flag to run prediction on the validation data and exit (default: False)')
