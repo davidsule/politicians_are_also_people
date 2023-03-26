@@ -35,6 +35,7 @@ class EmbeddingClassifier(nn.Module):
     @staticmethod
     def load(path):
         return torch.load(path)
+        ### return torch.load(path, map_location=torch.device('cpu')) ##### IF ONE DOES NOT HAVE GPU
 
     def forward(self, sentences, entities_1, entities_2):
         # embed sentences (batch_size, seq_length) -> (batch_size, max_length, emb_dim)
