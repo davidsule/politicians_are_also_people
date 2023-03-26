@@ -26,7 +26,7 @@ def prepare_data(data_path, labels2id, batch_size):
     data_loader = DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
     return data_loader
 
-def prepare_all_crossre(data_path, labels2id, topics, batch_size = 32, dataset='train'):
+def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train'):
     sentences, entities_1, entities_2, relations = [], [], [], []
     for t in topics:
         s, e_1, e_2, r = read_json_file(f'{data_path}{t}-{dataset}.json', labels2id)
