@@ -245,7 +245,7 @@ if __name__ == '__main__':
         # convert label indices back to string labels
         idx_2_label = {idx: lbl for lbl, idx in label_types.items()}
         pred_labels = [idx_2_label[pred] for pred in stats['predictions']]
-        pred_path = os.path.join(args.exp_path, f'{args.exp_path}/rs{args.seed}/cross_domain-pred.csv') ## This is a bit hard coded
+        pred_path = f'{args.exp_path}/cross_domain-pred.csv' ## This is a bit hard coded
         save_predictions(pred_path, test_data, pred_labels)
 
         logging.info(
