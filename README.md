@@ -1,6 +1,14 @@
 # 2yp_project
 Second Year Project repo
 
+## File Structure
+- Baseline
+    - Contain a notebook explaining steps used to train a baseline classifier and produce baseline predictions on test data.
+- CrossRE
+    - Contains the CrossRE dataset and project scripts for a baseline classifier. Note, that we have modified some files to fit our objective and needs.
+- project_rob
+    - Contains project description and requirements.
+
 ## To-dos
 - Find Literature regarding previous work
 - Find existing types of models - types, improvements, proposals.
