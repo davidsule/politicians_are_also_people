@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DATA_PATH=crossre_data
-EXP_PATH=<PATH TO EXPERIMENT FOLDER>
+EXP_PATH="."
 
 DOMAIN="ai"
 # domains: news politics science music literature ai
