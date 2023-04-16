@@ -1,0 +1,40 @@
+entity_name,label_ours,label_elisa
+politician,person,person
+person,person,person
+writer,person,person
+researcher,person,person
+scientist,person,person
+musical artist,person,person
+organisation,organisation,organisation
+political party,organisation,organisation
+university,organisation,organisation
+band,organisation,organisation
+country,location,location
+location,location,location
+event,event,event
+election,event,event
+award,event,miscellaneous
+conference,event,event
+album,artifact,miscellaneous
+song,artifact,miscellaneous
+academic journal,artifact,miscellaneous
+poem,artifact,miscellaneous
+magazine,artifact,miscellaneous
+book,artifact,miscellaneous
+metrics,scientific,miscellaneous
+enzyme,scientific,miscellaneous
+protein,scientific,miscellaneous
+chemical compound,scientific,miscellaneous
+chemical element,scientific,miscellaneous
+astronomical object,scientific,miscellaneous
+theory,concept,miscellaneous
+music genre,concept,miscellaneous
+field,concept,miscellaneous
+discipline,concept,miscellaneous
+algorithm,concept,miscellaneous
+literary genre,concept,miscellaneous
+product,brand,miscellaneous
+program language,brand,miscellaneous
+miscellaneous,miscellaneous,miscellaneous
+musical instrument,miscellaneous,miscellaneous
+task,miscellaneous,miscellaneous
