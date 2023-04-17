@@ -4,37 +4,37 @@ person,person,person
 writer,person,person
 researcher,person,person
 scientist,person,person
-musical artist,person,person
+musicalartist,person,person
 organisation,organisation,organisation
-political party,organisation,organisation
+politicalparty,organisation,organisation
 university,organisation,organisation
 band,organisation,organisation
 country,location,location
 location,location,location
 event,event,event
 election,event,event
-award,event,miscellaneous
+award,event,misc
 conference,event,event
-album,artifact,miscellaneous
-song,artifact,miscellaneous
-academic journal,artifact,miscellaneous
-poem,artifact,miscellaneous
-magazine,artifact,miscellaneous
-book,artifact,miscellaneous
-metrics,scientific,miscellaneous
-enzyme,scientific,miscellaneous
-protein,scientific,miscellaneous
-chemical compound,scientific,miscellaneous
-chemical element,scientific,miscellaneous
-astronomical object,scientific,miscellaneous
-theory,concept,miscellaneous
-music genre,concept,miscellaneous
-field,concept,miscellaneous
-discipline,concept,miscellaneous
-algorithm,concept,miscellaneous
-literary genre,concept,miscellaneous
-product,brand,miscellaneous
-program language,brand,miscellaneous
-miscellaneous,miscellaneous,miscellaneous
-musical instrument,miscellaneous,miscellaneous
-task,miscellaneous,miscellaneous
+album,artifact,misc
+song,artifact,misc
+academicjournal,artifact,misc
+poem,artifact,misc
+magazine,artifact,misc
+book,artifact,misc
+metrics,scientific,misc
+enzyme,scientific,misc
+protein,scientific,misc
+chemicalcompound,scientific,misc
+chemicalelement,scientific,misc
+astronomicalobject,scientific,misc
+theory,concept,misc
+musicgenre,concept,misc
+field,concept,misc
+discipline,concept,misc
+algorithm,concept,misc
+literarygenre,concept,misc
+product,brand,misc
+programlang,brand,misc
+misc,misc,misc
+musicalinstrument,misc,misc
+task,misc,misc
