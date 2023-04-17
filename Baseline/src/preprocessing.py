@@ -1,9 +1,9 @@
 import json
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 from torch.utils.data import Dataset, DataLoader
 from itertools import permutations
 
-#load_dotenv()
+load_dotenv()
 
 class DatasetMapper(Dataset):
 
