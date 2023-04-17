@@ -10,7 +10,22 @@ Second Year Project repo
     - Contains project description and requirements.
 
 ## To-dos
-- 
+
+## Clustering of entity types
+### Sources
+1. Manual Grouping
+2. Word2vec
+    a. Embedding-based
+    b. Distance (similarity)-based
+3. Wordnet
+    a. Hypernym-based (select 2nd, 3rd ... level)
+    b. Distance (similarity)-based
+### Clustering methods
+- K-moids
+- DBSCAN
+- Spectral
+- Affinity Propagation
+- Some hierarchical method
 
 ## Project Work Schedule
 - Create Groups / Hierarchy (Manual task)
