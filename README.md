@@ -10,8 +10,16 @@ Second Year Project repo
     - Contains project description and requirements.
 
 ## To-dos
-- Find Literature regarding previous work
-- Find existing types of models - types, improvements, proposals.
+- 
+
+## Project Work Schedule
+- Create Groups / Hierarchy (Manual task)
+- Create Groups / Hierarchy (Automatically / wordnet)
+- Properly define baseline (train on 5, validate on last?)
+- Determine test paramaters
+- Execute testing
+- Create visuals / results for report
+- Write Report
 
 ## Brain Storm Questions
  - which models are suited for cross-domain? 
