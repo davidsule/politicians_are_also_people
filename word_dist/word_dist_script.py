@@ -127,3 +127,19 @@ def find_vector_for_cluster(word2vec_model, group):
     centroid = np.mean(distance_list, axis=0)
 
     return centroid
+
+def create_entity2cluster_dict(pred_list):
+    entity2cluster = dict()
+    for i, pred in enumerate(pred_list):
+        entity2cluster[ENTITY_LABELS_SPLIT[i]] = pred
+    
+    return entity2cluster
+
+def create_cluster2label_dict(word2vec_model, pred_list):
+    sorted_list = sort_zip_labels(pred_list)
+    groups_list = group_by_cluster(sorted_list)
+    cluster2label = dict()
+    for i, group in enumerate(groups_list):
+        cluster2label[i] = find_label_for_cluster(word2vec_model, group)
+    
+    return cluster2label
