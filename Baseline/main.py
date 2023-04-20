@@ -33,7 +33,12 @@ def parse_arguments():
     arg_parser.add_argument('-rs', '--seed', type=int, help='Seed for probabilistic components')
 
     arg_parser.add_argument('-ood_val', '--ood_validation', type=bool, default=False, help='Wether or not to conduct cross validation with out-of-domain datasets')
-    arg_parser.add_argument('-t', '--topics', type=list, default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help="list of topics")
+    arg_parser.add_argument('-t', '--topics', type=str, nargs='+', default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help="list of topics")
+
+    # Which categories to map the entities to? (None: Don't map)
+    # Arg should match one of the column names in the grouping csv file
+    arg_parser.add_argument('-map', '--mapping_type', type=str, default=None, help='Mapping to use for entity substitution, or None.')
+    arg_parser.add_argument('-mpath', '--mappings_path', type=str, default=None, help='Path to entity substitution mapping csv, or None.')
 
     return arg_parser.parse_args()
 
@@ -211,15 +216,25 @@ if __name__ == '__main__':
         train_topics = [args.topics]
         test_topics = [args.topics]
 
+    # To make explicitely passing None as arg possible
+    if args.mapping_type == "None":
+        args.mapping_type = None
+    if args.mappings_path == "None":
+        args.mappings_path = None
+    
+    if (args.mapping_type is None and args.mappings_path is not None) or (args.mapping_type is not None and args.mappings_path is None):
+        logging.error(f"If mapping_type and mappings_path must be both None or both not None. Got: mapping_type: {args.mapping_type}, mappings_path: {args.mappings_path}")
+        exit(1)
+
     for tr, ts in zip(train_topics, test_topics):
         # setup data
         if args.prediction_only:
-            test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', topics=ts)
+            test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', topics=ts, mapping_type=args.mapping_type, mappings_path=args.mappings_path)
             logging.info(f"Loaded {test_data} (test).")
         else:
-            train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train', topics=tr)
+            train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train', topics=tr, mapping_type=args.mapping_type, mappings_path=args.mappings_path)
             logging.info(f"Loaded {train_data} (train).")
-            dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', topics=tr)
+            dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', topics=tr, mapping_type=args.mapping_type, mappings_path=args.mappings_path)
             logging.info(f"Loaded {dev_data} (dev).")
 
         # load embedding model

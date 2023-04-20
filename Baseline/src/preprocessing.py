@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 from torch.utils.data import Dataset, DataLoader
 from itertools import permutations
 
+import pandas as pd
+
 load_dotenv()
 
 class DatasetMapper(Dataset):
@@ -26,10 +28,10 @@ def prepare_data(data_path, labels2id, batch_size):
     data_loader = DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
     return data_loader
 
-def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train'):
+def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train', mapping_type=None, mappings_path=None):
     sentences, entities_1, entities_2, relations = [], [], [], []
     for t in topics:
-        s, e_1, e_2, r = read_json_file(f'{data_path}{t}-{dataset}.json', labels2id)
+        s, e_1, e_2, r = read_json_file(f'{data_path}{t}-{dataset}.json', labels2id, mapping_type=mapping_type, mappings_path=mappings_path)
         sentences += s
         entities_1 += e_1
         entities_2 += e_2
@@ -38,7 +40,14 @@ def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'liter
     return DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
 
 # return sentences, idx within the sentence of entity-markers-start, relation labels
-def read_json_file(json_file, labels2id, multi_label=False):
+def read_json_file(json_file, labels2id, multi_label=False, mapping_type=None, mappings_path=None):
+
+    # Create Dict for entity-category mapping
+    if mapping_type is not None:
+        df = pd.read_csv(mappings_path)
+        category_map = {}
+        for entity, category in zip(df.iloc[:, 0], df[mapping_type]):
+            category_map[entity] = category
 
     sentences, entities_1, entities_2, relations = [], [], [], []
 
@@ -54,11 +63,25 @@ def read_json_file(json_file, labels2id, multi_label=False):
 
                 for entity_pair in entity_pairs:
 
+                    # Convert entity to category if specified
+                    if mapping_type is not None:
+                        if entity_pair[0][2] in category_map:
+                            ent1 = category_map[entity_pair[0][2]]
+                        else:
+                            ent1 = "misc"  # TODO remove hardcoding?
+                        if entity_pair[1][2] in category_map:
+                            ent2 = category_map[entity_pair[1][2]]
+                        else:
+                            ent2 = "misc"  # TODO remove hardcoding?
+                    else:
+                        ent1 = entity_pair[0][2]
+                        ent2 = entity_pair[1][2]
+
                     # set the entity tokens to inject in the instance
-                    ent1_start = f'<E1:{entity_pair[0][2]}>'
-                    ent1_end = f'</E1:{entity_pair[0][2]}>'
-                    ent2_start = f'<E2:{entity_pair[1][2]}>'
-                    ent2_end = f'</E2:{entity_pair[1][2]}>'
+                    ent1_start = f'<E1:{ent1}>'
+                    ent1_end = f'</E1:{ent1}>'
+                    ent2_start = f'<E2:{ent2}>'
+                    ent2_end = f'</E2:{ent2}>'
 
                     # build the instance sentence for the model
                     sentence_marked = ''

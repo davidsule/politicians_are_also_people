@@ -1,4 +1,4 @@
-entity_name,label_ours,label_elisa,label_word_dist,label_word_emb
+entity_name,ours,elisa,word_dist,word_emb
 politician,person,person,artist,country
 person,person,person,location,country
 writer,person,person,journal,genre
