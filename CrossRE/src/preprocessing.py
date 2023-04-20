@@ -2,6 +2,7 @@ import json
 from dotenv import load_dotenv
 from torch.utils.data import Dataset, DataLoader
 from itertools import permutations
+import pandas as pd
 
 load_dotenv()
 
@@ -26,7 +27,7 @@ def prepare_data(data_path, labels2id, batch_size):
     data_loader = DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
     return data_loader
 
-def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train'):
+def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train', entity_mapping = None):
     sentences, entities_1, entities_2, relations = [], [], [], []
     for t in topics:
         s, e_1, e_2, r = read_json_file(f'{data_path}{t}-{dataset}.json', labels2id)
@@ -34,14 +35,37 @@ def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'liter
         entities_1 += e_1
         entities_2 += e_2
         relations += r
-
-        
+    ## map enties
+    if entity_mapping is not None:
+        entities_1, entities_2 = map_entities(entities_1, entities_2, method=entity_mapping)
 
     return DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
 
-def map_entities(entities, method: dict):
-    entities2cluster = {'journal': 0, 'album': 1, 'algorithm': 3, 'astronomer': 0, 'award': 4,'band': 1,'book': 0,'chemical': 3,'conference': 4,'country': 2,'discipline': 4,'election': 4,'enzyme': 3,'event': 2,'field': 2,'genre': 1,'location': 2,'magazine': 0,'metrics': 2,'misc': 4,'artist': 1,'instrument': 1,'Organisation': 4,'person': 2,'poem': 1,'politics': 1,'politician': 1,'product': 2,'java': 2,'protein': 3,'researcher': 0,'scientist': 0,'song': 1,'task': 2,'theory': 0,'university': 0,'writer': 0}
+def map_entities(entities_1, entities_2, method: str):
+    """
+    entity mapping
+
+    Parameters: 
+        entities_1 (list): list of entity 1
+        entities_2 (list): list of entity 2
+        method (str): {ours, elisa, word_dist, word_emb}
+    """
+    ## read mapping file
+    df = pd.read_csv("../../data/manual_groups.csv", index_col=0)
+
+    ## find column name
+    column_name = "label_" + method
     
+    ## dataframe to map entities
+    df_mapping = df[column_name]
+
+    ## map entities
+    entities_names = df.index.tolist()
+    entities_1 = list(map(lambda entity: df_mapping[entity] if entity in entities_names else entity, entities_1))
+    entities_2 = list(map(lambda entity: df_mapping[entity] if entity in entities_names else entity, entities_2))
+
+    return entities_1, entities_2
+
 
 # return sentences, idx within the sentence of entity-markers-start, relation labels
 def read_json_file(json_file, labels2id, multi_label=False):
