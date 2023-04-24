@@ -1,5 +1,6 @@
 import json
 from dotenv import load_dotenv
+import torch
 from torch.utils.data import Dataset, DataLoader
 from itertools import permutations
 
@@ -28,7 +29,8 @@ def prepare_data(data_path, labels2id, batch_size):
     data_loader = DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
     return data_loader
 
-def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train', mapping_type=None, mappings_path=None):
+def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train', mapping_type=None, mappings_path=None, shuffle=False):
+    # Pass int for shuffle to set that as seed for DataLoader
     sentences, entities_1, entities_2, relations = [], [], [], []
     for t in topics:
         s, e_1, e_2, r = read_json_file(f'{data_path}{t}-{dataset}.json', labels2id, mapping_type=mapping_type, mappings_path=mappings_path)
@@ -37,6 +39,8 @@ def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'liter
         entities_2 += e_2
         relations += r
 
+    if shuffle != False:
+        torch.random.manual_seed(shuffle)
     return DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
 
 # return sentences, idx within the sentence of entity-markers-start, relation labels

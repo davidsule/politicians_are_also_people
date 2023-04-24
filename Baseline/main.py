@@ -39,6 +39,8 @@ def parse_arguments():
     # Arg should match one of the column names in the grouping csv file
     arg_parser.add_argument('-map', '--mapping_type', type=str, default=None, help='Mapping to use for entity substitution, or None.')
     arg_parser.add_argument('-mpath', '--mappings_path', type=str, default=None, help='Path to entity substitution mapping csv, or None.')
+    # Shuffle between epochs?
+    arg_parser.add_argument('-shuffle', '--shuffle_data', type=bool, default=False, help='Shuffle data between epochs?')
 
     return arg_parser.parse_args()
 
@@ -226,15 +228,19 @@ if __name__ == '__main__':
         logging.error(f"If mapping_type and mappings_path must be both None or both not None. Got: mapping_type: {args.mapping_type}, mappings_path: {args.mappings_path}")
         exit(1)
 
+    if args.suffle != False:
+        # If we want to shuffle the data between epochs -> pass random seed to preprocessing func
+        args.shuffle_data = args.seed
+
     for tr, ts in zip(train_topics, test_topics):
         # setup data
         if args.prediction_only:
-            test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', topics=ts, mapping_type=args.mapping_type, mappings_path=args.mappings_path)
+            test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', topics=ts, mapping_type=args.mapping_type, mappings_path=args.mappings_path, shuffle=args.shuffle_data)
             logging.info(f"Loaded {test_data} (test).")
         else:
-            train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train', topics=tr, mapping_type=args.mapping_type, mappings_path=args.mappings_path)
+            train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train', topics=tr, mapping_type=args.mapping_type, mappings_path=args.mappings_path, shuffle=args.shuffle_data)
             logging.info(f"Loaded {train_data} (train).")
-            dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', topics=tr, mapping_type=args.mapping_type, mappings_path=args.mappings_path)
+            dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', topics=tr, mapping_type=args.mapping_type, mappings_path=args.mappings_path, shuffle=args.shuffle_data)
             logging.info(f"Loaded {dev_data} (dev).")
 
         # load embedding model
@@ -314,9 +320,9 @@ if __name__ == '__main__':
             # print statistics
             logging.info(
                 f"[Epoch {ep_idx + 1}/{args.epochs}] Train completed with "
-                f"Micro-f1: {np.mean(stats['micro-f1']):.4f}, "
-                f"Macro-f1: {np.mean(stats['macro-f1']):.4f}, "
-                f"Weighted-f1: {np.mean(stats['weighted-f1']):.4f}, " 
+                f"Micro-f1: {np.mean(ep_stats['micro-f1']):.4f}, "
+                f"Macro-f1: {np.mean(ep_stats['macro-f1']):.4f}, "
+                f"Weighted-f1: {np.mean(ep_stats['weighted-f1']):.4f}, " 
                 f"Loss: {np.mean(ep_stats['loss']):.4f}"
             )
 
@@ -335,7 +341,7 @@ if __name__ == '__main__':
 
             # print statistics
             logging.info(
-                f"[Epoch {ep_idx + 1}/{args.epochs}] Train completed with "
+                f"[Epoch {ep_idx + 1}/{args.epochs}] Evaluation completed with "
                 f"Micro-f1: {np.mean(stats['micro-f1']):.4f}, "
                 f"Macro-f1: {np.mean(stats['macro-f1']):.4f}, "
                 f"Weighted-f1: {np.mean(stats['weighted-f1']):.4f}, "
