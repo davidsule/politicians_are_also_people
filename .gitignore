@@ -1,6 +1,7 @@
 .DS_Store
 *.pt
 word_dist/twitter.bin
+data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
