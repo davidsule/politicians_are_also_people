@@ -52,7 +52,7 @@ def set_experiments(out_path, prediction=False):
 
         # if output dir does not exist, create it (new experiment)
         print(f"Path '{out_path}' does not exist. Creating...")
-        os.mkdir(out_path)
+        os.makedirs(out_path)
     # if output dir exist, check if predicting
     else:
         # if not predicting, verify overwrite
@@ -211,7 +211,7 @@ if __name__ == '__main__':
         test_topics = [[i] for i in args.topics]
         if not args.prediction_only:
             for ts in test_topics:
-                os.mkdir(f'{args.exp_path}/ood_{ts[0]}')
+                os.makedirs(f'{args.exp_path}/ood_{ts[0]}')
     else:
         train_topics = [args.topics]
         test_topics = [args.topics]
