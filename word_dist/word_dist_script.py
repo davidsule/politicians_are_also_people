@@ -37,7 +37,10 @@ def distance_to_every_word(word2vec_model, word):
     distance_list = []
     
     for i in range(len(ENTITY_LABELS_SPLIT)):
-        distance = word2vec_model.distance(word, ENTITY_LABELS_SPLIT[i])
+        if word != ENTITY_LABELS_SPLIT[i]:
+            distance = word2vec_model.distance(word, ENTITY_LABELS_SPLIT[i])
+        else:
+            distance = 0
         distance_list.append(distance)
     
     return distance_list
@@ -65,7 +68,7 @@ def get_every_distance(word2vec_model):
     for current_word in ENTITY_LABELS_SPLIT:
         distance_list = distance_to_every_word(word2vec_model, current_word)
         every_distance.append(distance_list)
-    return every_distance    
+    return np.array(every_distance)    
 
 def sort_zip_labels(predictions):
     zipped = zip(ENTITY_LABELS_SPLIT, predictions)
