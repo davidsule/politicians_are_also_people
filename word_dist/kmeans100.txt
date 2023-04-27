@@ -1,25 +1,25 @@
-5	mds	3 <3<3
+5	mds	3           <3<3
 4:	['genre', 'song', 'person', 'album', 'band', 'book', 'poem', 'musician', 'violin']
 0:	['writer', 'university', 'magazine', 'journal', 'researcher', 'politician', 'scientist']
 3:	['javascript', 'discipline', 'algorithm', 'product', 'metrics', 'theory']
 1:	['enzyme', 'chemical', 'protein', 'galaxy', 'location']
 2:	['award', 'event', 'conference', 'task', 'country', 'election', 'organization', 'miscellaneous', 'field', 'coalition']
 
-5	mds	4 !!!!
+5	mds	4
 3:	['genre', 'javascript', 'algorithm', 'location', 'product', 'metrics']
 2:	['song', 'magazine', 'journal', 'album', 'band', 'book', 'poem', 'violin']
 0:	['writer', 'university', 'person', 'researcher', 'country', 'election', 'musician', 'politician', 'coalition', 'scientist']
 1:	['enzyme', 'chemical', 'protein', 'galaxy', 'theory']
 4:	['award', 'event', 'conference', 'task', 'discipline', 'organization', 'miscellaneous', 'field']
 
-5	mds	6 !!!!!!!!
+5	mds	6           !!
 2:	['genre', 'person', 'galaxy', 'discipline', 'book', 'country', 'organization', 'location', 'miscellaneous', 'field', 'theory']
 4:	['song', 'album', 'band', 'poem', 'musician', 'violin']
 0:	['writer', 'university', 'journal', 'researcher', 'politician', 'scientist']
 3:	['javascript', 'enzyme', 'chemical', 'protein', 'algorithm', 'product', 'metrics']
 1:	['award', 'event', 'conference', 'magazine', 'task', 'election', 'coalition']
 
-6	mds	2 !!
+6	mds	2
 1:	['genre', 'javascript', 'task', 'location', 'miscellaneous']
 2:	['song', 'album', 'band', 'algorithm', 'metrics', 'theory', 'violin']
 0:	['writer', 'researcher', 'poem', 'musician', 'politician', 'coalition', 'scientist']
@@ -27,7 +27,7 @@
 3:	['enzyme', 'chemical', 'protein', 'galaxy', 'discipline']
 4:	['award', 'conference', 'magazine', 'journal', 'election']
 
-6	mds	4 !!!!! <3
+6	mds	4           <3
 5:	['genre', 'javascript', 'algorithm', 'product', 'metrics']
 0:	['song', 'album', 'band', 'book', 'poem', 'musician', 'violin']
 2:	['writer', 'researcher', 'politician', 'scientist']
@@ -35,7 +35,7 @@
 1:	['enzyme', 'chemical', 'protein', 'galaxy', 'theory']
 3:	['award', 'magazine', 'task', 'journal', 'discipline', 'organization']
 
-6	mds	6 !!!!!!!! <3<3<3
+6	mds	6           <3<3<3
 2:	['genre', 'song', 'album', 'band', 'musician', 'violin']
 1:	['writer', 'person', 'researcher', 'politician', 'scientist']
 3:	['university', 'award', 'event', 'conference', 'task', 'discipline', 'country', 'election', 'organization', 'location', 'field', 'coalition']
@@ -43,7 +43,7 @@
 5:	['enzyme', 'chemical', 'protein']
 0:	['magazine', 'galaxy', 'journal', 'book', 'poem', 'theory']
 
-6	mds	8 !!! <3
+6	mds	8           <3 !!!
 0:	['genre', 'song', 'album', 'band', 'poem', 'musician', 'violin']
 2:	['writer', 'researcher', 'politician', 'scientist']
 1:	['university', 'event', 'conference', 'task', 'galaxy', 'country', 'election', 'organization', 'location', 'field', 'coalition']
@@ -51,7 +51,7 @@
 3:	['enzyme', 'chemical', 'protein']
 5:	['award', 'magazine', 'journal', 'book', 'product', 'miscellaneous']
 
-6	se	6 !!
+6	se	6
 5:	['genre', 'song', 'university', 'galaxy', 'album', 'band', 'country', 'election', 'metrics', 'miscellaneous', 'musician', 'field', 'violin']
 4:	['writer', 'researcher', 'politician', 'scientist']
 3:	['javascript', 'algorithm', 'product', 'theory']
@@ -59,7 +59,7 @@
 0:	['award', 'person', 'event', 'conference', 'task', 'discipline', 'organization', 'location', 'coalition']
 2:	['magazine', 'journal', 'book', 'poem']
 
-7	mds	4 !!! <3
+7	mds	4           <3 !
 2:	['genre', 'country', 'election', 'location', 'product', 'metrics', 'coalition']
 3:	['song', 'magazine', 'journal', 'album', 'band', 'book', 'poem', 'musician', 'violin']
 1:	['writer', 'researcher', 'politician', 'scientist']
@@ -68,7 +68,7 @@
 5:	['enzyme', 'protein', 'algorithm']
 0:	['award', 'event', 'conference', 'discipline', 'organization', 'miscellaneous']
 
-7	mds	6 !!!
+7	mds	6
 2:	['genre', 'song', 'album', 'band', 'musician', 'violin']
 1:	['writer', 'researcher', 'politician', 'scientist']
 6:	['university', 'person', 'galaxy', 'discipline', 'country', 'organization', 'location', 'field', 'theory']
@@ -77,7 +77,7 @@
 4:	['award', 'event', 'conference', 'task', 'election', 'miscellaneous', 'coalition']
 0:	['magazine', 'journal', 'book', 'poem']
 
-7	mds	7 !!! <3<3<3
+7	mds	7           <3<3<3 !!!
 0:	['genre', 'song', 'galaxy', 'album', 'band', 'musician', 'violin']
 4:	['writer', 'researcher', 'politician', 'scientist']
 5:	['university', 'person', 'task', 'discipline', 'country', 'miscellaneous', 'field', 'theory']
@@ -86,7 +86,7 @@
 1:	['award', 'event', 'conference', 'election', 'organization', 'location', 'coalition']
 3:	['magazine', 'journal', 'book', 'poem']
 
-7	se	5 !!!!!!! <3<3
+7	se	5           <3<3 !!!
 5:	['genre', 'song', 'album', 'band', 'musician', 'violin']
 4:	['writer', 'researcher', 'politician', 'scientist']
 1:	['university', 'person', 'galaxy', 'country', 'election', 'miscellaneous', 'field']
@@ -95,7 +95,7 @@
 6:	['award', 'event', 'conference', 'task', 'discipline', 'organization', 'location', 'coalition']
 3:	['magazine', 'journal', 'book', 'poem']
 
-7	se	6 !!!!!!!!!
+7	se	6
 6:	['genre', 'song', 'album', 'band', 'musician', 'violin']
 3:	['writer', 'researcher', 'politician', 'scientist']
 0:	['university', 'galaxy', 'country', 'election', 'metrics', 'miscellaneous', 'field']
@@ -104,7 +104,7 @@
 2:	['award', 'person', 'event', 'conference', 'task', 'discipline', 'organization', 'location', 'coalition']
 4:	['magazine', 'journal', 'book', 'poem']
 
-8	mds	3 !!!
+8	mds	3
 2:	['genre', 'person', 'galaxy', 'country', 'location', 'product']
 0:	['song', 'album', 'band', 'violin']
 5:	['writer', 'magazine', 'journal', 'book', 'poem', 'musician']
@@ -114,7 +114,7 @@
 3:	['award', 'event', 'conference', 'task', 'election', 'organization', 'miscellaneous', 'coalition']
 7:	['discipline', 'metrics', 'field']
 
-8	mds	6
+8	mds	6           !!
 3:	['genre', 'song', 'album', 'band', 'poem', 'musician', 'violin']
 7:	['writer', 'researcher', 'scientist']
 2:	['university', 'event', 'conference', 'task', 'galaxy', 'discipline', 'country', 'organization', 'field']
@@ -124,7 +124,7 @@
 1:	['person', 'algorithm', 'location', 'product', 'miscellaneous', 'theory']
 0:	['election', 'politician', 'coalition']
 
-8	mds	8 <3
+8	mds	8           <3
 7:	['genre', 'song', 'album', 'band', 'musician', 'violin']
 5:	['writer', 'researcher', 'politician', 'scientist']
 2:	['university', 'chemical', 'person', 'galaxy', 'country', 'miscellaneous', 'field', 'coalition']
@@ -134,7 +134,7 @@
 3:	['magazine', 'journal', 'book', 'poem', 'theory']
 0:	['algorithm', 'metrics']
 
-8	se	5 <3
+8	se	5           <3
 5:	['genre', 'song', 'album', 'band', 'violin']
 3:	['writer', 'election', 'musician', 'politician']
 6:	['university', 'person', 'galaxy', 'country', 'miscellaneous', 'field']
@@ -174,7 +174,7 @@
 2:	['award', 'event', 'conference', 'task', 'discipline', 'organization', 'location', 'coalition']
 5:	['magazine', 'journal', 'book']
 
-9	mds	4 <3<3
+9	mds	4           <3<3 !!
 5:	['genre', 'song', 'album', 'band', 'musician']
 4:	['writer', 'researcher', 'scientist']
 6:	['university', 'chemical', 'task', 'galaxy', 'field', 'theory']
@@ -185,7 +185,7 @@
 2:	['magazine', 'journal', 'book', 'poem', 'violin']
 0:	['algorithm', 'product', 'metrics']
 
-9	mds	7 <3<3
+9	mds	7           <3<3 !!
 2:	['genre', 'song', 'album', 'band', 'musician', 'violin']
 5:	['writer', 'researcher', 'scientist']
 1:	['university', 'person', 'discipline', 'miscellaneous', 'field', 'theory']
@@ -207,7 +207,7 @@
 8:	['researcher', 'scientist']
 7:	['book', 'poem']
 
-9	se	6 <3<3
+9	se	6           <3<3 !!
 0:	['genre', 'song', 'album', 'band', 'violin']
 3:	['writer', 'election', 'musician', 'politician']
 4:	['university', 'galaxy', 'country', 'metrics', 'miscellaneous', 'field']

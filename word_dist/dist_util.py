@@ -67,12 +67,52 @@ def get_categories(labels, entities):
             categories[label].append(entity)
     return categories
 
+def get_named_categories(categories, model, kth_closest=6):
+    """Get category dictionary out with the keys replaced with a word
+    close to the mean of the embeddings of the words for that label in
+    the embedding space.  The `kth_closest` word is selected to be able
+    to avoid the common situation where the closest words are the same /
+    too similar to one of the words - especially if there is only a
+    few words in the given category.
+
+    Parameters:
+        categories (dict):  Output of `get_categories` function,
+            dictionary with labels as keys and list of corresponding
+            words as values.
+        model (gensim.models.keyedvectors.KeyedVectors):  The model
+            containing the embeddings.
+        kth_closest (int):  Determines which word is selected from the
+            list of 10 most similar words.  Must be in a positive int
+            but less than the number of words in the model. Defaults to
+            6 (the 6th most similar).
+    
+    Returns:
+        named_categories (dict):  Category dictionary with named labels.
+    """
+    named_categories = {}
+    for words in categories.values():
+        category = model.most_similar(positive=words, topn=kth_closest)[kth_closest-1][0]
+        # Handle the (extremely unlikely) case when two categories got the same name
+        tmp = kth_closest + 1
+        while category in named_categories:
+            category = model.most_similar(positive=words, topn=tmp)[tmp-1][0]
+            tmp += 1
+
+        named_categories[category] = words
+    
+    return named_categories
+
 def most_frequent_synset(entities: list) -> list:
     """Return list of most frequent synset for each word in entities."""
     return list(map(lambda w: wordnet.synsets(w)[0], entities))
 
 def minpath(synset) -> list:
-    """Return the path with the minimum length to the root."""
+    """Return the path with the minimum length to the root.
+    
+    If there are several with the same minimum length the first one is
+    chosen from the list returned by the `synset.hypernym_paths()`
+    method.
+    """
     hypernym_paths = synset.hypernym_paths()
     minlen = len(hypernym_paths[0])
     minlen_idx = 0
