@@ -46,13 +46,13 @@ def get_distances(model, words):
             distances[j, i] = dist
     return distances
 
-def get_categories(labels, entities):
+def categories_from_pred(labels, entities):
     """Get dictionary of labels as keys and the list of entities
-        belonging to them as values.  The two lists must be in
-        corresponding order.
+        belonging to them as values from predictions (list of labels).
+        The two lists must be in corresponding order.
     
     Parameters:
-        labels (list):  List of labels.
+        labels (list):  List of labels (predictions).
         entities (list):  List of entity names.
     
     Returns:
@@ -67,7 +67,7 @@ def get_categories(labels, entities):
             categories[label].append(entity)
     return categories
 
-def get_named_categories(categories, model, kth_closest=6):
+def name_categories(categories, model, kth_closest=6):
     """Get category dictionary out with the keys replaced with a word
     close to the mean of the embeddings of the words for that label in
     the embedding space.  The `kth_closest` word is selected to be able
@@ -122,7 +122,7 @@ def minpath(synset) -> list:
             minlen_idx = idx
     return hypernym_paths[minlen_idx]
 
-def category_dict(synset_list: list, level: int = 2, words: Union[list, None] = None) -> dict:
+def graph_category_dict(synset_list: list, level: int = 2, words: Union[list, None] = None) -> dict:
     """Create dictionary with desired level of hypernyms as keys and
     synsets as values.  Optionally pass the corresponding list of words
     to return the words as values.
@@ -144,6 +144,7 @@ def category_dict(synset_list: list, level: int = 2, words: Union[list, None] = 
             cat = path[level]
         except:
             cat = path[-1]
+        cat = cat.name()
         if cat in categories:
             if words is not None:
                 categories[cat].append(words[i])
