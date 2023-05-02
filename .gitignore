@@ -3,6 +3,8 @@
 word_dist/twitter.bin
 data/
 
+!data/category_mappings.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
