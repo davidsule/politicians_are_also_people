@@ -228,7 +228,7 @@ if __name__ == '__main__':
         logging.error(f"If mapping_type and mappings_path must be both None or both not None. Got: mapping_type: {args.mapping_type}, mappings_path: {args.mappings_path}")
         exit(1)
 
-    if args.suffle_data:
+    if args.shuffle_data:
         # If we want to shuffle the data between epochs -> pass random seed to preprocessing func
         args.shuffle_data = args.seed
 
@@ -299,8 +299,11 @@ if __name__ == '__main__':
                 f"Macro-f1: {np.mean(stats['macro-f1']):.4f}, "
                 f"Weighted-f1: {np.mean(stats['weighted-f1']):.4f}, " 
                 f"Loss: {np.mean(stats['loss']):.4f} (mean over batches).")
-            logging.info(f"Saved results from '{pred_path}'. Exiting.")
-            exit()
+            logging.info(f"Saved results from '{pred_path}'.")
+            if ts == test_topics[-1]:
+                logging.info(f"All results saved. Exiting.")
+                exit()
+            continue
 
         # setup optimizer
         optimizer = torch.optim.AdamW(params=classifier.parameters(), lr=args.learning_rate)
