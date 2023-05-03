@@ -37,7 +37,7 @@ def parse_arguments():
 
     # Which categories to map the entities to? (None: Don't map)
     # Arg should match one of the column names in the grouping csv file
-    arg_parser.add_argument('-map', '--mapping_type', type=str, default=None, help='Mapping to use for entity substitution, or None.')
+    arg_parser.add_argument('-map', '--mapping_type', type=str, default=None, help='Mapping to use for entity substitution, one of None, manual elisa, embedding, topological, thesaurus_similarity, cluster_ood. cluster_ood can only be used if --ood_validation is True.')
     arg_parser.add_argument('-mpath', '--mappings_path', type=str, default=None, help='Path to entity substitution mapping csv, or None.')
     # Shuffle between epochs?
     arg_parser.add_argument('-shuffle', '--shuffle_data', type=bool, default=False, help='Shuffle data between epochs?')
@@ -228,7 +228,7 @@ if __name__ == '__main__':
         logging.error(f"If mapping_type and mappings_path must be both None or both not None. Got: mapping_type: {args.mapping_type}, mappings_path: {args.mappings_path}")
         exit(1)
 
-    if args.suffle != False:
+    if args.suffle_data:
         # If we want to shuffle the data between epochs -> pass random seed to preprocessing func
         args.shuffle_data = args.seed
 

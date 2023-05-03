@@ -39,9 +39,12 @@ def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'liter
         entities_2 += e_2
         relations += r
 
-    if shuffle != False:
+    if shuffle:
         torch.random.manual_seed(shuffle)
-    return DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
+        shuffle_loader = True
+    else:
+        shuffle_loader = False
+    return DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size, shuffle=shuffle_loader)
 
 # return sentences, idx within the sentence of entity-markers-start, relation labels
 def read_json_file(json_file, labels2id, multi_label=False, mapping_type=None, mappings_path=None):
