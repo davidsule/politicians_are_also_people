@@ -228,10 +228,6 @@ if __name__ == '__main__':
         logging.error(f"If mapping_type and mappings_path must be both None or both not None. Got: mapping_type: {args.mapping_type}, mappings_path: {args.mappings_path}")
         exit(1)
 
-    if args.shuffle_data:
-        # If we want to shuffle the data between epochs -> pass random seed to preprocessing func
-        args.shuffle_data = args.seed
-
     for tr, ts in zip(train_topics, test_topics):
         # setup data
         if args.prediction_only:

@@ -8,7 +8,7 @@ import numpy as np
 from collections import defaultdict
 from dotenv import load_dotenv
 import matplotlib.pyplot as plt
-from src.preprocessing import prepare_data, prepare_all_crossre
+from src.preprocessing import prepare_data
 from src.classification import load_classifier
 from src.classification.embeddings import TransformerEmbeddings
 
@@ -17,11 +17,10 @@ load_dotenv()
 def parse_arguments():
 
     arg_parser = argparse.ArgumentParser()
-    #arg_parser.add_argument('--train_path', help='Path to training data')
-    #arg_parser.add_argument('--dev_path', help='Path to the dev data')
-    #arg_parser.add_argument('--test_path', help='Path to the test data')
+    arg_parser.add_argument('--train_path', help='Path to training data')
+    arg_parser.add_argument('--dev_path', help='Path to the dev data')
+    arg_parser.add_argument('--test_path', help='Path to the test data')
     arg_parser.add_argument('--exp_path', help='Path to the experiment directory')
-    arg_parser.add_argument('--data_path', help='Path to folder containing data', default='crossre_data/')
 
     arg_parser.add_argument('-lm', '--language_model', type=str, default='bert-base-cased')
     arg_parser.add_argument('-po', '--prediction_only', action='store_true', default=False, help='Set flag to run prediction on the validation data and exit (default: False)')
@@ -200,12 +199,12 @@ if __name__ == '__main__':
 
     # setup data
     if args.prediction_only:
-        test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test')
+        test_data = prepare_data(args.test_path, label_types, args.batch_size)
         logging.info(f"Loaded {test_data} (test).")
     else:
-        train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train')
+        train_data = prepare_data(args.train_path, label_types, args.batch_size)
         logging.info(f"Loaded {train_data} (train).")
-        dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev')
+        dev_data = prepare_data(args.dev_path, label_types, args.batch_size)
         logging.info(f"Loaded {dev_data} (dev).")
 
     # load embedding model
@@ -245,7 +244,7 @@ if __name__ == '__main__':
         # convert label indices back to string labels
         idx_2_label = {idx: lbl for lbl, idx in label_types.items()}
         pred_labels = [idx_2_label[pred] for pred in stats['predictions']]
-        pred_path = f'{args.exp_path}/cross_domain-pred.csv' ## This is a bit hard coded
+        pred_path = os.path.join(args.exp_path, f'{os.path.splitext(os.path.basename(args.test_path))[0]}-pred.csv')
         save_predictions(pred_path, test_data, pred_labels)
 
         logging.info(

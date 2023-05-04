@@ -1,9 +1,8 @@
 .DS_Store
 *.pt
 word_dist/twitter.bin
-data/
-
-!data/category_mappings.csv
+data/baseline/
+data/predictions/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

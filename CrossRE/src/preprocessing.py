@@ -2,7 +2,6 @@ import json
 from dotenv import load_dotenv
 from torch.utils.data import Dataset, DataLoader
 from itertools import permutations
-import pandas as pd
 
 load_dotenv()
 
@@ -26,45 +25,6 @@ def prepare_data(data_path, labels2id, batch_size):
     sentences, entities_1, entities_2, relations = read_json_file(data_path, labels2id)
     data_loader = DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
     return data_loader
-
-def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train', entity_mapping = None):
-    sentences, entities_1, entities_2, relations = [], [], [], []
-    for t in topics:
-        s, e_1, e_2, r = read_json_file(f'{data_path}{t}-{dataset}.json', labels2id)
-        sentences += s
-        entities_1 += e_1
-        entities_2 += e_2
-        relations += r
-    ## map enties
-    if entity_mapping is not None:
-        entities_1, entities_2 = map_entities(entities_1, entities_2, method=entity_mapping)
-
-    return DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
-
-def map_entities(entities_1, entities_2, method: str):
-    """
-    entity mapping
-
-    Parameters: 
-        entities_1 (list): list of entity 1
-        entities_2 (list): list of entity 2
-        method (str): {ours, elisa, word_dist, word_emb}
-    """
-    ## read mapping file
-    df = pd.read_csv("../../data/manual_groups.csv", index_col=0)
-
-    ## find column name
-    column_name = "label_" + method
-    
-    ## dataframe to map entities
-    df_mapping = df[column_name]
-
-    ## map entities
-    entities_names = df.index.tolist()
-    entities_1 = list(map(lambda entity: df_mapping[entity] if entity in entities_names else entity, entities_1))
-    entities_2 = list(map(lambda entity: df_mapping[entity] if entity in entities_names else entity, entities_2))
-
-    return entities_1, entities_2
 
 
 # return sentences, idx within the sentence of entity-markers-start, relation labels
