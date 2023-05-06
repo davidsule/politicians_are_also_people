@@ -1,9 +1,5 @@
-import os
-import sys
-import csv
-import argparse
-import logging
-import shutil
+import os, sys, csv, argparse, logging, shutil, json
+
 import torch
 import numpy as np
 from collections import defaultdict
@@ -219,9 +215,17 @@ if __name__ == '__main__':
 
     domain_list = "".join([domain[0] for domain in sorted(args.domains)])
     exp_type = "ood" if args.ood_validation else "all"
-    exp_path = os.path.join(args.exp_path, f"{domain_list}_{args.seed}", f"{args.mapping_type}", exp_type)
+    mapping_type = "no_mapping" if args.mapping_type is None or args.mapping_type == "None" else args.mapping_type
+    exp_path = os.path.join(args.exp_path, f"{domain_list}_{args.seed}", f"{mapping_type}", exp_type)
 
     set_experiments(exp_path, prediction=args.prediction_only)
+
+    # Save args - for future reference
+    if not args.prediction_only:
+        args_path = os.path.join(exp_path, "args.json")
+        with open(args_path, "w") as f:
+            json.dump(vars(args), f, indent=4)
+        logging.info(f"Saved arguments to {args_path}.")
 
     # set random seeds
     np.random.seed(args.seed)
@@ -240,8 +244,6 @@ if __name__ == '__main__':
     # To make explicitely passing None as arg possible
     if args.mapping_type == "None":
         args.mapping_type = None
-    if args.mappings_path == "None":
-        args.mappings_path = None
     
     if args.mapping_type not in [None, "manual", "elisa", "embedding", "ood_embedding", "topological", "thesaurus_affinity"]:
         logging.error(f"`mapping_type` must be one of ['None', 'manual', 'elisa', 'embedding', 'ood_embedding', 'topological', 'thesaurus_affinity'] Got: {args.mapping_type}")
@@ -268,11 +270,26 @@ if __name__ == '__main__':
             "damping": 0.5
         }
     # Get category mapping
-    if args.mapping_type is None:
-        category_mapping = None
+    mapping_path = os.path.join(exp_path, "mapping.json")
+    if args.prediction_only:
+        if os.path.exists(mapping_path):
+            with open(mapping_path) as f:
+                category_mapping = json.load(f)
+        elif args.mapping_type is None:
+            category_mapping = None
+        else:
+            logging.error(f"Category mapping json at {mapping_path} doesn't exist.")
+            exit(1)
     else:
-        category_mapping = categorize.get_categories(args.mapping_type, domains=args.domains, mapper_params=mapper_params)
-    logging.info(f"Loaded category mapping: {args.mapping_type}.")
+        if args.mapping_type is None:
+            category_mapping = None
+        else:
+            category_mapping = categorize.get_categories(args.mapping_type, domains=args.domains, mapper_params=mapper_params)
+        with open(mapping_path, "w") as f:
+            json.dump(category_mapping, f, indent=4)
+        logging.info(f"Saved category mapping to {mapping_path}.")
+    logging.info(f"Loaded category mapping: {mapping_type}.")
+
 
     for tr, ts in zip(train_domains, test_domains):
 
@@ -292,11 +309,13 @@ if __name__ == '__main__':
         if args.prediction_only:
             test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', domains=ts, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {test_data} (test).")
+            logging.info(f"Starting prediction on {ts[0]} test data.")
         else:
             train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train', domains=tr, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {train_data} (train).")
             dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', domains=tr, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {dev_data} (dev).")
+            logging.info(f"Starting training on {tr[0]} data.")
 
         # load embedding model
         embedding_model = TransformerEmbeddings(
@@ -419,6 +438,8 @@ if __name__ == '__main__':
             if (ep_idx - stats['loss'].index(min(stats['loss']))) >= args.early_stop:
                 logging.info(f"No improvement since {args.early_stop} epochs ({min(stats['loss']):.4f} loss). Early stop.")
                 break
-
-        logging.info(f"Training completed after {ep_idx + 1} epochs.")
+        if args.ood_validation:
+            logging.info(f"OOD training completed for test topic {ts[0]} after {ep_idx + 1} epochs.")
+        else:
+            logging.info(f"Training completed after {ep_idx + 1} epochs.")
         save_plots(exp_path_domain, statistics['loss_train'], statistics['loss_dev'], statistics['micro-f1'], statistics['macro-f1'], statistics['weighted-f1'])
