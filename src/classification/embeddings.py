@@ -21,7 +21,7 @@ class Embeddings(nn.Module):
 
 
 class TransformerEmbeddings(Embeddings):
-	def __init__(self, lm_name):
+	def __init__(self, lm_name, labels):
 		super().__init__()
 		# load transformer
 		self._tok = transformers.AutoTokenizer.from_pretrained(lm_name, use_fast=True, add_prefix_space=True)
@@ -32,18 +32,17 @@ class TransformerEmbeddings(Embeddings):
 			self._lm.to(torch.device('cuda'))
 
 		# add special tokens
-		ner_labels = os.getenv(f"ENTITY_LABELS").split()
-		self._tok.add_special_tokens({'additional_special_tokens': self.get_special_tokens(ner_labels)})
+		self._tok.add_special_tokens({'additional_special_tokens': self.get_special_tokens(labels)})
 		self._lm.resize_token_embeddings(len(self._tok))
 
 		# public variables
 		self.emb_dim = self._lm.config.hidden_size
 
-	def get_special_tokens(self, ner_labels):
+	def get_special_tokens(self, labels):
 
 		special_tokens = []
 
-		for label in ner_labels:
+		for label in labels:
 			special_tokens.append(f'<E1:{label}>')
 			special_tokens.append(f'</E1:{label}>')
 			special_tokens.append(f'<E2:{label}>')

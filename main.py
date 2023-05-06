@@ -317,9 +317,18 @@ if __name__ == '__main__':
             logging.info(f"Loaded {dev_data} (dev).")
             logging.info(f"Starting training on {tr[0]} data.")
 
+        # Entity names / category names need to be added to tokenizer as special tokens
+        # More accurately, how they are injected e.g. <E1:person>, <E/1:person> etc ->
+        # so pass list to TransformerEmbeddings class (previously that module just loaded
+        # the entity labels from the .env file.)
+        if mapping is None:
+            categories = os.getenv(f"ENTITY_LABELS").split()
+        else:
+            categories = list(set(mapping.values()))
         # load embedding model
         embedding_model = TransformerEmbeddings(
-            args.language_model
+            args.language_model,
+            categories
         )
         logging.info(f"Loaded {embedding_model}.")
 

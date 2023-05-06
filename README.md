@@ -10,6 +10,7 @@ Second Year Project repo
     - Contains project description and requirements.
 
 ## To-dos
+- Add requirements.txt
 
 ## Clustering of entity types
 ### Sources
