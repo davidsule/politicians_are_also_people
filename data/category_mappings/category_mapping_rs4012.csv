@@ -1,4 +1,4 @@
-entity_name,manual,elisa,embedding,topological,thesaurus_similarity,ood_embedding_ai,ood_embedding_literature,ood_embedding_music,ood_embedding_news,ood_embedding_politics,ood_embedding_science
+entity_name,manual,elisa,embedding,topological,thesaurus_affinity,ood_embedding_ai,ood_embedding_literature,ood_embedding_music,ood_embedding_news,ood_embedding_politics,ood_embedding_science
 politician,person,person,journalist,causal_agent,journalist,violinist,elections,journalist,journalist,songs,journalist
 person,person,person,convention,causal_agent,journalist,MDSY,elections,journalist,journalist,elections,Nariang
 writer,person,person,journalist,causal_agent,journalist,violinist,songs,journalist,journalist,author,journalist

@@ -3,12 +3,15 @@ import sys
 import csv
 import argparse
 import logging
+import shutil
 import torch
 import numpy as np
 from collections import defaultdict
 from dotenv import load_dotenv
 import matplotlib.pyplot as plt
-from src.preprocessing import prepare_data, prepare_all_crossre
+
+import categorize
+from src.preprocessing import prepare_all_crossre
 from src.classification import load_classifier
 from src.classification.embeddings import TransformerEmbeddings
 
@@ -33,14 +36,12 @@ def parse_arguments():
     arg_parser.add_argument('-rs', '--seed', type=int, help='Seed for probabilistic components')
 
     arg_parser.add_argument('-ood_val', '--ood_validation', type=bool, default=False, help='Wether or not to conduct cross validation with out-of-domain datasets')
-    arg_parser.add_argument('-t', '--topics', type=str, nargs='+', default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help="list of topics")
+    arg_parser.add_argument('-d', '--domains', type=str, nargs='+', default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help="list of domains")
 
     # Which categories to map the entities to? (None: Don't map)
-    # Arg should match one of the column names in the grouping csv file
-    arg_parser.add_argument('-map', '--mapping_type', type=str, default=None, help='Mapping to use for entity substitution, one of None, manual elisa, embedding, topological, thesaurus_similarity, cluster_ood. cluster_ood can only be used if --ood_validation is True.')
-    arg_parser.add_argument('-mpath', '--mappings_path', type=str, default=None, help='Path to entity substitution mapping csv, or None.')
+    arg_parser.add_argument('-map', '--mapping_type', type=str, default=None, help='Mapping to use for entity substitution, one of None, "manual", "elisa", "embedding", "ood_embedding", "topological", "thesaurus_affinity". ood_embedding can only be used if --ood_validation is True.')
     # Shuffle between epochs?
-    arg_parser.add_argument('-shuffle', '--shuffle_data', type=bool, default=False, help='Shuffle data between epochs?')
+    arg_parser.add_argument('-shuffle', '--shuffle_data', type=bool, default=False, help='Shuffle data between epochs? Seed provided in the --seed arg will be used.')
 
     return arg_parser.parse_args()
 
@@ -62,9 +63,13 @@ def set_experiments(out_path, prediction=False):
             response = None
 
             while response not in ['y', 'n']:
-                response = input(f"Path '{out_path}' already exists. Overwrite? [y/n] ")
+                response = input(f"Path '{out_path}' already exists. Delete contents and run new experiment? [y/n] ")
             if response == 'n':
                 exit(1)
+            # remove all data from previous run to avoid having data from several runs in same
+            # folder (e.g. run training but not prediction -> new classifiers but old predictions)
+            shutil.rmtree(out_path)
+            os.makedirs(out_path)  # rmtree removes the whole dir -> recreate
 
     # setup logging
     log_format = '%(message)s'
@@ -199,7 +204,24 @@ def save_plots(path, loss_train, loss_dev, microf1, macrof1, weightedf1):
 if __name__ == '__main__':
 
     args = parse_arguments()
-    set_experiments(args.exp_path, prediction=args.prediction_only)
+
+    # Experiment folder based on args so diff runs don't overwrite each other (incl. logging info)
+    # Structure: {domains_list}_{random_seed}/{mapping_type}/{exp_type} 
+    # Example: almnps_4012/manual/ood
+    # Breakdown:
+    #   1. almnps:  All six domains evaluated: Since we have the domains arg
+    #               different lists will provide different results even iff all
+    #               other args are the same.  Luckily they all start w/
+    #               different letter -> abbrev is the starting letters
+    #   2. 4012:    Random seed
+    #   3. manual:  Manual clustering
+    #   4. ood:     OOD eval.  All would mean train on all, test on all.
+
+    domain_list = "".join([domain[0] for domain in sorted(args.domains)])
+    exp_type = "ood" if args.ood_validation else "all"
+    exp_path = os.path.join(args.exp_path, f"{domain_list}_{args.seed}", f"{args.mapping_type}", exp_type)
+
+    set_experiments(exp_path, prediction=args.prediction_only)
 
     # set random seeds
     np.random.seed(args.seed)
@@ -209,14 +231,11 @@ if __name__ == '__main__':
     label_types = {label: idx for idx, label in enumerate(os.getenv(f"RELATION_LABELS").split())}
 
     if args.ood_validation:
-        train_topics = [[j for j in args.topics if j != i] for i in args.topics]
-        test_topics = [[i] for i in args.topics]
-        if not args.prediction_only:
-            for ts in test_topics:
-                os.makedirs(f'{args.exp_path}/ood_{ts[0]}')
+        train_domains = [[j for j in args.domains if j != i] for i in args.domains]
+        test_domains = [[i] for i in args.domains]
     else:
-        train_topics = [args.topics]
-        test_topics = [args.topics]
+        train_domains = [args.domains]
+        test_domains = [args.domains]
 
     # To make explicitely passing None as arg possible
     if args.mapping_type == "None":
@@ -224,19 +243,59 @@ if __name__ == '__main__':
     if args.mappings_path == "None":
         args.mappings_path = None
     
-    if (args.mapping_type is None and args.mappings_path is not None) or (args.mapping_type is not None and args.mappings_path is None):
-        logging.error(f"If mapping_type and mappings_path must be both None or both not None. Got: mapping_type: {args.mapping_type}, mappings_path: {args.mappings_path}")
+    if args.mapping_type not in [None, "manual", "elisa", "embedding", "ood_embedding", "topological", "thesaurus_affinity"]:
+        logging.error(f"`mapping_type` must be one of ['None', 'manual', 'elisa', 'embedding', 'ood_embedding', 'topological', 'thesaurus_affinity'] Got: {args.mapping_type}")
         exit(1)
+    
+    # Set up args for getting category mappings
+    if args.mapping_type in ["manual", "elisa"]:
+        mapper_params = None
+    elif args.mapping_type in ["embedding", "ood_embedding"]:  # TODO add params as command line arg?
+        mapper_params = {
+            "random_state": args.seed,
+            "n_components": 35,
+            "n_neighbors": 4,
+            "min_dist": 0.3,
+            "damping": 0.5
+        }
+    elif args.mapping_type == "topological":
+        mapper_params = {
+            "level": 2
+        }
+    elif args.mapping_type == "thesaurus_affinity":
+        mapper_params = {
+            "random_state": args.seed,
+            "damping": 0.5
+        }
+    # Get category mapping
+    if args.mapping_type is None:
+        category_mapping = None
+    else:
+        category_mapping = categorize.get_categories(args.mapping_type, domains=args.domains, mapper_params=mapper_params)
+    logging.info(f"Loaded category mapping: {args.mapping_type}.")
 
-    for tr, ts in zip(train_topics, test_topics):
+    for tr, ts in zip(train_domains, test_domains):
+
+        # Create domain folder
+        if args.ood_validation:
+            exp_path_domain = os.path.join(exp_path, f"{ts[0]}")
+        else:
+            exp_path_domain = exp_path
+        os.makedirs(exp_path_domain, exist_ok=True)        
+
+        # If ood_embedding mapping -> select mapping that was clustered without the test domain entities
+        if args.mapping_type == "ood_embedding":
+            mapping = category_mapping[ts[0]]
+        else:
+            mapping = category_mapping
         # setup data
         if args.prediction_only:
-            test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', topics=ts, mapping_type=args.mapping_type, mappings_path=args.mappings_path, shuffle=args.shuffle_data)
+            test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', domains=ts, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {test_data} (test).")
         else:
-            train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train', topics=tr, mapping_type=args.mapping_type, mappings_path=args.mappings_path, shuffle=args.shuffle_data)
+            train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train', domains=tr, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {train_data} (train).")
-            dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', topics=tr, mapping_type=args.mapping_type, mappings_path=args.mappings_path, shuffle=args.shuffle_data)
+            dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', domains=tr, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {dev_data} (dev).")
 
         # load embedding model
@@ -253,15 +312,8 @@ if __name__ == '__main__':
         logging.info(f"Using classifier: {classifier}")
 
         # load pre-trained model for prediction
-        if args.prediction_only and not args.ood_validation:
-            classifier_path = os.path.join(args.exp_path, f'best.pt')
-            if not os.path.exists(classifier_path):
-                logging.error(f"[Error] No pre-trained model available in '{classifier_path}'. Exiting.")
-                exit(1)
-            classifier = classifier_constructor.load(classifier_path)
-            logging.info(f"Loaded pre-trained classifier from '{classifier_path}'.")
-        elif args.prediction_only:
-            classifier_path = os.path.join(args.exp_path, f'ood_{ts[0]}/best.pt')
+        if args.prediction_only:
+            classifier_path = os.path.join(exp_path_domain, f'best.pt')
             if not os.path.exists(classifier_path):
                 logging.error(f"[Error] No pre-trained model available in '{classifier_path}'. Exiting.")
                 exit(1)
@@ -283,10 +335,7 @@ if __name__ == '__main__':
             # convert label indices back to string labels
             idx_2_label = {idx: lbl for lbl, idx in label_types.items()}
             pred_labels = [idx_2_label[pred] for pred in stats['predictions']]
-            if args.ood_validation:
-                pred_path = f'{args.exp_path}/ood_{ts[0]}/predictions.csv' ## This is a bit hard coded
-            else:
-                pred_path = f'{args.exp_path}/all/predictions.csv' ## This is a bit hard coded
+            pred_path = os.path.join(exp_path_domain, 'predictions.csv')
             save_predictions(pred_path, test_data, pred_labels)
 
             logging.info(
@@ -296,7 +345,7 @@ if __name__ == '__main__':
                 f"Weighted-f1: {np.mean(stats['weighted-f1']):.4f}, " 
                 f"Loss: {np.mean(stats['loss']):.4f} (mean over batches).")
             logging.info(f"Saved results from '{pred_path}'.")
-            if ts == test_topics[-1]:
+            if ts == test_domains[-1]:
                 logging.info(f"All results saved. Exiting.")
                 exit()
             continue
@@ -356,19 +405,13 @@ if __name__ == '__main__':
             cur_eval_loss = stats['loss'][-1]
 
             # save most recent model
-            if args.ood_validation:
-                path = os.path.join(args.exp_path, f'ood_{ts[0]}/newest.pt')
-            else:
-                path = os.path.join(args.exp_path, f'newest.pt')
+            path = os.path.join(exp_path_domain, f'newest.pt')
             classifier.save(path)
             logging.info(f"Saved models from epoch {ep_idx + 1} to '{path}'.")
 
             # save best model
             if cur_eval_loss <= min(stats['loss']):
-                if args.ood_validation:
-                    path = os.path.join(args.exp_path, f'ood_{ts[0]}/best.pt')
-                else:
-                    path = os.path.join(args.exp_path, f'best.pt')
+                path = os.path.join(exp_path_domain, f'best.pt')
                 classifier.save(path)
                 logging.info(f"Saved model with best loss {cur_eval_loss:.4f} to '{path}'.")
 
@@ -378,7 +421,4 @@ if __name__ == '__main__':
                 break
 
         logging.info(f"Training completed after {ep_idx + 1} epochs.")
-        if args.ood_validation:
-            save_plots(os.path.join(args.exp_path, f'ood_{ts[0]}'), statistics['loss_train'], statistics['loss_dev'], statistics['micro-f1'], statistics['macro-f1'], statistics['weighted-f1'])
-        else:
-            save_plots(args.exp_path, statistics['loss_train'], statistics['loss_dev'], statistics['micro-f1'], statistics['macro-f1'], statistics['weighted-f1'])
+        save_plots(exp_path_domain, statistics['loss_train'], statistics['loss_dev'], statistics['micro-f1'], statistics['macro-f1'], statistics['weighted-f1'])

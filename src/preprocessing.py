@@ -29,11 +29,11 @@ def prepare_data(data_path, labels2id, batch_size):
     data_loader = DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size)
     return data_loader
 
-def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train', mapping_type=None, mappings_path=None, shuffle=False):
+def prepare_all_crossre(data_path, labels2id, batch_size, domains=['ai', 'literature', 'music', 'news', 'politics', 'science'], dataset='train', category_mapping=None, shuffle=False):
     # Pass int for shuffle to set that as seed for DataLoader
     sentences, entities_1, entities_2, relations = [], [], [], []
-    for t in topics:
-        s, e_1, e_2, r = read_json_file(f'{data_path}{t}-{dataset}.json', labels2id, mapping_type=mapping_type, mappings_path=mappings_path)
+    for d in domains:
+        s, e_1, e_2, r = read_json_file(f'{data_path}{d}-{dataset}.json', labels2id, category_mapping=category_mapping)
         sentences += s
         entities_1 += e_1
         entities_2 += e_2
@@ -42,14 +42,7 @@ def prepare_all_crossre(data_path, labels2id, batch_size, topics = ['ai', 'liter
     return DataLoader(DatasetMapper(sentences, entities_1, entities_2, relations), batch_size=batch_size, shuffle=shuffle)
 
 # return sentences, idx within the sentence of entity-markers-start, relation labels
-def read_json_file(json_file, labels2id, multi_label=False, mapping_type=None, mappings_path=None):
-
-    # Create Dict for entity-category mapping
-    if mapping_type is not None:
-        df = pd.read_csv(mappings_path)
-        category_map = {}
-        for entity, category in zip(df.iloc[:, 0], df[mapping_type]):
-            category_map[entity] = category
+def read_json_file(json_file, labels2id, multi_label=False, category_mapping=None):
 
     sentences, entities_1, entities_2, relations = [], [], [], []
 
@@ -66,15 +59,15 @@ def read_json_file(json_file, labels2id, multi_label=False, mapping_type=None, m
                 for entity_pair in entity_pairs:
 
                     # Convert entity to category if specified
-                    if mapping_type is not None:
-                        if entity_pair[0][2] in category_map:
-                            ent1 = category_map[entity_pair[0][2]]
+                    if category_mapping is not None:
+                        if entity_pair[0][2] in category_mapping:
+                            ent1 = category_mapping[entity_pair[0][2]]
                         else:
-                            ent1 = "misc"  # TODO remove hardcoding?
-                        if entity_pair[1][2] in category_map:
-                            ent2 = category_map[entity_pair[1][2]]
+                            raise ValueError(f"Category mapping provided but doesn't contain all entity types. Missing: {entity_pair[0][2]}.")
+                        if entity_pair[1][2] in category_mapping:
+                            ent2 = category_mapping[entity_pair[1][2]]
                         else:
-                            ent2 = "misc"  # TODO remove hardcoding?
+                            raise ValueError(f"Category mapping provided but doesn't contain all entity types. Missing: {entity_pair[1][2]}.")
                     else:
                         ent1 = entity_pair[0][2]
                         ent2 = entity_pair[1][2]
