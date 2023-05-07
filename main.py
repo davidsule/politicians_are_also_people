@@ -248,6 +248,10 @@ if __name__ == '__main__':
     if args.mapping_type not in [None, "manual", "elisa", "embedding", "ood_embedding", "topological", "thesaurus_affinity"]:
         logging.error(f"`mapping_type` must be one of ['None', 'manual', 'elisa', 'embedding', 'ood_embedding', 'topological', 'thesaurus_affinity'] Got: {args.mapping_type}")
         exit(1)
+
+    if args.mapping_type == "ood_embedding" and not args.ood_validation:
+        logging.error("ood_embeddig mapping type can only be used with ood validation.")
+        exit(1)
     
     # Set up args for getting category mappings
     if args.mapping_type in ["manual", "elisa"]:
@@ -309,13 +313,13 @@ if __name__ == '__main__':
         if args.prediction_only:
             test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', domains=ts, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {test_data} (test).")
-            logging.info(f"Starting prediction on {ts[0]} test data.")
+            logging.info(f"Starting prediction on {ts} test data.")
         else:
             train_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='train', domains=tr, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {train_data} (train).")
             dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', domains=tr, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {dev_data} (dev).")
-            logging.info(f"Starting training on {tr[0]} data.")
+            logging.info(f"Starting training on {tr} data.")
 
         # Entity names / category names need to be added to tokenizer as special tokens
         # More accurately, how they are injected e.g. <E1:person>, <E/1:person> etc ->
@@ -452,3 +456,4 @@ if __name__ == '__main__':
         else:
             logging.info(f"Training completed after {ep_idx + 1} epochs.")
         save_plots(exp_path_domain, statistics['loss_train'], statistics['loss_dev'], statistics['micro-f1'], statistics['macro-f1'], statistics['weighted-f1'])
+    logging.info(f"TRAINING COMPLETED with:\n\tDomains:\t\t{args.domains}\n\tOOD validaation:\t{args.ood_validation}\n\tMapping type:\t\t{args.mapping_type}")

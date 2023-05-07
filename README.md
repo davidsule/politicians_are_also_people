@@ -11,6 +11,7 @@ Second Year Project repo
 
 ## To-dos
 - Add requirements.txt
+- Add licence
 
 ## Clustering of entity types
 ### Sources
