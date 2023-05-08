@@ -1,4 +1,4 @@
-import os
+import os, json
 import numpy as np
 from typing import Union
 from sklearn.cluster import AffinityPropagation
@@ -615,15 +615,18 @@ def get_categories(
         mapping_type: str,
         domains: list = ["ai", "literature", "music", "news", "politics", "science"],
         mapper_params: Union[dict, None] = None,
-        entity2category: bool = True
+        entity2category: bool = True,
+        unique_entities: Union[dict, None] = None
     ) -> dict:
     """Get categorization of named entities as dictionary based on
     different kind of clustering methods (mapping_type).  Options:
     ['manual', 'elisa', 'embedding', 'ood_embedding', 'topological',
-    'thesaurus_affinity'].  The named entity labels are for the list of
+    'thesaurus_affinity'].  The named entity labels for the list of
     domains provided are read from the .env file.  The optional args
     for the different mapping functions can be passed as the
-    mapper_params arg as a dict.
+    mapper_params arg as a dict.  For 'ood_embedding' `unique_entities`
+    must be passed and the set of its keys must match the list of
+    `domains`.
 
     If entity2category == True the returned dictionary will be in the
     format entity (key, str): category (value, str), else in category
@@ -645,6 +648,12 @@ def get_categories(
         entity2category (bool, optional):  If True, the returned dict
             will be in format entity (key): category (values), else
             category (key): list of entities (value).
+        unique_entities (dict|None, optional):  Keys are domains, values
+            are entities unique to the domain.  Only takes effect if
+            `mapping_type` == 'ood_embedding'.  If given, all domains
+            partaking in the training must be in it, even if they don't
+            have any unique entities, in which case the value should be
+            an empty list.  Defaults to None.
     
     Returns:
         category_dict (dict):  Mapping dictionary as descriped above.
@@ -673,6 +682,12 @@ def get_categories(
     else:
         substitutions = {"musicalartist": "musician", "organisation": "organization", "politicalparty": "party", "academicjournal": "journal", "chemicalcompound": "chemical", "chemicalelement": "chemical", "astronomicalobject": "galaxy", "musicgenre": "genre", "literarygenre": "genre", "programlang": "java", "musicalinstrument": "instrument", "misc": "miscellaneous"}
 
+    if mapping_type == "ood_embedding" and unique_entities is None:
+        raise ValueError("For 'ood_embedding' `mapping_type` unique_entities dict must be passed.")
+    
+    if mapping_type == "ood_embedding" and set(domains) != set(unique_entities.keys()):
+        raise ValueError("For 'ood_embedding' `mapping_type` the keys of `unique_entities` must match set(`domains`).")
+
     domain_entity_dict = {}
     all_entities = set()
     for domain in domains:
@@ -685,10 +700,12 @@ def get_categories(
     if len(domains) == 6 and all_entities != sorted(os.getenv("ENTITY_LABELS").split()):
         raise ValueError("All domains are given but entity list wasn't built successfully.")
     
-    if mapping_type == "embedding":
-        mapping =  get_embedding_based(all_entities, substitutions, **mapper_params)
-    elif mapping_type == "ood_embedding":
+    if mapping_type == "ood_embedding":
+        to_remove = get_to_remove(unique_entities)
+        domain_entity_dict = get_ood_cluster_domain_entity_dict(domain_entity_dict, to_remove)
         mapping =  get_ood_embedding_based(domain_entity_dict, substitutions, **mapper_params)
+    elif mapping_type == "embedding":
+        mapping =  get_embedding_based(all_entities, substitutions, **mapper_params)
     elif mapping_type == "topological":
         mapping =  get_topological(**mapper_params)
     else:
@@ -708,3 +725,124 @@ def get_categories(
         return entity2category_dict
     else:
         return mapping
+
+def get_to_remove(unique_entities: dict) -> dict:
+    """Get dict with domains are keys and values are the set of entities
+    that domain cannot contain, i.e. the set of all unique entities of
+    all other domains.
+
+    Parameters:
+        unique_entities (dict):  Dict with domains as keys and list of
+            entities unique to that domain as values.
+
+    Returns:
+        to_remove (dict):  As specified above.
+    """
+    to_remove = {}
+    for from_domain_remove in unique_entities.keys():
+        to_remove[from_domain_remove] = set()
+        for domain_unique, entities in unique_entities.items():
+            if domain_unique != from_domain_remove:
+                to_remove[from_domain_remove].update(entities)
+    return to_remove
+
+def create_ood_clustering_data(unique_entities: dict, data_path: str, destination_path: str) -> None:
+    """Create dataset where the entities listed in `unique_entities` are
+    unique to the matching domain.  Removes all sentences where
+    a unique entity type is in another domain, and writes the removed
+    counts per domain and per train/dev/test set to file.  Randomly
+    selected sentences are moved from the dev set to the train and test
+    sets to replenish their original size.  All domains partaking in the
+    training must be the `unique_entities` dict, even if they don't have
+    any unique entities, in which case the value should be an empty
+    list.
+
+    Parameters:
+        unique_entities (dict):  domain (key, str): unique entities
+            (value, list of str) pairs.
+        data_path (str):  Path to original data folder.
+        destination_path (str):  Folder to save new data in.
+
+    Returns:
+        None
+    """
+    # Check if all entities are only unique to only one domain
+    unique_list =[]
+    unique_set = set()
+    for entities in unique_entities.values():
+        unique_list += entities
+        unique_set.update(entities)
+    if len(unique_set) != len(unique_list):
+        raise ValueError("An entity can only be unique to one domain.")
+
+    os.makedirs(destination_path, exist_ok=True)
+    # For each domain create dict what to remove
+    to_remove = get_to_remove(unique_entities)    
+
+    removed_per_domain = {}
+    removed_count = {}
+    for domain, entities_to_remove in to_remove.items():
+        removed_count = {}  # technically not necessary but easier to read
+        for dataset in ["train", "test", "dev"]:
+            to_write = []
+            removed_count[dataset] = 0
+            kept_line_count = 0  # Only matter for dev
+            with open(f"{data_path}{domain}-{dataset}.json") as from_file:
+                for json_elem in from_file:
+                    document = json.loads(json_elem)
+                    # If any entity in to remove list for given domain for given line...
+                    for ner in document["ner"]:
+                        if ner[2] in entities_to_remove:
+                            removed_count[dataset] += 1
+                            break
+                    # ... break the inner for loop -> 'else' won't execute (for-else construct)
+                    else:
+                        # if loop wasn't broken -> add line to buffer
+                        kept_line_count += 1
+                        to_write.append(json_elem)
+
+            if dataset != "dev":
+                with open(f"{destination_path}{domain}-{dataset}.json", "w") as to_file:
+                    for json_elem in to_write:
+                        to_file.write(json_elem)
+            else:
+                nr_to_remove = removed_count["train"] + removed_count["test"]
+                # Randomly choose the sentences that will be reallocated to train/test
+                idx_to_remove = np.random.randint(0, kept_line_count, nr_to_remove)
+                # We can just append them to the end of the train / test file, no random insertion needed bc shuffling dataloader
+                with open(f"{destination_path}{domain}-train.json", "a") as to_file:
+                    for idx in idx_to_remove[:removed_count["train"]]:
+                        to_file.write(to_write[idx])
+                with open(f"{destination_path}{domain}-test.json", "a") as to_file:
+                    for idx in idx_to_remove[removed_count["train"]:]:
+                        to_file.write(to_write[idx])
+                to_write = [line for i, line in enumerate(to_write) if i not in idx_to_remove]
+                with open(f"{destination_path}{domain}-{dataset}.json", "w") as to_file:
+                    for json_elem in to_write:
+                        to_file.write(json_elem)
+        removed_per_domain[domain] = removed_count
+    with open(f"{destination_path}removed_per_domain.json", "w") as f:
+        json.dump(removed_per_domain, f, indent=4)
+
+def get_ood_cluster_domain_entity_dict(domain_entity_dict: dict, to_remove: dict) -> dict:
+    """Get dictionary for ood entity clustering.
+
+    Parameters:
+        domain_entity_dict (dict):  Keys are domains, values are the
+            list of entitites that occur in the corpus for that domain.
+        to_remove (dict):   Keys are domains, values are the set of
+            entities that domain cannot contain.
+    
+        Returns:
+            ood_dict (dict):  Keys are domains, values are entities that
+                will occur in the corpus for given domain after removing
+                the unique entities of other domains.
+    """
+    ood_dict = {}
+    for domain, entities in domain_entity_dict.items():
+        ood_dict[domain] = []
+        for entity in entities:
+            if entity not in to_remove[domain]:
+                ood_dict[domain].append(entity)
+        ood_dict[domain].sort()
+    return ood_dict

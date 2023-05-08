@@ -273,9 +273,15 @@ if __name__ == '__main__':
             "random_state": args.seed,
             "damping": 0.5
         }
+
     # Get category mapping
     mapping_path = os.path.join(exp_path, "mapping.json")
     if args.prediction_only:
+        # If ood_embedding -> use matching dataset
+        if args.mapping_type == "ood_embedding":
+            ood_clustering_data_path = os.path.join(args.exp_path, "ood_clustering_data", f"{args.seed}", exp_type) + "/"
+            args.data_path = ood_clustering_data_path
+        # load form file
         if os.path.exists(mapping_path):
             with open(mapping_path) as f:
                 category_mapping = json.load(f)
@@ -288,12 +294,38 @@ if __name__ == '__main__':
         if args.mapping_type is None:
             category_mapping = None
         else:
-            category_mapping = categorize.get_categories(args.mapping_type, domains=args.domains, mapper_params=mapper_params)
+            if args.mapping_type == "ood_embedding":
+                # define entities unique to certain domains
+                # Note: Some might doesn't seem unique (e.g. researcher to AI)
+                # but were either already unique based on the data, or nearly
+                # were (e.g. 1 magazine NER outside literature)
+                unique_entities_all = {
+                    "ai": ["algorithm", "conference", "field", "metrics", "product", "researcher", "task", "programlang"],
+                    "literature": ["poem", "writer", "literarygenre", "book", "magazine"],
+                    "music": ["band", "song", "musicalartist", "musicgenre", "album", "musicalinstrument"],
+                    "politics": ["politicalparty", "election", "politician"],
+                    "science": ["chemicalcompound", "chemicalelement", "astronomicalobject", "discipline", "enzyme", "protein", "theory", "scientist", "academicjournal"],
+                    "news": []
+                }
+                unique_entities = {}
+                # In case not all 6 domains is run
+                for domain in args.domains:
+                    unique_entities[domain] = unique_entities_all[domain]
+                # create data
+                ood_clustering_data_path = os.path.join(args.exp_path, "ood_clustering_data", f"{args.seed}", exp_type) + "/"
+                categorize.create_ood_clustering_data(unique_entities, args.data_path, ood_clustering_data_path)
+                logging.info(f"Out of domain clustering of entities with domain-specific unique entities created and saved to: {ood_clustering_data_path}")
+                # use that path for training
+                args.data_path = ood_clustering_data_path
+            else:
+                unique_entities = None
+
+            category_mapping = categorize.get_categories(args.mapping_type, domains=args.domains, mapper_params=mapper_params, unique_entities=unique_entities)
+        
         with open(mapping_path, "w") as f:
             json.dump(category_mapping, f, indent=4)
         logging.info(f"Saved category mapping to {mapping_path}.")
     logging.info(f"Loaded category mapping: {mapping_type}.")
-
 
     for tr, ts in zip(train_domains, test_domains):
 
@@ -320,6 +352,7 @@ if __name__ == '__main__':
             dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', domains=tr, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {dev_data} (dev).")
             logging.info(f"Starting training on {tr} data.")
+        logging.info(f"Read data from folder {args.data_path}")
 
         # Entity names / category names need to be added to tokenizer as special tokens
         # More accurately, how they are injected e.g. <E1:person>, <E/1:person> etc ->
