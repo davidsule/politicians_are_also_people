@@ -1,0 +1,11 @@
+Saved arguments to data/predictions/almnps_9908/no_mapping/all/args.json.
+Saved category mapping to data/predictions/almnps_9908/no_mapping/all/mapping.json.
+Loaded category mapping: no_mapping.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f239087c970> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f239087ceb0> (dev).
+Starting training on ['ai', 'literature', 'music', 'news', 'politics', 'science'] data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.4076, Macro-f1: 0.2533, Weighted-f1: 0.3488, Loss: 2.0545

@@ -1,0 +1,30 @@
+Loaded category mapping: elisa.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7ff228e12e50> (test).
+Starting prediction on ['ai'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/elisa/ood/ai/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4451, Macro-f1: 0.3337, Weighted-f1: 0.4096, Loss: 1.9560 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/elisa/ood/ai/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7ff21940ae80> (test).
+Starting prediction on ['literature'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/elisa/ood/literature/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5765, Macro-f1: 0.4066, Weighted-f1: 0.5731, Loss: 1.4107 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/elisa/ood/literature/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7ff2193e29a0> (test).
+Starting prediction on ['music'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/elisa/ood/music/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6307, Macro-f1: 0.4524, Weighted-f1: 0.6331, Loss: 1.2422 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/elisa/ood/music/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7ff22adb27f0> (test).
+Starting prediction on ['news'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+[Error] No pre-trained model available in 'data/predictions/almnps_8857/elisa/ood/news/best.pt'. Exiting.
