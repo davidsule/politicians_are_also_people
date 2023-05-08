@@ -1,0 +1,50 @@
+Loaded category mapping: embedding.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fdd10e42f70> (test).
+Starting prediction on ['ai'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8878/embedding/ood/ai/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4287, Macro-f1: 0.3222, Weighted-f1: 0.3809, Loss: 2.0653 (mean over batches).
+Saved results from 'data/predictions/almnps_8878/embedding/ood/ai/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fdd01286f70> (test).
+Starting prediction on ['literature'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8878/embedding/ood/literature/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5466, Macro-f1: 0.3801, Weighted-f1: 0.5155, Loss: 1.4445 (mean over batches).
+Saved results from 'data/predictions/almnps_8878/embedding/ood/literature/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fdd01412a00> (test).
+Starting prediction on ['music'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8878/embedding/ood/music/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6462, Macro-f1: 0.4501, Weighted-f1: 0.6193, Loss: 1.2740 (mean over batches).
+Saved results from 'data/predictions/almnps_8878/embedding/ood/music/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fdd12e4b6d0> (test).
+Starting prediction on ['news'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8878/embedding/ood/news/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4639, Macro-f1: 0.2057, Weighted-f1: 0.4035, Loss: 1.5900 (mean over batches).
+Saved results from 'data/predictions/almnps_8878/embedding/ood/news/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fdd01469610> (test).
+Starting prediction on ['politics'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8878/embedding/ood/politics/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5697, Macro-f1: 0.3252, Weighted-f1: 0.5513, Loss: 1.4516 (mean over batches).
+Saved results from 'data/predictions/almnps_8878/embedding/ood/politics/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fdd0e5eb490> (test).
+Starting prediction on ['science'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8878/embedding/ood/science/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4176, Macro-f1: 0.2896, Weighted-f1: 0.3813, Loss: 2.0719 (mean over batches).
+Saved results from 'data/predictions/almnps_8878/embedding/ood/science/predictions.csv'.
+All results saved. Exiting.

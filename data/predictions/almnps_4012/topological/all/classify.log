@@ -1,0 +1,37 @@
+Saved arguments to data/predictions/almnps_4012/topological/all/args.json.
+Saved category mapping to data/predictions/almnps_4012/topological/all/mapping.json.
+Loaded category mapping: topological.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f921fdd35e0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f921fdd3fd0> (dev).
+Starting training on ai data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3937, Macro-f1: 0.2442, Weighted-f1: 0.3362, Loss: 2.0265
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5216, Macro-f1: 0.3579, Weighted-f1: 0.4813, Loss: 1.6743
+Saved models from epoch 1 to 'data/predictions/almnps_4012/topological/all/newest.pt'.
+Saved model with best loss 1.6743 to 'data/predictions/almnps_4012/topological/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6992, Macro-f1: 0.5576, Weighted-f1: 0.6731, Loss: 1.1005
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5394, Macro-f1: 0.3780, Weighted-f1: 0.5030, Loss: 1.4764
+Saved models from epoch 2 to 'data/predictions/almnps_4012/topological/all/newest.pt'.
+Saved model with best loss 1.4764 to 'data/predictions/almnps_4012/topological/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8325, Macro-f1: 0.7402, Weighted-f1: 0.8204, Loss: 0.6695
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5520, Macro-f1: 0.3932, Weighted-f1: 0.5178, Loss: 1.3998
+Saved models from epoch 3 to 'data/predictions/almnps_4012/topological/all/newest.pt'.
+Saved model with best loss 1.3998 to 'data/predictions/almnps_4012/topological/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9049, Macro-f1: 0.8346, Weighted-f1: 0.8976, Loss: 0.4361
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5600, Macro-f1: 0.4024, Weighted-f1: 0.5278, Loss: 1.3754
+Saved models from epoch 4 to 'data/predictions/almnps_4012/topological/all/newest.pt'.
+Saved model with best loss 1.3754 to 'data/predictions/almnps_4012/topological/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9427, Macro-f1: 0.8925, Weighted-f1: 0.9390, Loss: 0.2777
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5668, Macro-f1: 0.4111, Weighted-f1: 0.5367, Loss: 1.3765
+Saved models from epoch 5 to 'data/predictions/almnps_4012/topological/all/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9696, Macro-f1: 0.9478, Weighted-f1: 0.9683, Loss: 0.1849
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5729, Macro-f1: 0.4202, Weighted-f1: 0.5452, Loss: 1.4286
+Saved models from epoch 6 to 'data/predictions/almnps_4012/topological/all/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9748, Macro-f1: 0.9581, Weighted-f1: 0.9740, Loss: 0.1342
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5772, Macro-f1: 0.4250, Weighted-f1: 0.5507, Loss: 1.4824
+Saved models from epoch 7 to 'data/predictions/almnps_4012/topological/all/newest.pt'.
+No improvement since 3 epochs (1.3754 loss). Early stop.
+Training completed after 7 epochs.

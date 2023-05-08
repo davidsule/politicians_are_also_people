@@ -1,11 +1,6 @@
 .DS_Store
 *.pt
 word_dist/twitter.bin
-data/
-
-!data/category_mappings/
-!data/crossre_data/
-!data/embeddings.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -65,7 +60,6 @@ coverage.xml
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal

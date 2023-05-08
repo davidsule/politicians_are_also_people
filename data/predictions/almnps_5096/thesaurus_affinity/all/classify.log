@@ -1,0 +1,39 @@
+Saved arguments to data/predictions/almnps_5096/thesaurus_affinity/all/args.json.
+loading projection weights from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz
+KeyedVectors lifecycle event {'msg': 'loaded (3000000, 300) matrix of type float32 from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz', 'binary': True, 'encoding': 'utf8', 'datetime': '2023-05-07T10:13:34.426297', 'gensim': '4.3.0', 'python': '3.9.16 | packaged by conda-forge | (main, Feb  1 2023, 21:39:03) \n[GCC 11.3.0]', 'platform': 'Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.31', 'event': 'load_word2vec_format'}
+Saved category mapping to data/predictions/almnps_5096/thesaurus_affinity/all/mapping.json.
+Loaded category mapping: thesaurus_affinity.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f85bcd42850> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f85bc4edc40> (dev).
+Starting training on ai data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3872, Macro-f1: 0.2224, Weighted-f1: 0.3286, Loss: 2.0837
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5098, Macro-f1: 0.3266, Weighted-f1: 0.4573, Loss: 1.7076
+Saved models from epoch 1 to 'data/predictions/almnps_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.7076 to 'data/predictions/almnps_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6897, Macro-f1: 0.5347, Weighted-f1: 0.6545, Loss: 1.1080
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5288, Macro-f1: 0.3554, Weighted-f1: 0.4836, Loss: 1.4774
+Saved models from epoch 2 to 'data/predictions/almnps_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.4774 to 'data/predictions/almnps_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8160, Macro-f1: 0.7080, Weighted-f1: 0.7990, Loss: 0.7004
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5454, Macro-f1: 0.3784, Weighted-f1: 0.5075, Loss: 1.4182
+Saved models from epoch 3 to 'data/predictions/almnps_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.4182 to 'data/predictions/almnps_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8863, Macro-f1: 0.8121, Weighted-f1: 0.8745, Loss: 0.4587
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5572, Macro-f1: 0.3970, Weighted-f1: 0.5246, Loss: 1.3692
+Saved models from epoch 4 to 'data/predictions/almnps_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.3692 to 'data/predictions/almnps_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9345, Macro-f1: 0.8776, Weighted-f1: 0.9252, Loss: 0.3092
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5663, Macro-f1: 0.4087, Weighted-f1: 0.5361, Loss: 1.4236
+Saved models from epoch 5 to 'data/predictions/almnps_5096/thesaurus_affinity/all/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9661, Macro-f1: 0.9377, Weighted-f1: 0.9625, Loss: 0.1907
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5742, Macro-f1: 0.4177, Weighted-f1: 0.5458, Loss: 1.4201
+Saved models from epoch 6 to 'data/predictions/almnps_5096/thesaurus_affinity/all/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9787, Macro-f1: 0.9618, Weighted-f1: 0.9776, Loss: 0.1381
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5796, Macro-f1: 0.4238, Weighted-f1: 0.5521, Loss: 1.4895
+Saved models from epoch 7 to 'data/predictions/almnps_5096/thesaurus_affinity/all/newest.pt'.
+No improvement since 3 epochs (1.3692 loss). Early stop.
+Training completed after 7 epochs.

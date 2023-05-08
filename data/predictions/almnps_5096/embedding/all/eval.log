@@ -1,0 +1,10 @@
+Loaded category mapping: embedding.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f0846e6dc70> (test).
+Starting prediction on ['ai', 'literature', 'music', 'news', 'politics', 'science'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_5096/embedding/all/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6140, Macro-f1: 0.4537, Weighted-f1: 0.6036, Loss: 1.3517 (mean over batches).
+Saved results from 'data/predictions/almnps_5096/embedding/all/predictions.csv'.
+All results saved. Exiting.

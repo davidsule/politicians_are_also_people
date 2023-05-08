@@ -1,0 +1,38 @@
+Loaded category mapping: manual.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f4251ff5f10> (test).
+Starting prediction on ai test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_4012/manual/ood/ai/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4004, Macro-f1: 0.2873, Weighted-f1: 0.3634, Loss: 2.0850 (mean over batches).
+Saved results from 'data/predictions/almnps_4012/manual/ood/ai/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f42425f0370> (test).
+Starting prediction on literature test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_4012/manual/ood/literature/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5678, Macro-f1: 0.4057, Weighted-f1: 0.5415, Loss: 1.3841 (mean over batches).
+Saved results from 'data/predictions/almnps_4012/manual/ood/literature/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f42425c5a00> (test).
+Starting prediction on music test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_4012/manual/ood/music/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.7325, Macro-f1: 0.5103, Weighted-f1: 0.7117, Loss: 1.0501 (mean over batches).
+Saved results from 'data/predictions/almnps_4012/manual/ood/music/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f4253e89eb0> (test).
+Starting prediction on news test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_4012/manual/ood/news/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6498, Macro-f1: 0.3006, Weighted-f1: 0.5789, Loss: 1.4678 (mean over batches).
+Saved results from 'data/predictions/almnps_4012/manual/ood/news/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f424260a7c0> (test).
+Starting prediction on politics test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+[Error] No pre-trained model available in 'data/predictions/almnps_4012/manual/ood/politics/best.pt'. Exiting.

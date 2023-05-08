@@ -1,0 +1,37 @@
+Saved arguments to data/predictions/almnps_5096/no_mapping/all/args.json.
+Saved category mapping to data/predictions/almnps_5096/no_mapping/all/mapping.json.
+Loaded category mapping: no_mapping.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f4e9ab9a7f0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f4e9ab9ad30> (dev).
+Starting training on ai data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3837, Macro-f1: 0.2350, Weighted-f1: 0.3200, Loss: 2.1005
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5220, Macro-f1: 0.3533, Weighted-f1: 0.4764, Loss: 1.7055
+Saved models from epoch 1 to 'data/predictions/almnps_5096/no_mapping/all/newest.pt'.
+Saved model with best loss 1.7055 to 'data/predictions/almnps_5096/no_mapping/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6931, Macro-f1: 0.5408, Weighted-f1: 0.6611, Loss: 1.1101
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5356, Macro-f1: 0.3692, Weighted-f1: 0.4936, Loss: 1.5362
+Saved models from epoch 2 to 'data/predictions/almnps_5096/no_mapping/all/newest.pt'.
+Saved model with best loss 1.5362 to 'data/predictions/almnps_5096/no_mapping/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8260, Macro-f1: 0.7237, Weighted-f1: 0.8083, Loss: 0.6741
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5474, Macro-f1: 0.3824, Weighted-f1: 0.5089, Loss: 1.4733
+Saved models from epoch 3 to 'data/predictions/almnps_5096/no_mapping/all/newest.pt'.
+Saved model with best loss 1.4733 to 'data/predictions/almnps_5096/no_mapping/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9076, Macro-f1: 0.8423, Weighted-f1: 0.8962, Loss: 0.4188
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5597, Macro-f1: 0.3968, Weighted-f1: 0.5245, Loss: 1.4180
+Saved models from epoch 4 to 'data/predictions/almnps_5096/no_mapping/all/newest.pt'.
+Saved model with best loss 1.4180 to 'data/predictions/almnps_5096/no_mapping/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9557, Macro-f1: 0.9158, Weighted-f1: 0.9497, Loss: 0.2659
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5686, Macro-f1: 0.4080, Weighted-f1: 0.5363, Loss: 1.4620
+Saved models from epoch 5 to 'data/predictions/almnps_5096/no_mapping/all/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9735, Macro-f1: 0.9572, Weighted-f1: 0.9706, Loss: 0.1636
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5757, Macro-f1: 0.4155, Weighted-f1: 0.5449, Loss: 1.4455
+Saved models from epoch 6 to 'data/predictions/almnps_5096/no_mapping/all/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9883, Macro-f1: 0.9788, Weighted-f1: 0.9874, Loss: 0.1053
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5805, Macro-f1: 0.4205, Weighted-f1: 0.5504, Loss: 1.5459
+Saved models from epoch 7 to 'data/predictions/almnps_5096/no_mapping/all/newest.pt'.
+No improvement since 3 epochs (1.4180 loss). Early stop.
+Training completed after 7 epochs.

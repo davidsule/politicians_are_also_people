@@ -1,0 +1,142 @@
+Saved arguments to data/predictions/almnps_4012/manual/ood/args.json.
+Saved category mapping to data/predictions/almnps_4012/manual/ood/mapping.json.
+Loaded category mapping: manual.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f457167c0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f45716e80> (dev).
+Starting training on literature data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.4052, Macro-f1: 0.2281, Weighted-f1: 0.3334, Loss: 2.0158
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5364, Macro-f1: 0.3413, Weighted-f1: 0.4836, Loss: 1.6501
+Saved models from epoch 1 to 'data/predictions/almnps_4012/manual/ood/ai/newest.pt'.
+Saved model with best loss 1.6501 to 'data/predictions/almnps_4012/manual/ood/ai/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7126, Macro-f1: 0.5506, Weighted-f1: 0.6773, Loss: 1.0538
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5497, Macro-f1: 0.3651, Weighted-f1: 0.5009, Loss: 1.4810
+Saved models from epoch 2 to 'data/predictions/almnps_4012/manual/ood/ai/newest.pt'.
+Saved model with best loss 1.4810 to 'data/predictions/almnps_4012/manual/ood/ai/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8361, Macro-f1: 0.7192, Weighted-f1: 0.8213, Loss: 0.6537
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5612, Macro-f1: 0.3814, Weighted-f1: 0.5150, Loss: 1.4295
+Saved models from epoch 3 to 'data/predictions/almnps_4012/manual/ood/ai/newest.pt'.
+Saved model with best loss 1.4295 to 'data/predictions/almnps_4012/manual/ood/ai/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8986, Macro-f1: 0.8337, Weighted-f1: 0.8905, Loss: 0.4291
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5707, Macro-f1: 0.3960, Weighted-f1: 0.5274, Loss: 1.3909
+Saved models from epoch 4 to 'data/predictions/almnps_4012/manual/ood/ai/newest.pt'.
+Saved model with best loss 1.3909 to 'data/predictions/almnps_4012/manual/ood/ai/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9442, Macro-f1: 0.8935, Weighted-f1: 0.9394, Loss: 0.2765
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5777, Macro-f1: 0.4046, Weighted-f1: 0.5366, Loss: 1.3986
+Saved models from epoch 5 to 'data/predictions/almnps_4012/manual/ood/ai/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9662, Macro-f1: 0.9342, Weighted-f1: 0.9630, Loss: 0.1910
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5832, Macro-f1: 0.4112, Weighted-f1: 0.5441, Loss: 1.4519
+Saved models from epoch 6 to 'data/predictions/almnps_4012/manual/ood/ai/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9790, Macro-f1: 0.9579, Weighted-f1: 0.9780, Loss: 0.1360
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5872, Macro-f1: 0.4176, Weighted-f1: 0.5494, Loss: 1.4969
+Saved models from epoch 7 to 'data/predictions/almnps_4012/manual/ood/ai/newest.pt'.
+No improvement since 3 epochs (1.3909 loss). Early stop.
+OOD training completed for test topic ai after 7 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f472a8790> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f45716c40> (dev).
+Starting training on ai data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3839, Macro-f1: 0.2264, Weighted-f1: 0.3165, Loss: 2.0666
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5186, Macro-f1: 0.3561, Weighted-f1: 0.4735, Loss: 1.6795
+Saved models from epoch 1 to 'data/predictions/almnps_4012/manual/ood/literature/newest.pt'.
+Saved model with best loss 1.6795 to 'data/predictions/almnps_4012/manual/ood/literature/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7126, Macro-f1: 0.5730, Weighted-f1: 0.6825, Loss: 1.0773
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5337, Macro-f1: 0.3736, Weighted-f1: 0.4948, Loss: 1.5162
+Saved models from epoch 2 to 'data/predictions/almnps_4012/manual/ood/literature/newest.pt'.
+Saved model with best loss 1.5162 to 'data/predictions/almnps_4012/manual/ood/literature/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8360, Macro-f1: 0.7496, Weighted-f1: 0.8270, Loss: 0.6610
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5460, Macro-f1: 0.3910, Weighted-f1: 0.5111, Loss: 1.4564
+Saved models from epoch 3 to 'data/predictions/almnps_4012/manual/ood/literature/newest.pt'.
+Saved model with best loss 1.4564 to 'data/predictions/almnps_4012/manual/ood/literature/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9049, Macro-f1: 0.8293, Weighted-f1: 0.8973, Loss: 0.4255
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5512, Macro-f1: 0.3980, Weighted-f1: 0.5193, Loss: 1.5494
+Saved models from epoch 4 to 'data/predictions/almnps_4012/manual/ood/literature/newest.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9436, Macro-f1: 0.9022, Weighted-f1: 0.9396, Loss: 0.2726
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5585, Macro-f1: 0.4067, Weighted-f1: 0.5290, Loss: 1.5032
+Saved models from epoch 5 to 'data/predictions/almnps_4012/manual/ood/literature/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9690, Macro-f1: 0.9379, Weighted-f1: 0.9676, Loss: 0.1816
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5647, Macro-f1: 0.4137, Weighted-f1: 0.5370, Loss: 1.5157
+Saved models from epoch 6 to 'data/predictions/almnps_4012/manual/ood/literature/newest.pt'.
+No improvement since 3 epochs (1.4564 loss). Early stop.
+OOD training completed for test topic literature after 6 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f42c2b310> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f471a6880> (dev).
+Starting training on ai data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3266, Macro-f1: 0.1796, Weighted-f1: 0.2528, Loss: 2.2478
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4593, Macro-f1: 0.2805, Weighted-f1: 0.4069, Loss: 1.9128
+Saved models from epoch 1 to 'data/predictions/almnps_4012/manual/ood/music/newest.pt'.
+Saved model with best loss 1.9128 to 'data/predictions/almnps_4012/manual/ood/music/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6597, Macro-f1: 0.5230, Weighted-f1: 0.6255, Loss: 1.3098
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.4800, Macro-f1: 0.3110, Weighted-f1: 0.4375, Loss: 1.6408
+Saved models from epoch 2 to 'data/predictions/almnps_4012/manual/ood/music/newest.pt'.
+Saved model with best loss 1.6408 to 'data/predictions/almnps_4012/manual/ood/music/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.7998, Macro-f1: 0.6962, Weighted-f1: 0.7803, Loss: 0.8042
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.4959, Macro-f1: 0.3318, Weighted-f1: 0.4575, Loss: 1.5211
+Saved models from epoch 3 to 'data/predictions/almnps_4012/manual/ood/music/newest.pt'.
+Saved model with best loss 1.5211 to 'data/predictions/almnps_4012/manual/ood/music/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8820, Macro-f1: 0.8035, Weighted-f1: 0.8684, Loss: 0.5178
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5036, Macro-f1: 0.3440, Weighted-f1: 0.4687, Loss: 1.4978
+Saved models from epoch 4 to 'data/predictions/almnps_4012/manual/ood/music/newest.pt'.
+Saved model with best loss 1.4978 to 'data/predictions/almnps_4012/manual/ood/music/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9332, Macro-f1: 0.8870, Weighted-f1: 0.9280, Loss: 0.3346
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5125, Macro-f1: 0.3577, Weighted-f1: 0.4818, Loss: 1.5217
+Saved models from epoch 5 to 'data/predictions/almnps_4012/manual/ood/music/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9699, Macro-f1: 0.9430, Weighted-f1: 0.9679, Loss: 0.2115
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5200, Macro-f1: 0.3677, Weighted-f1: 0.4910, Loss: 1.5281
+Saved models from epoch 6 to 'data/predictions/almnps_4012/manual/ood/music/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9888, Macro-f1: 0.9805, Weighted-f1: 0.9880, Loss: 0.1375
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5260, Macro-f1: 0.3760, Weighted-f1: 0.4989, Loss: 1.5905
+Saved models from epoch 7 to 'data/predictions/almnps_4012/manual/ood/music/newest.pt'.
+No improvement since 3 epochs (1.4978 loss). Early stop.
+OOD training completed for test topic music after 7 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f2c638070> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f22b64e20> (dev).
+Starting training on ai data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.4013, Macro-f1: 0.2407, Weighted-f1: 0.3370, Loss: 2.0570
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5290, Macro-f1: 0.3585, Weighted-f1: 0.4825, Loss: 1.6193
+Saved models from epoch 1 to 'data/predictions/almnps_4012/manual/ood/news/newest.pt'.
+Saved model with best loss 1.6193 to 'data/predictions/almnps_4012/manual/ood/news/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7187, Macro-f1: 0.5763, Weighted-f1: 0.6904, Loss: 1.0720
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5517, Macro-f1: 0.3893, Weighted-f1: 0.5125, Loss: 1.4172
+Saved models from epoch 2 to 'data/predictions/almnps_4012/manual/ood/news/newest.pt'.
+Saved model with best loss 1.4172 to 'data/predictions/almnps_4012/manual/ood/news/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8273, Macro-f1: 0.7165, Weighted-f1: 0.8089, Loss: 0.6642
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5657, Macro-f1: 0.4060, Weighted-f1: 0.5283, Loss: 1.3818
+Saved models from epoch 3 to 'data/predictions/almnps_4012/manual/ood/news/newest.pt'.
+Saved model with best loss 1.3818 to 'data/predictions/almnps_4012/manual/ood/news/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9020, Macro-f1: 0.8297, Weighted-f1: 0.8925, Loss: 0.4273
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5749, Macro-f1: 0.4152, Weighted-f1: 0.5406, Loss: 1.3574
+Saved models from epoch 4 to 'data/predictions/almnps_4012/manual/ood/news/newest.pt'.
+Saved model with best loss 1.3574 to 'data/predictions/almnps_4012/manual/ood/news/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9424, Macro-f1: 0.8960, Weighted-f1: 0.9376, Loss: 0.2783
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5813, Macro-f1: 0.4242, Weighted-f1: 0.5496, Loss: 1.4145
+Saved models from epoch 5 to 'data/predictions/almnps_4012/manual/ood/news/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9697, Macro-f1: 0.9478, Weighted-f1: 0.9675, Loss: 0.1861
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5864, Macro-f1: 0.4322, Weighted-f1: 0.5571, Loss: 1.4970
+Saved models from epoch 6 to 'data/predictions/almnps_4012/manual/ood/news/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9872, Macro-f1: 0.9780, Weighted-f1: 0.9853, Loss: 0.1163
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5904, Macro-f1: 0.4366, Weighted-f1: 0.5623, Loss: 1.5356
+Saved models from epoch 7 to 'data/predictions/almnps_4012/manual/ood/news/newest.pt'.
+No improvement since 3 epochs (1.3574 loss). Early stop.
+OOD training completed for test topic news after 7 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f2c58a1f0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2f2c638160> (dev).
+Starting training on ai data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.

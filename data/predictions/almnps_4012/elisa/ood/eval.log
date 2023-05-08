@@ -1,0 +1,22 @@
+Loaded category mapping: elisa.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1a21633f10> (test).
+Starting prediction on ai test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_4012/elisa/ood/ai/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4519, Macro-f1: 0.3429, Weighted-f1: 0.4131, Loss: 1.9703 (mean over batches).
+Saved results from 'data/predictions/almnps_4012/elisa/ood/ai/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1a11c2cc70> (test).
+Starting prediction on literature test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_4012/elisa/ood/literature/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6053, Macro-f1: 0.4122, Weighted-f1: 0.6061, Loss: 1.3263 (mean over batches).
+Saved results from 'data/predictions/almnps_4012/elisa/ood/literature/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1a11c03a30> (test).
+Starting prediction on music test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+[Error] No pre-trained model available in 'data/predictions/almnps_4012/elisa/ood/music/best.pt'. Exiting.

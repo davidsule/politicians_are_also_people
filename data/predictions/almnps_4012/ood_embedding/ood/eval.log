@@ -1,0 +1,22 @@
+Loaded category mapping: ood_embedding.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2a32bbff10> (test).
+Starting prediction on ai test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_4012/ood_embedding/ood/ai/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4281, Macro-f1: 0.2984, Weighted-f1: 0.3681, Loss: 2.0424 (mean over batches).
+Saved results from 'data/predictions/almnps_4012/ood_embedding/ood/ai/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2a243bac70> (test).
+Starting prediction on literature test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_4012/ood_embedding/ood/literature/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4635, Macro-f1: 0.3578, Weighted-f1: 0.4434, Loss: 1.6496 (mean over batches).
+Saved results from 'data/predictions/almnps_4012/ood_embedding/ood/literature/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2a24391a30> (test).
+Starting prediction on music test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+[Error] No pre-trained model available in 'data/predictions/almnps_4012/ood_embedding/ood/music/best.pt'. Exiting.

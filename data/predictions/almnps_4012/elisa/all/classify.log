@@ -1,0 +1,33 @@
+Saved arguments to data/predictions/almnps_4012/elisa/all/args.json.
+Saved category mapping to data/predictions/almnps_4012/elisa/all/mapping.json.
+Loaded category mapping: elisa.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fe0ad9888b0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fe0ad988df0> (dev).
+Starting training on ai data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3876, Macro-f1: 0.2238, Weighted-f1: 0.3176, Loss: 2.0220
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5296, Macro-f1: 0.3512, Weighted-f1: 0.4834, Loss: 1.5993
+Saved models from epoch 1 to 'data/predictions/almnps_4012/elisa/all/newest.pt'.
+Saved model with best loss 1.5993 to 'data/predictions/almnps_4012/elisa/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7127, Macro-f1: 0.5754, Weighted-f1: 0.6838, Loss: 1.0731
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5442, Macro-f1: 0.3791, Weighted-f1: 0.5062, Loss: 1.4868
+Saved models from epoch 2 to 'data/predictions/almnps_4012/elisa/all/newest.pt'.
+Saved model with best loss 1.4868 to 'data/predictions/almnps_4012/elisa/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8203, Macro-f1: 0.7056, Weighted-f1: 0.8042, Loss: 0.6845
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5595, Macro-f1: 0.3975, Weighted-f1: 0.5255, Loss: 1.3569
+Saved models from epoch 3 to 'data/predictions/almnps_4012/elisa/all/newest.pt'.
+Saved model with best loss 1.3569 to 'data/predictions/almnps_4012/elisa/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8859, Macro-f1: 0.8140, Weighted-f1: 0.8775, Loss: 0.4625
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5688, Macro-f1: 0.4075, Weighted-f1: 0.5385, Loss: 1.4225
+Saved models from epoch 4 to 'data/predictions/almnps_4012/elisa/all/newest.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9358, Macro-f1: 0.8873, Weighted-f1: 0.9314, Loss: 0.3080
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5756, Macro-f1: 0.4174, Weighted-f1: 0.5477, Loss: 1.4273
+Saved models from epoch 5 to 'data/predictions/almnps_4012/elisa/all/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9622, Macro-f1: 0.9187, Weighted-f1: 0.9594, Loss: 0.2067
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5811, Macro-f1: 0.4248, Weighted-f1: 0.5549, Loss: 1.4709
+Saved models from epoch 6 to 'data/predictions/almnps_4012/elisa/all/newest.pt'.
+No improvement since 3 epochs (1.3569 loss). Early stop.
+Training completed after 6 epochs.
