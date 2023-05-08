@@ -1,0 +1,10 @@
+Loaded category mapping: topological.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fe6cabb4e50> (test).
+Starting prediction on ['ai', 'literature', 'music', 'news', 'politics', 'science'] test data.
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/topological/all/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6229, Macro-f1: 0.4534, Weighted-f1: 0.6077, Loss: 1.3285 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/topological/all/predictions.csv'.
+All results saved. Exiting.
