@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 from src.preprocessing import read_json_file
 from sklearn.metrics import classification_report
 
+# python evaluate.py --gold_path data/crossre_data/ai-test.json --pred_path data/predictions/almnps_4012/elisa/ood/ai/predictions.csv --out_path test/ --summary_exps test/summary.json
+
 load_dotenv()
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s %(message)s')
@@ -18,9 +20,12 @@ def parse_arguments():
     arg_parser.add_argument('--gold_path', type=str, nargs='?', required=True, help='Path to the gold labels file')
     arg_parser.add_argument('--pred_path', type=str, nargs='?', required=True, help='Path to the predicted labels file')
     arg_parser.add_argument('--out_path', type=str, nargs='?', required=True, help='Path where to save scores')
-
     arg_parser.add_argument('--summary_exps', type=str, nargs='?', required=True, help='Path to the summary of the overall experiments')
-
+    
+    arg_parser.add_argument('--mapping_method', type=str, nargs='?', default="no_mapping", help='Mapping method: use name of folder')
+    arg_parser.add_argument('--ood', type=bool, nargs='?', default=True, help='Wether it is out of domain evaluation or not')
+    arg_parser.add_argument('--domains', type=list, nargs='?', default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help='Name of the experiment')
+    
     return arg_parser.parse_args()
 
 def get_metrics(gold_path, predicted_path):
@@ -32,7 +37,7 @@ def get_metrics(gold_path, predicted_path):
 
     # get the predicted labels
     predicted = []
-    with open(predicted_path) as predicted_file:
+    with open(predicted_path, encoding="UTF-8") as predicted_file:
         predicted_reader = csv.reader(predicted_file, delimiter=',')
         next(predicted_reader)
         for line in predicted_reader:
@@ -56,15 +61,28 @@ if __name__ == '__main__':
 
     args = parse_arguments()
 
-    logging.info(f"Evaluating {args.gold_path} and {args.pred_path}.")
+    for domain in args.domains:
 
-    metrics, macro = get_metrics(args.gold_path, args.pred_path)
+        logging.info(f"Evaluating domain {domain}")
+        ## creating paths for saving and retrieving data 
+        gold_path_domain = os.path.join(args.gold_path,f"{domain}-test.json") # args.gold_path is a folder
+        pred_path_domain = os.path.join(args.pred_path, args.mapping_method, "ood", domain, "predictions.csv")
+        saving_path = os.path.join(args.pred_path, args.mapping_method, "ood", domain, "evaluation.json")
 
-    logging.info(f"Saving scores to {args.out_path} -> Macro F1: {macro * 100}")
-    exp = os.path.splitext(os.path.basename(args.pred_path))[0]
-    json.dump(metrics, open(f"{os.path.join(args.out_path, exp)}-results.json", "w"))
+        # get metrics
+        metrics, macro = get_metrics(gold_path_domain, pred_path_domain)
 
-    with open(args.summary_exps, 'a') as file:
-        file.write(f"Micro F1: {metrics['micro avg']['f1-score'] * 100}\n")
-        file.write(f"Macro F1: {macro * 100}\n")
-        file.write(f"Weighted F1: {metrics['weighted avg']['f1-score'] * 100}\n")
+        # write metrics to file
+        logging.info(f"Writing metrics to {saving_path}")
+        json.dump(metrics, open(saving_path, "w"))
+
+        # write summary statistics to file
+        with open(args.summary_exps, 'a') as file:
+            file.write(f"Metrics for {domain}-domain with mapping method {args.mapping_method}\n")
+            file.write(f"Micro F1: {metrics['micro avg']['f1-score'] * 100}\n")
+            file.write(f"Macro F1: {macro * 100}\n")
+            file.write(f"Weighted F1: {metrics['weighted avg']['f1-score'] * 100}\n")
+            file.write("--------------------------------------------------------------\n")
+    
+    logging.info("Evaluation complete")
+    
