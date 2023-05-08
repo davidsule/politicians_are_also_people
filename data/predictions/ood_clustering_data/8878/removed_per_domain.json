@@ -1,0 +1,32 @@
+{
+    "ai": {
+        "train": 0,
+        "test": 1,
+        "dev": 2
+    },
+    "literature": {
+        "train": 1,
+        "test": 3,
+        "dev": 6
+    },
+    "music": {
+        "train": 1,
+        "test": 0,
+        "dev": 0
+    },
+    "news": {
+        "train": 0,
+        "test": 0,
+        "dev": 0
+    },
+    "politics": {
+        "train": 1,
+        "test": 0,
+        "dev": 1
+    },
+    "science": {
+        "train": 5,
+        "test": 2,
+        "dev": 0
+    }
+}

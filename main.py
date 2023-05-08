@@ -275,24 +275,24 @@ if __name__ == '__main__':
         }
 
     # Get category mapping
-    mapping_path = os.path.join(exp_path, "mapping.json")
+    entity2category_mapping_path = os.path.join(exp_path, "entity2category_mapping.json")
     if args.prediction_only:
         # If ood_embedding -> use matching dataset
         if args.mapping_type == "ood_embedding":
-            ood_clustering_data_path = os.path.join(args.exp_path, "ood_clustering_data", f"{args.seed}", exp_type) + "/"
+            ood_clustering_data_path = os.path.join(args.exp_path, "ood_clustering_data", f"{args.seed}") + "/"
             args.data_path = ood_clustering_data_path
         # load form file
-        if os.path.exists(mapping_path):
-            with open(mapping_path) as f:
-                category_mapping = json.load(f)
+        if os.path.exists(entity2category_mapping_path):
+            with open(entity2category_mapping_path) as f:
+                entity2category_mapping = json.load(f)
         elif args.mapping_type is None:
-            category_mapping = None
+            entity2category_mapping = None
         else:
-            logging.error(f"Category mapping json at {mapping_path} doesn't exist.")
+            logging.error(f"Category mapping json at {entity2category_mapping_path} doesn't exist.")
             exit(1)
     else:
         if args.mapping_type is None:
-            category_mapping = None
+            entity2category_mapping, category2entity_mapping = None, None
         else:
             if args.mapping_type == "ood_embedding":
                 # define entities unique to certain domains
@@ -312,7 +312,7 @@ if __name__ == '__main__':
                 for domain in args.domains:
                     unique_entities[domain] = unique_entities_all[domain]
                 # create data
-                ood_clustering_data_path = os.path.join(args.exp_path, "ood_clustering_data", f"{args.seed}", exp_type) + "/"
+                ood_clustering_data_path = os.path.join(args.exp_path, "ood_clustering_data", f"{args.seed}") + "/"
                 categorize.create_ood_clustering_data(unique_entities, args.data_path, ood_clustering_data_path)
                 logging.info(f"Out of domain clustering of entities with domain-specific unique entities created and saved to: {ood_clustering_data_path}")
                 # use that path for training
@@ -320,11 +320,13 @@ if __name__ == '__main__':
             else:
                 unique_entities = None
 
-            category_mapping = categorize.get_categories(args.mapping_type, domains=args.domains, mapper_params=mapper_params, unique_entities=unique_entities)
+            entity2category_mapping, category2entity_mapping = categorize.get_categories(args.mapping_type, domains=args.domains, mapper_params=mapper_params, incl_category2entity=True, unique_entities=unique_entities)
         
-        with open(mapping_path, "w") as f:
-            json.dump(category_mapping, f, indent=4)
-        logging.info(f"Saved category mapping to {mapping_path}.")
+        with open(entity2category_mapping_path, "w") as f:
+            json.dump(entity2category_mapping, f, indent=4)
+        with open(os.path.join(exp_path, "category2entity_mapping.json"), "w") as f:
+            json.dump(category2entity_mapping, f, indent=4)
+        logging.info(f"Saved category mapping to {entity2category_mapping_path}.")
     logging.info(f"Loaded category mapping: {mapping_type}.")
 
     for tr, ts in zip(train_domains, test_domains):
@@ -338,9 +340,9 @@ if __name__ == '__main__':
 
         # If ood_embedding mapping -> select mapping that was clustered without the test domain entities
         if args.mapping_type == "ood_embedding":
-            mapping = category_mapping[ts[0]]
+            mapping = entity2category_mapping[ts[0]]
         else:
-            mapping = category_mapping
+            mapping = entity2category_mapping
         # setup data
         if args.prediction_only:
             test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', domains=ts, category_mapping=mapping, shuffle=args.shuffle_data)
