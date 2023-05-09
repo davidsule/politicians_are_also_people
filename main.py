@@ -31,13 +31,13 @@ def parse_arguments():
     arg_parser.add_argument('-es', '--early_stop', type=int, default=3, help='Maximum number of epochs without improvement (default: 3)')
     arg_parser.add_argument('-rs', '--seed', type=int, help='Seed for probabilistic components')
 
-    arg_parser.add_argument('-ood_val', '--ood_validation', type=bool, default=False, help='Wether or not to conduct cross validation with out-of-domain datasets')
+    arg_parser.add_argument('-ood_val', '--ood_validation', action='store_true', default=False, help='Wether or not to conduct cross validation with out-of-domain datasets')
     arg_parser.add_argument('-d', '--domains', type=str, nargs='+', default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help="list of domains")
 
     # Which categories to map the entities to? (None: Don't map)
-    arg_parser.add_argument('-map', '--mapping_type', type=str, default=None, help='Mapping to use for entity substitution, one of None, "manual", "elisa", "embedding", "ood_embedding", "topological", "thesaurus_affinity". ood_embedding can only be used if --ood_validation is True.')
+    arg_parser.add_argument('-map', '--mapping_type', type=str, default=None, help='Mapping to use for entity substitution, one of None, "manual", "elisa", "embedding", "ood_clustering", "topological", "thesaurus_affinity". ood_clustering can only be used if --ood_validation is True.')
     # Shuffle between epochs?
-    arg_parser.add_argument('-shuffle', '--shuffle_data', type=bool, default=False, help='Shuffle data between epochs? Seed provided in the --seed arg will be used.')
+    arg_parser.add_argument('-shuffle', '--shuffle_data', action='store_true', default=False, help='Shuffle data between epochs? Seed provided in the --seed arg will be used.')
 
     return arg_parser.parse_args()
 
@@ -214,7 +214,7 @@ if __name__ == '__main__':
     #   4. ood:     OOD eval.  All would mean train on all, test on all.
 
     domain_list = "".join([domain[0] for domain in sorted(args.domains)])
-    exp_type = "ood" if args.ood_validation else "all"
+    exp_type = "ood_validation" if args.ood_validation else "all"
     mapping_type = "no_mapping" if args.mapping_type is None or args.mapping_type == "None" else args.mapping_type
     exp_path = os.path.join(args.exp_path, f"{domain_list}_{args.seed}", f"{mapping_type}", exp_type)
 
@@ -245,18 +245,18 @@ if __name__ == '__main__':
     if args.mapping_type == "None":
         args.mapping_type = None
     
-    if args.mapping_type not in [None, "manual", "elisa", "embedding", "ood_embedding", "topological", "thesaurus_affinity"]:
-        logging.error(f"`mapping_type` must be one of ['None', 'manual', 'elisa', 'embedding', 'ood_embedding', 'topological', 'thesaurus_affinity'] Got: {args.mapping_type}")
+    if args.mapping_type not in [None, "manual", "elisa", "embedding", "ood_clustering", "topological", "thesaurus_affinity"]:
+        logging.error(f"`mapping_type` must be one of ['None', 'manual', 'elisa', 'embedding', 'ood_clustering', 'topological', 'thesaurus_affinity'] Got: {args.mapping_type}")
         exit(1)
 
-    if args.mapping_type == "ood_embedding" and not args.ood_validation:
-        logging.error("ood_embeddig mapping type can only be used with ood validation.")
+    if args.mapping_type == "ood_clustering" and not args.ood_validation:
+        logging.error("ood_clustering mapping type can only be used with ood validation.")
         exit(1)
     
     # Set up args for getting category mappings
     if args.mapping_type in ["manual", "elisa"]:
         mapper_params = None
-    elif args.mapping_type in ["embedding", "ood_embedding"]:  # TODO add params as command line arg?
+    elif args.mapping_type in ["embedding", "ood_clustering"]:  # TODO add params as command line arg?
         mapper_params = {
             "random_state": args.seed,
             "n_components": 35,
@@ -277,8 +277,8 @@ if __name__ == '__main__':
     # Get category mapping
     entity2category_mapping_path = os.path.join(exp_path, "entity2category_mapping.json")
     if args.prediction_only:
-        # If ood_embedding -> use matching dataset
-        if args.mapping_type == "ood_embedding":
+        # If ood_clustering -> use matching dataset
+        if args.mapping_type == "ood_clustering":
             ood_clustering_data_path = os.path.join(args.exp_path, "ood_clustering_data", f"{args.seed}") + "/"
             args.data_path = ood_clustering_data_path
         # load form file
@@ -294,7 +294,7 @@ if __name__ == '__main__':
         if args.mapping_type is None:
             entity2category_mapping, category2entity_mapping = None, None
         else:
-            if args.mapping_type == "ood_embedding":
+            if args.mapping_type == "ood_clustering":
                 # define entities unique to certain domains
                 # Note: Some might doesn't seem unique (e.g. researcher to AI)
                 # but were either already unique based on the data, or nearly
@@ -338,8 +338,8 @@ if __name__ == '__main__':
             exp_path_domain = exp_path
         os.makedirs(exp_path_domain, exist_ok=True)        
 
-        # If ood_embedding mapping -> select mapping that was clustered without the test domain entities
-        if args.mapping_type == "ood_embedding":
+        # If ood_clustering mapping -> select mapping that was clustered without the test domain entities
+        if args.mapping_type == "ood_clustering":
             mapping = entity2category_mapping[ts[0]]
         else:
             mapping = entity2category_mapping
