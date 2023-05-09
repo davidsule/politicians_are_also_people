@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from src.preprocessing import read_json_file
 from sklearn.metrics import classification_report
 
-# python evaluate.py --gold_path data/crossre_data/ai-test.json --pred_path data/predictions/almnps_4012/elisa/ood/ai/predictions.csv --out_path test/ --summary_exps test/summary.json
+# python evaluate.py --gold_path data/crossre_data/ai-test.json --pred_path data/predictions/almnps_4012/elisa/ood_validation/ai/predictions.csv --out_path test/ --summary_exps test/summary.json
 
 load_dotenv()
 
@@ -66,8 +66,8 @@ if __name__ == '__main__':
         logging.info(f"Evaluating domain {domain}")
         ## creating paths for saving and retrieving data 
         gold_path_domain = os.path.join(args.gold_path,f"{domain}-test.json") # args.gold_path is a folder
-        pred_path_domain = os.path.join(args.pred_path, args.mapping_method, "ood", domain, "predictions.csv")
-        saving_path = os.path.join(args.pred_path, args.mapping_method, "ood", domain, "evaluation.json")
+        pred_path_domain = os.path.join(args.pred_path, args.mapping_method, "ood_validation", domain, "predictions.csv")
+        saving_path = os.path.join(args.pred_path, args.mapping_method, "ood_validation", domain, "evaluation.json")
 
         # get metrics
         metrics, macro = get_metrics(gold_path_domain, pred_path_domain)
