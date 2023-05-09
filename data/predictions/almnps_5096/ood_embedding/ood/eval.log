@@ -1,0 +1,56 @@
+Loaded category mapping: ood_embedding.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fd83d360370> (test).
+Starting prediction on ['ai'] test data.
+Read data from folder data/predictions/ood_clustering_data/5096/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_5096/ood_embedding/ood/ai/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.3899, Macro-f1: 0.2802, Weighted-f1: 0.3382, Loss: 2.1014 (mean over batches).
+Saved results from 'data/predictions/almnps_5096/ood_embedding/ood/ai/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fd8304a7f10> (test).
+Starting prediction on ['literature'] test data.
+Read data from folder data/predictions/ood_clustering_data/5096/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_5096/ood_embedding/ood/literature/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4862, Macro-f1: 0.3386, Weighted-f1: 0.4511, Loss: 1.7089 (mean over batches).
+Saved results from 'data/predictions/almnps_5096/ood_embedding/ood/literature/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fd830519bb0> (test).
+Starting prediction on ['music'] test data.
+Read data from folder data/predictions/ood_clustering_data/5096/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_5096/ood_embedding/ood/music/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6540, Macro-f1: 0.4424, Weighted-f1: 0.6325, Loss: 1.2339 (mean over batches).
+Saved results from 'data/predictions/almnps_5096/ood_embedding/ood/music/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fd83f287370> (test).
+Starting prediction on ['news'] test data.
+Read data from folder data/predictions/ood_clustering_data/5096/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_5096/ood_embedding/ood/news/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4014, Macro-f1: 0.2239, Weighted-f1: 0.3874, Loss: 1.7728 (mean over batches).
+Saved results from 'data/predictions/almnps_5096/ood_embedding/ood/news/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fd83ae5ff40> (test).
+Starting prediction on ['politics'] test data.
+Read data from folder data/predictions/ood_clustering_data/5096/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_5096/ood_embedding/ood/politics/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5665, Macro-f1: 0.3218, Weighted-f1: 0.5561, Loss: 1.4749 (mean over batches).
+Saved results from 'data/predictions/almnps_5096/ood_embedding/ood/politics/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fd83ab084f0> (test).
+Starting prediction on ['science'] test data.
+Read data from folder data/predictions/ood_clustering_data/5096/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_5096/ood_embedding/ood/science/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4223, Macro-f1: 0.2861, Weighted-f1: 0.3843, Loss: 2.0106 (mean over batches).
+Saved results from 'data/predictions/almnps_5096/ood_embedding/ood/science/predictions.csv'.
+All results saved. Exiting.
