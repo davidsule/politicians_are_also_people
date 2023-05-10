@@ -60,29 +60,52 @@ def get_metrics(gold_path, predicted_path):
 if __name__ == '__main__':
 
     args = parse_arguments()
-
-    for domain in args.domains:
-
-        logging.info(f"Evaluating domain {domain}")
-        ## creating paths for saving and retrieving data 
-        gold_path_domain = os.path.join(args.gold_path,f"{domain}-test.json") # args.gold_path is a folder
-        pred_path_domain = os.path.join(args.pred_path, args.mapping_method, "ood_validation", domain, "predictions.csv")
-        saving_path = os.path.join(args.pred_path, args.mapping_method, "ood_validation", domain, "evaluation.json")
-
-        # get metrics
-        metrics, macro = get_metrics(gold_path_domain, pred_path_domain)
-
-        # write metrics to file
-        logging.info(f"Writing metrics to {saving_path}")
-        json.dump(metrics, open(saving_path, "w"))
-
-        # write summary statistics to file
-        with open(args.summary_exps, 'a') as file:
-            file.write(f"Metrics for {domain}-domain with mapping method {args.mapping_method}\n")
-            file.write(f"Micro F1: {metrics['micro avg']['f1-score'] * 100}\n")
-            file.write(f"Macro F1: {macro * 100}\n")
-            file.write(f"Weighted F1: {metrics['weighted avg']['f1-score'] * 100}\n")
-            file.write("--------------------------------------------------------------\n")
     
+    if args.ood:
+        pred_path = os.path.join(args.pred_path, args.mapping_method, "all", "predictions.csv")
+        saving_path = os.path.join(args.pred_path, args.mapping_method, "all", "evaluation.json")
+        ## TODO: Gold path to all 
+        # metrics, macro = get_metrics(gold_path_domain, pred_path_domain)        
+    else:
+    
+
+        for domain in args.domains:
+
+            logging.info(f"Evaluating domain {domain}")
+
+            gold_path_domain = os.path.join(args.gold_path,f"{domain}-test.json") # args.gold_path is a folder
+            
+            ## there is no domains in the all evaluation so only oodValidation
+            pred_path_domain = os.path.join(args.pred_path, args.mapping_method, "ood_validation", domain, "predictions.csv")
+            saving_path = os.path.join(args.pred_path, args.mapping_method, "ood_validation", domain, "evaluation.json")
+
+            # get metrics
+            if os.path.isfile(pred_path_domain) and (args.mapping_method != "elisa" and args.ood) :
+            
+                metrics, macro = get_metrics(gold_path_domain, pred_path_domain)
+            
+
+                # write metrics to file
+                logging.info(f"Writing metrics to {saving_path}")
+                json.dump(metrics, open(saving_path, "w"))
+
+                # write summary statistics to file
+                with open(args.summary_exps, 'a') as file:
+                    file.write(f"Metrics for {domain}-domain with mapping method {args.mapping_method}\n")
+                    file.write(f"Micro F1: {metrics['micro avg']['f1-score'] * 100}\n")
+                    file.write(f"Macro F1: {macro * 100}\n")
+                    file.write(f"Weighted F1: {metrics['weighted avg']['f1-score'] * 100}\n")
+                    file.write("--------------------------------------------------------------\n")
+            else:
+                
+                logging.info(f"No metrics found in: {pred_path_domain}")
+                
+                with open(args.summary_exps, 'a') as file:
+                    file.write("<-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!>\n")
+                    file.write(f"No metrics for {domain}-domain with mapping method {args.mapping_method}\n")
+                    file.write(f"No predictions in this path: {pred_path_domain} \n")
+                    file.write("--------------------------------------------------------------\n")
+
+
     logging.info("Evaluation complete")
     
