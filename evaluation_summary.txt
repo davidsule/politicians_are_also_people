@@ -4131,3 +4131,73 @@ Micro F1: 23.31226295828066
 Macro F1: 6.415516127630413
 Weighted F1: 22.972735263420468
 --------------------------------------------------------------
+Metrics for ai-domain with mapping method no_mapping
+Micro F1: 9.694323144104803
+Macro F1: 4.259110101126207
+Weighted F1: 8.248497606447026
+--------------------------------------------------------------
+Metrics for literature-domain with mapping method no_mapping
+Micro F1: 16.31382316313823
+Macro F1: 5.827264655756088
+Weighted F1: 12.669153179811252
+--------------------------------------------------------------
+Metrics for music-domain with mapping method no_mapping
+Micro F1: 13.358617783396545
+Macro F1: 5.138328437087365
+Weighted F1: 13.27927165461707
+--------------------------------------------------------------
+Metrics for news-domain with mapping method no_mapping
+Micro F1: 30.05050505050505
+Macro F1: 8.940817152377917
+Weighted F1: 26.505916558410004
+--------------------------------------------------------------
+Metrics for politics-domain with mapping method no_mapping
+Micro F1: 25.840707964601766
+Macro F1: 6.488733006824401
+Weighted F1: 24.495108111822624
+--------------------------------------------------------------
+Metrics for science-domain with mapping method no_mapping
+Micro F1: 10.081071554458935
+Macro F1: 5.50064349654077
+Weighted F1: 8.825868269009977
+--------------------------------------------------------------
+Metrics for ai-domain with mapping method no_mapping
+Micro F1: 9.694323144104803
+Macro F1: 4.259110101126207
+Weighted F1: 8.248497606447026
+--------------------------------------------------------------
+Metrics for literature-domain with mapping method no_mapping
+Micro F1: 16.31382316313823
+Macro F1: 5.827264655756088
+Weighted F1: 12.669153179811252
+--------------------------------------------------------------
+Metrics for music-domain with mapping method no_mapping
+Micro F1: 13.358617783396545
+Macro F1: 5.138328437087365
+Weighted F1: 13.27927165461707
+--------------------------------------------------------------
+Metrics for news-domain with mapping method no_mapping
+Micro F1: 30.05050505050505
+Macro F1: 8.940817152377917
+Weighted F1: 26.505916558410004
+--------------------------------------------------------------
+Metrics for politics-domain with mapping method no_mapping
+Micro F1: 25.840707964601766
+Macro F1: 6.488733006824401
+Weighted F1: 24.495108111822624
+--------------------------------------------------------------
+Metrics for science-domain with mapping method no_mapping
+Micro F1: 10.081071554458935
+Macro F1: 5.50064349654077
+Weighted F1: 8.825868269009977
+--------------------------------------------------------------
+Metrics for all domains with mapping method no_mapping
+Micro F1: 12.438313144908031
+Macro F1: 5.905968936354271
+Weighted F1: 11.98701658652542
+--------------------------------------------------------------
+Metrics for all domains with mapping method no_mapping
+Micro F1: 12.438313144908031
+Macro F1: 5.905968936354271
+Weighted F1: 11.98701658652542
+--------------------------------------------------------------

@@ -23,17 +23,24 @@ def parse_arguments():
     arg_parser.add_argument('--summary_exps', type=str, nargs='?', required=True, help='Path to the summary of the overall experiments')
     
     arg_parser.add_argument('--mapping_method', type=str, nargs='?', default="no_mapping", help='Mapping method: use name of folder')
-    arg_parser.add_argument('--ood', type=bool, nargs='?', default=True, help='Wether it is out of domain evaluation or not')
+    arg_parser.add_argument('--ood', type=bool, nargs='?', default=False, help='Wether it is out of domain evaluation or not')
     arg_parser.add_argument('--domains', type=list, nargs='?', default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help='Name of the experiment')
     
     return arg_parser.parse_args()
 
-def get_metrics(gold_path, predicted_path):
+def get_metrics(gold_path, predicted_path, ood=True, domains=['ai', 'literature', 'music', 'news', 'politics', 'science']):
 
     # setup label types
     label_types = {label: idx for idx, label in enumerate(os.getenv(f"RELATION_LABELS").split())}
 
-    _, _, _, gold_relations = read_json_file(gold_path, label_types, multi_label=True)
+    if ood:
+        _, _, _, gold_relations = read_json_file(gold_path, label_types, multi_label=True)
+    else:
+        gold_relations = []
+        for d in domains:
+            g_path = os.path.join(gold_path,f"{d}-test.json")
+            _, _, _, g = read_json_file(g_path, label_types, multi_label=True)
+            gold_relations += g
 
     # get the predicted labels
     predicted = []
@@ -61,14 +68,24 @@ if __name__ == '__main__':
 
     args = parse_arguments()
     
-    if args.ood:
+    if not args.ood:
+        logging.info("Evaluating Predictions for All Domains at Once")
         pred_path = os.path.join(args.pred_path, args.mapping_method, "all", "predictions.csv")
         saving_path = os.path.join(args.pred_path, args.mapping_method, "all", "evaluation.json")
-        ## TODO: Gold path to all 
-        # metrics, macro = get_metrics(gold_path_domain, pred_path_domain)        
-    else:
-    
+        metrics, macro = get_metrics(args.gold_path, pred_path, ood=args.ood, domains=args.domains)
 
+        logging.info(f"Writing metrics to {saving_path}")
+        json.dump(metrics, open(saving_path, "w"))
+
+        # write summary statistics to file
+        with open(args.summary_exps, 'a') as file:
+            file.write(f"Metrics for all domains with mapping method {args.mapping_method}\n")
+            file.write(f"Micro F1: {metrics['micro avg']['f1-score'] * 100}\n")
+            file.write(f"Macro F1: {macro * 100}\n")
+            file.write(f"Weighted F1: {metrics['weighted avg']['f1-score'] * 100}\n")
+            file.write("--------------------------------------------------------------\n")        
+    else:
+        logging.info("Evaluating Predictions for OOD")
         for domain in args.domains:
 
             logging.info(f"Evaluating domain {domain}")
