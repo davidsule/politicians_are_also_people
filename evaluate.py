@@ -1,4 +1,5 @@
 import os
+import sys
 import csv
 import json
 import logging
@@ -53,7 +54,7 @@ def get_metrics(gold_path, predicted_path, ood=True, domains=['ai', 'literature'
                 pred_instance[label_types[rel]] = 1
             predicted.append(pred_instance)
     
-    assert len(gold_relations) == len(predicted), "Length of gold and predicted labels should be equal."
+        assert len(gold_relations) == len(predicted), f"Length of gold: {len(gold_relations)} != Length of pred: {len(predicted) }\n at pred path: {predicted_path}"
 
     labels = os.getenv(f"RELATION_LABELS").split()
     report = classification_report(gold_relations, predicted, target_names=labels, output_dict=True, zero_division=0)
@@ -69,22 +70,30 @@ if __name__ == '__main__':
     args = parse_arguments()
     
     if not args.ood:
-        logging.info("Evaluating Predictions for All Domains at Once")
-        pred_path = os.path.join(args.pred_path, args.mapping_method, "all", "predictions.csv")
-        saving_path = os.path.join(args.pred_path, args.mapping_method, "all", "evaluation.json")
-        metrics, macro = get_metrics(args.gold_path, pred_path, ood=args.ood, domains=args.domains)
 
-        logging.info(f"Writing metrics to {saving_path}")
-        json.dump(metrics, open(saving_path, "w"))
+        if args.mapping_method == "ood_clustering":
+            logging.info("Exiting: No evaluation for ood_clustering with all domains at once")
+            sys.exit()
+        else:
+            logging.info("Evaluating Predictions for All Domains at Once")
+            pred_path = os.path.join(args.pred_path, args.mapping_method, "all", "predictions.csv")
+            saving_path = os.path.join(args.pred_path, args.mapping_method, "all", "evaluation.json")
+            metrics, macro = get_metrics(args.gold_path, pred_path, ood=args.ood, domains=args.domains)
 
-        # write summary statistics to file
-        with open(args.summary_exps, 'a') as file:
-            file.write(f"Metrics for all domains with mapping method {args.mapping_method}\n")
-            file.write(f"Micro F1: {metrics['micro avg']['f1-score'] * 100}\n")
-            file.write(f"Macro F1: {macro * 100}\n")
-            file.write(f"Weighted F1: {metrics['weighted avg']['f1-score'] * 100}\n")
-            file.write("--------------------------------------------------------------\n")        
+            logging.info(f"Writing metrics to {saving_path}")
+            json.dump(metrics, open(saving_path, "w"))
+
+            # write summary statistics to file
+            with open(args.summary_exps, 'a') as file:
+                file.write(f"Metrics for all domains with mapping method {args.mapping_method}\n")
+                file.write(f"Micro F1: {metrics['micro avg']['f1-score'] * 100}\n")
+                file.write(f"Macro F1: {macro * 100}\n")
+                file.write(f"Weighted F1: {metrics['weighted avg']['f1-score'] * 100}\n")
+                file.write("--------------------------------------------------------------\n")        
     else:
+        if args.mapping_method == "elisa":
+            logging.info("Exiting: No evaluation for elisa with ood")
+            sys.exit()
         logging.info("Evaluating Predictions for OOD")
         for domain in args.domains:
 
@@ -103,7 +112,6 @@ if __name__ == '__main__':
             
 
                 # write metrics to file
-                logging.info(f"Writing metrics to {saving_path}")
                 json.dump(metrics, open(saving_path, "w"))
 
                 # write summary statistics to file
@@ -113,6 +121,7 @@ if __name__ == '__main__':
                     file.write(f"Macro F1: {macro * 100}\n")
                     file.write(f"Weighted F1: {metrics['weighted avg']['f1-score'] * 100}\n")
                     file.write("--------------------------------------------------------------\n")
+                logging.info(f"Evaluation complete wrote metrics to {saving_path}")
             else:
                 
                 logging.info(f"No metrics found in: {pred_path_domain}")
@@ -122,7 +131,3 @@ if __name__ == '__main__':
                     file.write(f"No metrics for {domain}-domain with mapping method {args.mapping_method}\n")
                     file.write(f"No predictions in this path: {pred_path_domain} \n")
                     file.write("--------------------------------------------------------------\n")
-
-
-    logging.info("Evaluation complete")
-    
