@@ -10,6 +10,8 @@ from sklearn.metrics import classification_report
 
 # python evaluate.py --gold_path data/crossre_data/ai-test.json --pred_path data/predictions/almnps_4012/elisa/ood_validation/ai/predictions.csv --out_path test/ --summary_exps test/summary.json
 
+# TODO args.domains.sort()
+
 load_dotenv()
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s %(message)s')
@@ -68,7 +70,9 @@ def get_metrics(gold_path, predicted_path, ood=True, domains=['ai', 'literature'
 if __name__ == '__main__':
 
     args = parse_arguments()
-    
+    # Sort domain list so it's always in the same order (important when saving predictions -> order of sentences)
+    args.domains.sort()
+
     if not args.ood:
 
         if args.mapping_method == "ood_clustering":

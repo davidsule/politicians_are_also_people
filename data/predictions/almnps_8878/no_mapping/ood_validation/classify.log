@@ -1,9 +1,9 @@
 Saved arguments to data/predictions/almnps_8878/no_mapping/ood_validation/args.json.
 Saved category mapping to data/predictions/almnps_8878/no_mapping/ood_validation/entity2category_mapping.json.
 Loaded category mapping: no_mapping.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c88072a30> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c8807a070> (dev).
-Starting training on ['literature', 'music', 'news', 'politics', 'science'] data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa1ac794f10> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa1ac79d550> (dev).
+Starting training on ['literature', 'music', 'news', 'politics', 'science'] data with validation domain ai.
 Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
@@ -36,9 +36,9 @@ Saved models from epoch 6 to 'data/predictions/almnps_8878/no_mapping/ood_valida
 Saved models from epoch 7 to 'data/predictions/almnps_8878/no_mapping/ood_validation/ai/newest.pt'.
 No improvement since 3 epochs (1.4010 loss). Early stop.
 OOD training completed for test topic ai after 7 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c89e322e0> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c88072eb0> (dev).
-Starting training on ['ai', 'music', 'news', 'politics', 'science'] data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa1ae26d760> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa1ac79d0d0> (dev).
+Starting training on ['ai', 'music', 'news', 'politics', 'science'] data with validation domain literature.
 Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
@@ -71,9 +71,9 @@ Saved models from epoch 6 to 'data/predictions/almnps_8878/no_mapping/ood_valida
 Saved models from epoch 7 to 'data/predictions/almnps_8878/no_mapping/ood_validation/literature/newest.pt'.
 No improvement since 3 epochs (1.4495 loss). Early stop.
 OOD training completed for test topic literature after 7 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c8557e0a0> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c89b51c10> (dev).
-Starting training on ['ai', 'literature', 'news', 'politics', 'science'] data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa1ac4ca6d0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa1ae274e50> (dev).
+Starting training on ['ai', 'literature', 'news', 'politics', 'science'] data with validation domain music.
 Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
@@ -106,9 +106,9 @@ Saved models from epoch 6 to 'data/predictions/almnps_8878/no_mapping/ood_valida
 Saved models from epoch 7 to 'data/predictions/almnps_8878/no_mapping/ood_validation/music/newest.pt'.
 No improvement since 3 epochs (1.5372 loss). Early stop.
 OOD training completed for test topic music after 7 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c6ad0ed60> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c85588640> (dev).
-Starting training on ['ai', 'literature', 'music', 'politics', 'science'] data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa192ca9160> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa1ac4ca6d0> (dev).
+Starting training on ['ai', 'literature', 'music', 'politics', 'science'] data with validation domain news.
 Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
@@ -137,9 +137,9 @@ Saved models from epoch 5 to 'data/predictions/almnps_8878/no_mapping/ood_valida
 Saved models from epoch 6 to 'data/predictions/almnps_8878/no_mapping/ood_validation/news/newest.pt'.
 No improvement since 3 epochs (1.4216 loss). Early stop.
 OOD training completed for test topic news after 6 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c6aceb370> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c61561550> (dev).
-Starting training on ['ai', 'literature', 'music', 'news', 'science'] data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa192b8f7c0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa192ca9370> (dev).
+Starting training on ['ai', 'literature', 'music', 'news', 'science'] data with validation domain politics.
 Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
@@ -168,9 +168,9 @@ Saved models from epoch 5 to 'data/predictions/almnps_8878/no_mapping/ood_valida
 Saved models from epoch 6 to 'data/predictions/almnps_8878/no_mapping/ood_validation/politics/newest.pt'.
 No improvement since 3 epochs (1.3972 loss). Early stop.
 OOD training completed for test topic politics after 6 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c6ad54190> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f8c6af32ca0> (dev).
-Starting training on ['ai', 'literature', 'music', 'news', 'politics'] data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa192ceaac0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fa192b80610> (dev).
+Starting training on ['ai', 'literature', 'music', 'news', 'politics'] data with validation domain science.
 Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>

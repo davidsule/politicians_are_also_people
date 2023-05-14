@@ -37,7 +37,7 @@ def parse_arguments():
     # Which categories to map the entities to? (None: Don't map)
     arg_parser.add_argument('-map', '--mapping_type', type=str, default=None, help='Mapping to use for entity substitution, one of None, "manual", "elisa", "embedding", "ood_clustering", "topological", "thesaurus_affinity". ood_clustering can only be used if --ood_validation is True.')
     # Shuffle between epochs?
-    arg_parser.add_argument('-shuffle', '--shuffle_data', action='store_true', default=False, help='Shuffle data between epochs? Seed provided in the --seed arg will be used.')
+    arg_parser.add_argument('-shuffle', '--shuffle_data', action='store_true', default=False, help='Shuffle data between epochs? Seed provided in the --seed arg will be used. Only takes effect during training.')
 
     return arg_parser.parse_args()
 
@@ -200,6 +200,8 @@ def save_plots(path, loss_train, loss_dev, microf1, macrof1, weightedf1):
 if __name__ == '__main__':
 
     args = parse_arguments()
+    # Sort domain list so it's always in the same order (important when saving predictions -> order of sentences)
+    args.domains.sort()
 
     # Experiment folder based on args so diff runs don't overwrite each other (incl. logging info)
     # Structure: {domains_list}_{random_seed}/{mapping_type}/{exp_type} 
@@ -308,7 +310,7 @@ if __name__ == '__main__':
                     "news": []
                 }
                 unique_entities = {}
-                # In case not all 6 domains is run
+                # In case not all 6 domains are run
                 for domain in args.domains:
                     unique_entities[domain] = unique_entities_all[domain]
                 # create data
@@ -345,7 +347,8 @@ if __name__ == '__main__':
             mapping = entity2category_mapping
         # setup data
         if args.prediction_only:
-            test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', domains=ts, category_mapping=mapping, shuffle=args.shuffle_data)
+            # Shuffle is always false -> save predictions in the order it occurs in the test data.
+            test_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='test', domains=ts, category_mapping=mapping, shuffle=False)
             logging.info(f"Loaded {test_data} (test).")
             logging.info(f"Starting prediction on {ts} test data.")
         else:
@@ -353,7 +356,10 @@ if __name__ == '__main__':
             logging.info(f"Loaded {train_data} (train).")
             dev_data = prepare_all_crossre(args.data_path, label_types, args.batch_size, dataset='dev', domains=tr, category_mapping=mapping, shuffle=args.shuffle_data)
             logging.info(f"Loaded {dev_data} (dev).")
-            logging.info(f"Starting training on {tr} data.")
+            if args.ood_validation:
+                logging.info(f"Starting training on {tr} data with validation domain {ts[0]}.")
+            else:
+                logging.info(f"Starting training on {tr} data.")
         logging.info(f"Read data from folder {args.data_path}")
 
         # Entity names / category names need to be added to tokenizer as special tokens
@@ -491,4 +497,6 @@ if __name__ == '__main__':
         else:
             logging.info(f"Training completed after {ep_idx + 1} epochs.")
         save_plots(exp_path_domain, statistics['loss_train'], statistics['loss_dev'], statistics['micro-f1'], statistics['macro-f1'], statistics['weighted-f1'])
+        # We only need the best model for later
+        os.remove(os.path.join(exp_path_domain, f'newest.pt'))
     logging.info(f"TRAINING COMPLETED with:\n\tDomains:\t\t{args.domains}\n\tOOD validaation:\t{args.ood_validation}\n\tMapping type:\t\t{args.mapping_type}")

@@ -611,125 +611,6 @@ def get_entity2category(category2entities: dict) -> dict:
             entity2category[entity] = category
     return entity2category
 
-def get_categories(
-        mapping_type: str,
-        domains: list = ["ai", "literature", "music", "news", "politics", "science"],
-        mapper_params: Union[dict, None] = None,
-        incl_category2entity: bool = False,
-        unique_entities: Union[dict, None] = None
-    ) -> Union[dict, tuple]:
-    """Get categorization of named entities as dictionary based on
-    different kind of clustering methods (mapping_type).  Options:
-    ['manual', 'elisa', 'embedding', 'ood_clustering', 'topological',
-    'thesaurus_affinity'].  The named entity labels for the list of
-    domains provided are read from the .env file.  The optional args
-    for the different mapping functions can be passed as the
-    mapper_params arg as a dict.  For 'ood_clustering' `unique_entities`
-    must be passed and the set of its keys must match the list of
-    `domains`.
-
-    The returned dictionary will be in the format entity (key, str):
-    category (value, str), if incl_category2entity == True then a second
-    dict with in in category (key, str): entities (value, list of str)
-    format will also be returned.  For the ood_clustering mapping type
-    either of these a wrapper dict will be returned which has the test
-    domains as keys and the corresponding mapping dicts as values.
-
-    Parameters:
-        mapping_type (str):  As described above.
-        domains (list, optional):  List of domains to be included.
-            Defaults to include all 6.  Only takes effect if
-            mapping_type is in ['embedding', 'ood_clustering'], else all
-            domains are considered.
-        mapper_params (dict|None, optional):  (Optional) args to pass to
-            specific mapper functions, see their docstrings for options.
-            Use str matching the arg name as key and the desired value
-            as well, you guessed it, value.
-        incl_category2entity (bool, optional):  If True, a second dict
-            will also be returned, mapping categories to entities.
-            Default: False.
-        unique_entities (dict|None, optional):  Keys are domains, values
-            are entities unique to the domain.  Only takes effect if
-            `mapping_type` == 'ood_clustering'.  If given, all domains
-            partaking in the training must be in it, even if they don't
-            have any unique entities, in which case the value should be
-            an empty list.  Defaults to None.
-    
-    Returns:
-        entity2category (dict):  Mapping dictionary as described above,
-            entity to category.
-        category2entity (dict, optional):  Mapping dictionary as
-            described above, category to entities.  Only returned if
-            `incl_category2entity` == True.
-    """
-    if mapping_type not in ["manual", "elisa", "embedding", "ood_clustering", "topological", "thesaurus_affinity"]:
-        raise ValueError('Mapping_type must be in ["manual", "elisa", "embedding", "ood_clustering", "topological", "thesaurus_affinity"]')
-
-    # Empty dict is ok for unpacking kwargs in function calls but None is not
-    if mapper_params is None:
-        mapper_params = {}
-    
-    if mapping_type in ["manual", "elisa"]:
-        if mapping_type == "manual":
-            mapping = get_manual()
-        else:
-            mapping = get_elisa()
-        if incl_category2entity:
-            return get_entity2category(mapping), mapping
-        else:
-            return get_entity2category(mapping)
-
-    if mapping_type in ["embedding", "ood_clustering"]:
-        substitutions = {"musicalartist": "musician", "organisation": "organization", "politicalparty": "coalition", "academicjournal": "journal", "chemicalcompound": "chemical", "chemicalelement": "chemical", "astronomicalobject": "galaxy", "musicgenre": "genre", "literarygenre": "genre", "programlang": "javascript", "musicalinstrument": "violin", "misc": "miscellaneous"}
-    # Not currently used, the thesaurus based stuff is hard-coded because the
-    # meaning dict ordering would be really hard to implement otherwise.
-    else:
-        substitutions = {"musicalartist": "musician", "organisation": "organization", "politicalparty": "party", "academicjournal": "journal", "chemicalcompound": "chemical", "chemicalelement": "chemical", "astronomicalobject": "galaxy", "musicgenre": "genre", "literarygenre": "genre", "programlang": "java", "musicalinstrument": "instrument", "misc": "miscellaneous"}
-
-    if mapping_type == "ood_clustering" and unique_entities is None:
-        raise ValueError("For 'ood_clustering' `mapping_type` unique_entities dict must be passed.")
-    
-    if mapping_type == "ood_clustering" and set(domains) != set(unique_entities.keys()):
-        raise ValueError("For 'ood_clustering' `mapping_type` the keys of `unique_entities` must match set(`domains`).")
-
-    domain_entity_dict = {}
-    all_entities = set()
-    for domain in domains:
-        domain_entity_dict[domain] = sorted(os.getenv(f"{domain.upper()}_LABELS").split())
-        all_entities.update(os.getenv(f"{domain.upper()}_LABELS").split())
-    # All as in all within the domains specified
-    all_entities = sorted(list(all_entities))
-
-    # This is a test if i messed up the code above
-    if len(domains) == 6 and all_entities != sorted(os.getenv("ENTITY_LABELS").split()):
-        raise ValueError("All domains are given but entity list wasn't built successfully.")
-    
-    if mapping_type == "ood_clustering":
-        to_remove = get_to_remove(unique_entities)
-        domain_entity_dict = get_ood_cluster_domain_entity_dict(domain_entity_dict, to_remove)
-        mapping =  get_ood_embedding_based(domain_entity_dict, substitutions, **mapper_params)
-    elif mapping_type == "embedding":
-        mapping =  get_embedding_based(all_entities, substitutions, **mapper_params)
-    elif mapping_type == "topological":
-        mapping =  get_topological(**mapper_params)
-    else:
-        mapping =  get_thesaurus_affinity_based(**mapper_params)
-    
-    if mapping_type != "ood_clustering":
-        if incl_category2entity:
-            return get_entity2category(mapping), mapping
-        else:
-            return get_entity2category(mapping)
-    
-    # If ood_clustering
-    entity2category_dict = {}
-    for domain, map in mapping.items():
-        entity2category_dict[domain] = get_entity2category(map)
-    if incl_category2entity:
-        return entity2category_dict, mapping
-    else:
-        return entity2category_dict
-
 def get_to_remove(unique_entities: dict) -> dict:
     """Get dict with domains are keys and values are the set of entities
     that domain cannot contain, i.e. the set of all unique entities of
@@ -749,6 +630,29 @@ def get_to_remove(unique_entities: dict) -> dict:
             if domain_unique != from_domain_remove:
                 to_remove[from_domain_remove].update(entities)
     return to_remove
+
+def get_ood_cluster_domain_entity_dict(domain_entity_dict: dict, to_remove: dict) -> dict:
+    """Get dictionary for ood entity clustering.
+
+    Parameters:
+        domain_entity_dict (dict):  Keys are domains, values are the
+            list of entitites that occur in the corpus for that domain.
+        to_remove (dict):   Keys are domains, values are the set of
+            entities that domain cannot contain.
+    
+        Returns:
+            ood_dict (dict):  Keys are domains, values are entities that
+                will occur in the corpus for given domain after removing
+                the unique entities of other domains.
+    """
+    ood_dict = {}
+    for domain, entities in domain_entity_dict.items():
+        ood_dict[domain] = []
+        for entity in entities:
+            if entity not in to_remove[domain]:
+                ood_dict[domain].append(entity)
+        ood_dict[domain].sort()
+    return ood_dict
 
 def create_ood_clustering_data(unique_entities: dict, data_path: str, destination_path: str) -> None:
     """Create dataset where the entities listed in `unique_entities` are
@@ -828,25 +732,121 @@ def create_ood_clustering_data(unique_entities: dict, data_path: str, destinatio
     with open(f"{destination_path}removed_per_domain.json", "w") as f:
         json.dump(removed_per_domain, f, indent=4)
 
-def get_ood_cluster_domain_entity_dict(domain_entity_dict: dict, to_remove: dict) -> dict:
-    """Get dictionary for ood entity clustering.
+def get_categories(
+        mapping_type: str,
+        domains: list = ["ai", "literature", "music", "news", "politics", "science"],
+        mapper_params: Union[dict, None] = None,
+        incl_category2entity: bool = False,
+        unique_entities: Union[dict, None] = None
+    ) -> Union[dict, tuple]:
+    """Get categorization of named entities as dictionary based on
+    different kind of clustering methods (mapping_type).  Options:
+    ['manual', 'elisa', 'embedding', 'ood_clustering', 'topological',
+    'thesaurus_affinity'].  The named entity labels for the list of
+    domains provided are read from the .env file.  The optional args
+    for the different mapping functions can be passed as the
+    mapper_params arg as a dict.  For 'ood_clustering' `unique_entities`
+    must be passed and the set of its keys must match the list of
+    `domains`.
+
+    The returned dictionary will be in the format entity (key, str):
+    category (value, str), if incl_category2entity == True then a second
+    dict with in in category (key, str): entities (value, list of str)
+    format will also be returned.  For the ood_clustering mapping type
+    either of these a wrapper dict will be returned which has the test
+    domains as keys and the corresponding mapping dicts as values.
 
     Parameters:
-        domain_entity_dict (dict):  Keys are domains, values are the
-            list of entitites that occur in the corpus for that domain.
-        to_remove (dict):   Keys are domains, values are the set of
-            entities that domain cannot contain.
+        mapping_type (str):  As described above.
+        domains (list, optional):  List of domains to be included.
+            Defaults to include all 6.  Only takes effect if
+            mapping_type is in ['embedding', 'ood_clustering'], else all
+            domains are considered.
+        mapper_params (dict|None, optional):  (Optional) args to pass to
+            specific mapper functions, see their docstrings for options.
+            Use str matching the arg name as key and the desired value
+            as well, you guessed it, value.
+        incl_category2entity (bool, optional):  If True, a second dict
+            will also be returned, mapping categories to entities.
+            Default: False.
+        unique_entities (dict|None, optional):  Keys are domains, values
+            are entities unique to the domain.  Only takes effect if
+            `mapping_type` == 'ood_clustering'.  If given, all domains
+            partaking in the training must be in it, even if they don't
+            have any unique entities, in which case the value should be
+            an empty list.  Defaults to None.
     
-        Returns:
-            ood_dict (dict):  Keys are domains, values are entities that
-                will occur in the corpus for given domain after removing
-                the unique entities of other domains.
+    Returns:
+        entity2category (dict):  Mapping dictionary as described above,
+            entity to category.
+        category2entity (dict, optional):  Mapping dictionary as
+            described above, category to entities.  Only returned if
+            `incl_category2entity` == True.
     """
-    ood_dict = {}
-    for domain, entities in domain_entity_dict.items():
-        ood_dict[domain] = []
-        for entity in entities:
-            if entity not in to_remove[domain]:
-                ood_dict[domain].append(entity)
-        ood_dict[domain].sort()
-    return ood_dict
+    if mapping_type not in ["manual", "elisa", "embedding", "ood_clustering", "topological", "thesaurus_affinity"]:
+        raise ValueError('Mapping_type must be in ["manual", "elisa", "embedding", "ood_clustering", "topological", "thesaurus_affinity"]')
+
+    # Empty dict is ok for unpacking kwargs in function calls but None is not
+    if mapper_params is None:
+        mapper_params = {}
+    
+    if mapping_type in ["manual", "elisa"]:
+        if mapping_type == "manual":
+            mapping = get_manual()
+        else:
+            mapping = get_elisa()
+        if incl_category2entity:
+            return get_entity2category(mapping), mapping
+        else:
+            return get_entity2category(mapping)
+
+    if mapping_type in ["embedding", "ood_clustering"]:
+        substitutions = {"musicalartist": "musician", "organisation": "organization", "politicalparty": "coalition", "academicjournal": "journal", "chemicalcompound": "chemical", "chemicalelement": "chemical", "astronomicalobject": "galaxy", "musicgenre": "genre", "literarygenre": "genre", "programlang": "javascript", "musicalinstrument": "violin", "misc": "miscellaneous"}
+    # Not currently used, the thesaurus based stuff is hard-coded because the
+    # meaning dict ordering would be really hard to implement otherwise.
+    else:
+            substitutions = {"musicalartist": "musician", "organisation": "organization", "politicalparty": "party", "academicjournal": "journal", "chemicalcompound": "chemical", "chemicalelement": "chemical", "astronomicalobject": "galaxy", "musicgenre": "genre", "literarygenre": "genre", "programlang": "java", "musicalinstrument": "instrument", "misc": "miscellaneous"}
+
+    if mapping_type == "ood_clustering" and unique_entities is None:
+        raise ValueError("For 'ood_clustering' `mapping_type` unique_entities dict must be passed.")
+    
+    if mapping_type == "ood_clustering" and set(domains) != set(unique_entities.keys()):
+        raise ValueError("For 'ood_clustering' `mapping_type` the keys of `unique_entities` must match set(`domains`).")
+
+    domain_entity_dict = {}
+    all_entities = set()
+    for domain in domains:
+        domain_entity_dict[domain] = sorted(os.getenv(f"{domain.upper()}_LABELS").split())
+        all_entities.update(os.getenv(f"{domain.upper()}_LABELS").split())
+    # All as in all within the domains specified
+    all_entities = sorted(list(all_entities))
+
+    # This is a test if i messed up the code above
+    if len(domains) == 6 and all_entities != sorted(os.getenv("ENTITY_LABELS").split()):
+        raise ValueError("All domains are given but entity list wasn't built successfully.")
+    
+    if mapping_type == "ood_clustering":
+        to_remove = get_to_remove(unique_entities)
+        domain_entity_dict = get_ood_cluster_domain_entity_dict(domain_entity_dict, to_remove)
+        mapping =  get_ood_embedding_based(domain_entity_dict, substitutions, **mapper_params)
+    elif mapping_type == "embedding":
+        mapping =  get_embedding_based(all_entities, substitutions, **mapper_params)
+    elif mapping_type == "topological":
+        mapping =  get_topological(**mapper_params)
+    else:
+        mapping =  get_thesaurus_affinity_based(**mapper_params)
+    
+    if mapping_type != "ood_clustering":
+        if incl_category2entity:
+            return get_entity2category(mapping), mapping
+        else:
+            return get_entity2category(mapping)
+    
+    # If ood_clustering
+    entity2category_dict = {}
+    for domain, map in mapping.items():
+        entity2category_dict[domain] = get_entity2category(map)
+    if incl_category2entity:
+        return entity2category_dict, mapping
+    else:
+        return entity2category_dict

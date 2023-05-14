@@ -1,33 +1,38 @@
 Saved arguments to data/predictions/almnps_5096/topological/all/args.json.
-Saved category mapping to data/predictions/almnps_5096/topological/all/mapping.json.
+Saved category mapping to data/predictions/almnps_5096/topological/all/entity2category_mapping.json.
 Loaded category mapping: topological.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fc250429ca0> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fc250429c70> (dev).
-Starting training on ai data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fcc33373280> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fcc33373340> (dev).
+Starting training on ['ai', 'literature', 'music', 'news', 'politics', 'science'] data.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Using criterion: <LabelLoss: loss=XEnt>.
 Optimizing using: AdamW with learning rate 2e-05.
-[Epoch 1/50] Train completed with Micro-f1: 0.3872, Macro-f1: 0.2440, Weighted-f1: 0.3272, Loss: 2.0676
-[Epoch 1/50] Evaluation completed with Micro-f1: 0.5149, Macro-f1: 0.3473, Weighted-f1: 0.4732, Loss: 1.6773
+[Epoch 1/50] Train completed with Micro-f1: 0.4021, Macro-f1: 0.2581, Weighted-f1: 0.3352, Loss: 2.0167
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5152, Macro-f1: 0.3554, Weighted-f1: 0.4785, Loss: 1.6188
 Saved models from epoch 1 to 'data/predictions/almnps_5096/topological/all/newest.pt'.
-Saved model with best loss 1.6773 to 'data/predictions/almnps_5096/topological/all/best.pt'.
-[Epoch 2/50] Train completed with Micro-f1: 0.7122, Macro-f1: 0.5634, Weighted-f1: 0.6838, Loss: 1.0885
-[Epoch 2/50] Evaluation completed with Micro-f1: 0.5368, Macro-f1: 0.3670, Weighted-f1: 0.4954, Loss: 1.5063
+Saved model with best loss 1.6188 to 'data/predictions/almnps_5096/topological/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7301, Macro-f1: 0.5893, Weighted-f1: 0.7019, Loss: 1.0022
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5386, Macro-f1: 0.3812, Weighted-f1: 0.5035, Loss: 1.4992
 Saved models from epoch 2 to 'data/predictions/almnps_5096/topological/all/newest.pt'.
-Saved model with best loss 1.5063 to 'data/predictions/almnps_5096/topological/all/best.pt'.
-[Epoch 3/50] Train completed with Micro-f1: 0.8194, Macro-f1: 0.7124, Weighted-f1: 0.8026, Loss: 0.6933
-[Epoch 3/50] Evaluation completed with Micro-f1: 0.5520, Macro-f1: 0.3851, Weighted-f1: 0.5143, Loss: 1.4087
+Saved model with best loss 1.4992 to 'data/predictions/almnps_5096/topological/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8434, Macro-f1: 0.7395, Weighted-f1: 0.8288, Loss: 0.6064
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5553, Macro-f1: 0.4016, Weighted-f1: 0.5255, Loss: 1.3850
 Saved models from epoch 3 to 'data/predictions/almnps_5096/topological/all/newest.pt'.
-Saved model with best loss 1.4087 to 'data/predictions/almnps_5096/topological/all/best.pt'.
-[Epoch 4/50] Train completed with Micro-f1: 0.9002, Macro-f1: 0.8263, Weighted-f1: 0.8908, Loss: 0.4441
-[Epoch 4/50] Evaluation completed with Micro-f1: 0.5634, Macro-f1: 0.4011, Weighted-f1: 0.5308, Loss: 1.4524
+Saved model with best loss 1.3850 to 'data/predictions/almnps_5096/topological/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9239, Macro-f1: 0.8670, Weighted-f1: 0.9158, Loss: 0.3638
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5658, Macro-f1: 0.4154, Weighted-f1: 0.5392, Loss: 1.4181
 Saved models from epoch 4 to 'data/predictions/almnps_5096/topological/all/newest.pt'.
-[Epoch 5/50] Train completed with Micro-f1: 0.9358, Macro-f1: 0.8913, Weighted-f1: 0.9280, Loss: 0.2845
-[Epoch 5/50] Evaluation completed with Micro-f1: 0.5700, Macro-f1: 0.4096, Weighted-f1: 0.5389, Loss: 1.4552
+[Epoch 5/50] Train completed with Micro-f1: 0.9547, Macro-f1: 0.9254, Weighted-f1: 0.9515, Loss: 0.2204
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5725, Macro-f1: 0.4234, Weighted-f1: 0.5465, Loss: 1.4803
 Saved models from epoch 5 to 'data/predictions/almnps_5096/topological/all/newest.pt'.
-[Epoch 6/50] Train completed with Micro-f1: 0.9635, Macro-f1: 0.9339, Weighted-f1: 0.9601, Loss: 0.1943
-[Epoch 6/50] Evaluation completed with Micro-f1: 0.5756, Macro-f1: 0.4168, Weighted-f1: 0.5467, Loss: 1.5389
+[Epoch 6/50] Train completed with Micro-f1: 0.9763, Macro-f1: 0.9623, Weighted-f1: 0.9751, Loss: 0.1458
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5771, Macro-f1: 0.4300, Weighted-f1: 0.5527, Loss: 1.5682
 Saved models from epoch 6 to 'data/predictions/almnps_5096/topological/all/newest.pt'.
-No improvement since 3 epochs (1.4087 loss). Early stop.
+No improvement since 3 epochs (1.3850 loss). Early stop.
 Training completed after 6 epochs.
+TRAINING COMPLETED with:
+	Domains:		['ai', 'literature', 'music', 'news', 'politics', 'science']
+	OOD validaation:	False
+	Mapping type:		topological

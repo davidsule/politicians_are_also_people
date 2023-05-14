@@ -4,7 +4,7 @@
     "language_model": "bert-base-cased",
     "prediction_only": false,
     "epochs": 50,
-    "batch_size": 32,
+    "batch_size": 25,
     "learning_rate": 2e-05,
     "early_stop": 3,
     "seed": 5096,
@@ -17,6 +17,6 @@
         "politics",
         "science"
     ],
-    "mapping_type": "ood_embedding",
+    "mapping_type": "ood_clustering",
     "shuffle_data": true
 }

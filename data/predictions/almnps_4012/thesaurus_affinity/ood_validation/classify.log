@@ -1,204 +1,207 @@
-Saved arguments to data/predictions/almnps_4012/thesaurus_affinity/ood/args.json.
+Saved arguments to data/predictions/almnps_4012/thesaurus_affinity/ood_validation/args.json.
 loading projection weights from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz
-KeyedVectors lifecycle event {'msg': 'loaded (3000000, 300) matrix of type float32 from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz', 'binary': True, 'encoding': 'utf8', 'datetime': '2023-05-07T07:34:39.075062', 'gensim': '4.3.0', 'python': '3.9.16 | packaged by conda-forge | (main, Feb  1 2023, 21:39:03) \n[GCC 11.3.0]', 'platform': 'Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.31', 'event': 'load_word2vec_format'}
-Saved category mapping to data/predictions/almnps_4012/thesaurus_affinity/ood/mapping.json.
+KeyedVectors lifecycle event {'msg': 'loaded (3000000, 300) matrix of type float32 from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz', 'binary': True, 'encoding': 'utf8', 'datetime': '2023-05-14T02:02:50.447476', 'gensim': '4.3.0', 'python': '3.9.16 | packaged by conda-forge | (main, Feb  1 2023, 21:39:03) \n[GCC 11.3.0]', 'platform': 'Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.31', 'event': 'load_word2vec_format'}
+Saved category mapping to data/predictions/almnps_4012/thesaurus_affinity/ood_validation/entity2category_mapping.json.
 Loaded category mapping: thesaurus_affinity.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f18a99b0040> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f18ab6d4be0> (dev).
-Starting training on literature data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f62b5be59d0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f62b5be53a0> (dev).
+Starting training on ['literature', 'music', 'news', 'politics', 'science'] data with validation domain ai.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Using criterion: <LabelLoss: loss=XEnt>.
 Optimizing using: AdamW with learning rate 2e-05.
-[Epoch 1/50] Train completed with Micro-f1: 0.4206, Macro-f1: 0.2349, Weighted-f1: 0.3496, Loss: 1.9844
-[Epoch 1/50] Evaluation completed with Micro-f1: 0.5184, Macro-f1: 0.3418, Weighted-f1: 0.4642, Loss: 1.7066
-Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/ai/newest.pt'.
-Saved model with best loss 1.7066 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/ai/best.pt'.
-[Epoch 2/50] Train completed with Micro-f1: 0.7126, Macro-f1: 0.5519, Weighted-f1: 0.6799, Loss: 1.0538
-[Epoch 2/50] Evaluation completed with Micro-f1: 0.5364, Macro-f1: 0.3651, Weighted-f1: 0.4865, Loss: 1.5185
-Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/ai/newest.pt'.
-Saved model with best loss 1.5185 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/ai/best.pt'.
-[Epoch 3/50] Train completed with Micro-f1: 0.8366, Macro-f1: 0.7427, Weighted-f1: 0.8191, Loss: 0.6460
-[Epoch 3/50] Evaluation completed with Micro-f1: 0.5490, Macro-f1: 0.3774, Weighted-f1: 0.5018, Loss: 1.4472
-Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/ai/newest.pt'.
-Saved model with best loss 1.4472 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/ai/best.pt'.
-[Epoch 4/50] Train completed with Micro-f1: 0.8965, Macro-f1: 0.8102, Weighted-f1: 0.8870, Loss: 0.4279
-[Epoch 4/50] Evaluation completed with Micro-f1: 0.5587, Macro-f1: 0.3901, Weighted-f1: 0.5154, Loss: 1.4810
-Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/ai/newest.pt'.
-[Epoch 5/50] Train completed with Micro-f1: 0.9452, Macro-f1: 0.8861, Weighted-f1: 0.9379, Loss: 0.2648
-[Epoch 5/50] Evaluation completed with Micro-f1: 0.5672, Macro-f1: 0.4026, Weighted-f1: 0.5273, Loss: 1.5247
-Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/ai/newest.pt'.
-[Epoch 6/50] Train completed with Micro-f1: 0.9708, Macro-f1: 0.9485, Weighted-f1: 0.9687, Loss: 0.1786
-[Epoch 6/50] Evaluation completed with Micro-f1: 0.5717, Macro-f1: 0.4105, Weighted-f1: 0.5346, Loss: 1.6297
-Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/ai/newest.pt'.
-No improvement since 3 epochs (1.4472 loss). Early stop.
+[Epoch 1/50] Train completed with Micro-f1: 0.4154, Macro-f1: 0.2391, Weighted-f1: 0.3460, Loss: 1.9626
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5326, Macro-f1: 0.3620, Weighted-f1: 0.4808, Loss: 1.6497
+Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/ai/newest.pt'.
+Saved model with best loss 1.6497 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/ai/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7448, Macro-f1: 0.6052, Weighted-f1: 0.7140, Loss: 0.9634
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5515, Macro-f1: 0.3866, Weighted-f1: 0.5037, Loss: 1.4647
+Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/ai/newest.pt'.
+Saved model with best loss 1.4647 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/ai/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8670, Macro-f1: 0.7821, Weighted-f1: 0.8514, Loss: 0.5670
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5596, Macro-f1: 0.3956, Weighted-f1: 0.5145, Loss: 1.4027
+Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/ai/newest.pt'.
+Saved model with best loss 1.4027 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/ai/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9231, Macro-f1: 0.8569, Weighted-f1: 0.9181, Loss: 0.3430
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5694, Macro-f1: 0.4071, Weighted-f1: 0.5280, Loss: 1.4163
+Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/ai/newest.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9584, Macro-f1: 0.9234, Weighted-f1: 0.9543, Loss: 0.2066
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5759, Macro-f1: 0.4172, Weighted-f1: 0.5382, Loss: 1.5386
+Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/ai/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9782, Macro-f1: 0.9596, Weighted-f1: 0.9769, Loss: 0.1335
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5804, Macro-f1: 0.4246, Weighted-f1: 0.5453, Loss: 1.5986
+Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/ai/newest.pt'.
+No improvement since 3 epochs (1.4027 loss). Early stop.
 OOD training completed for test topic ai after 6 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1875195f10> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f18b40fadf0> (dev).
-Starting training on ai data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f629c3962b0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f62b5be5670> (dev).
+Starting training on ['ai', 'music', 'news', 'politics', 'science'] data with validation domain literature.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Using criterion: <LabelLoss: loss=XEnt>.
 Optimizing using: AdamW with learning rate 2e-05.
-[Epoch 1/50] Train completed with Micro-f1: 0.3577, Macro-f1: 0.2019, Weighted-f1: 0.2943, Loss: 2.1245
-[Epoch 1/50] Evaluation completed with Micro-f1: 0.4987, Macro-f1: 0.3245, Weighted-f1: 0.4484, Loss: 1.7578
-Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/literature/newest.pt'.
-Saved model with best loss 1.7578 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/literature/best.pt'.
-[Epoch 2/50] Train completed with Micro-f1: 0.6914, Macro-f1: 0.5713, Weighted-f1: 0.6634, Loss: 1.1556
-[Epoch 2/50] Evaluation completed with Micro-f1: 0.5204, Macro-f1: 0.3528, Weighted-f1: 0.4748, Loss: 1.4847
-Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/literature/newest.pt'.
-Saved model with best loss 1.4847 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/literature/best.pt'.
-[Epoch 3/50] Train completed with Micro-f1: 0.8204, Macro-f1: 0.7201, Weighted-f1: 0.8050, Loss: 0.6973
-[Epoch 3/50] Evaluation completed with Micro-f1: 0.5336, Macro-f1: 0.3733, Weighted-f1: 0.4953, Loss: 1.4238
-Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/literature/newest.pt'.
-Saved model with best loss 1.4238 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/literature/best.pt'.
-[Epoch 4/50] Train completed with Micro-f1: 0.9001, Macro-f1: 0.8243, Weighted-f1: 0.8915, Loss: 0.4446
-[Epoch 4/50] Evaluation completed with Micro-f1: 0.5416, Macro-f1: 0.3855, Weighted-f1: 0.5079, Loss: 1.4399
-Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/literature/newest.pt'.
-[Epoch 5/50] Train completed with Micro-f1: 0.9438, Macro-f1: 0.8912, Weighted-f1: 0.9388, Loss: 0.2820
-[Epoch 5/50] Evaluation completed with Micro-f1: 0.5475, Macro-f1: 0.3938, Weighted-f1: 0.5183, Loss: 1.4367
-Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/literature/newest.pt'.
-[Epoch 6/50] Train completed with Micro-f1: 0.9701, Macro-f1: 0.9553, Weighted-f1: 0.9679, Loss: 0.1901
-[Epoch 6/50] Evaluation completed with Micro-f1: 0.5530, Macro-f1: 0.4023, Weighted-f1: 0.5266, Loss: 1.4549
-Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/literature/newest.pt'.
-No improvement since 3 epochs (1.4238 loss). Early stop.
+[Epoch 1/50] Train completed with Micro-f1: 0.4037, Macro-f1: 0.2575, Weighted-f1: 0.3448, Loss: 2.0324
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4705, Macro-f1: 0.3229, Weighted-f1: 0.4286, Loss: 1.7450
+Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/literature/newest.pt'.
+Saved model with best loss 1.7450 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/literature/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7068, Macro-f1: 0.5928, Weighted-f1: 0.6803, Loss: 1.0691
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5061, Macro-f1: 0.3547, Weighted-f1: 0.4690, Loss: 1.4756
+Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/literature/newest.pt'.
+Saved model with best loss 1.4756 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/literature/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8342, Macro-f1: 0.7293, Weighted-f1: 0.8225, Loss: 0.6371
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5263, Macro-f1: 0.3783, Weighted-f1: 0.4949, Loss: 1.4290
+Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/literature/newest.pt'.
+Saved model with best loss 1.4290 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/literature/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9137, Macro-f1: 0.8614, Weighted-f1: 0.9033, Loss: 0.3929
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5367, Macro-f1: 0.3919, Weighted-f1: 0.5085, Loss: 1.4609
+Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/literature/newest.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9542, Macro-f1: 0.9169, Weighted-f1: 0.9494, Loss: 0.2538
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5460, Macro-f1: 0.4024, Weighted-f1: 0.5199, Loss: 1.4632
+Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/literature/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9737, Macro-f1: 0.9585, Weighted-f1: 0.9727, Loss: 0.1607
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5509, Macro-f1: 0.4083, Weighted-f1: 0.5262, Loss: 1.4772
+Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/literature/newest.pt'.
+No improvement since 3 epochs (1.4290 loss). Early stop.
 OOD training completed for test topic literature after 6 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1898e5ddf0> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1875142e20> (dev).
-Starting training on ai data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f630e75aa90> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f629c305370> (dev).
+Starting training on ['ai', 'literature', 'news', 'politics', 'science'] data with validation domain music.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Using criterion: <LabelLoss: loss=XEnt>.
 Optimizing using: AdamW with learning rate 2e-05.
-[Epoch 1/50] Train completed with Micro-f1: 0.3249, Macro-f1: 0.1844, Weighted-f1: 0.2543, Loss: 2.2170
-[Epoch 1/50] Evaluation completed with Micro-f1: 0.4456, Macro-f1: 0.2987, Weighted-f1: 0.4069, Loss: 1.9083
-Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/newest.pt'.
-Saved model with best loss 1.9083 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/best.pt'.
-[Epoch 2/50] Train completed with Micro-f1: 0.6458, Macro-f1: 0.5020, Weighted-f1: 0.6090, Loss: 1.2838
-[Epoch 2/50] Evaluation completed with Micro-f1: 0.4740, Macro-f1: 0.3254, Weighted-f1: 0.4377, Loss: 1.6650
-Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/newest.pt'.
-Saved model with best loss 1.6650 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/best.pt'.
-[Epoch 3/50] Train completed with Micro-f1: 0.7877, Macro-f1: 0.6766, Weighted-f1: 0.7621, Loss: 0.8188
-[Epoch 3/50] Evaluation completed with Micro-f1: 0.4884, Macro-f1: 0.3418, Weighted-f1: 0.4537, Loss: 1.6410
-Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/newest.pt'.
-Saved model with best loss 1.6410 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/best.pt'.
-[Epoch 4/50] Train completed with Micro-f1: 0.8769, Macro-f1: 0.8028, Weighted-f1: 0.8649, Loss: 0.5385
-[Epoch 4/50] Evaluation completed with Micro-f1: 0.5019, Macro-f1: 0.3565, Weighted-f1: 0.4701, Loss: 1.5407
-Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/newest.pt'.
-Saved model with best loss 1.5407 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/best.pt'.
-[Epoch 5/50] Train completed with Micro-f1: 0.9276, Macro-f1: 0.8783, Weighted-f1: 0.9206, Loss: 0.3572
-[Epoch 5/50] Evaluation completed with Micro-f1: 0.5087, Macro-f1: 0.3656, Weighted-f1: 0.4795, Loss: 1.5864
-Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/newest.pt'.
-[Epoch 6/50] Train completed with Micro-f1: 0.9631, Macro-f1: 0.9298, Weighted-f1: 0.9595, Loss: 0.2376
-[Epoch 6/50] Evaluation completed with Micro-f1: 0.5167, Macro-f1: 0.3736, Weighted-f1: 0.4887, Loss: 1.5794
-Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/newest.pt'.
-[Epoch 7/50] Train completed with Micro-f1: 0.9803, Macro-f1: 0.9629, Weighted-f1: 0.9784, Loss: 0.1576
-[Epoch 7/50] Evaluation completed with Micro-f1: 0.5228, Macro-f1: 0.3794, Weighted-f1: 0.4959, Loss: 1.6374
-Saved models from epoch 7 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/music/newest.pt'.
-No improvement since 3 epochs (1.5407 loss). Early stop.
+[Epoch 1/50] Train completed with Micro-f1: 0.3439, Macro-f1: 0.2069, Weighted-f1: 0.2811, Loss: 2.1795
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4553, Macro-f1: 0.3068, Weighted-f1: 0.4146, Loss: 1.8612
+Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/newest.pt'.
+Saved model with best loss 1.8612 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6864, Macro-f1: 0.5508, Weighted-f1: 0.6523, Loss: 1.1977
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.4824, Macro-f1: 0.3323, Weighted-f1: 0.4472, Loss: 1.6534
+Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/newest.pt'.
+Saved model with best loss 1.6534 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8161, Macro-f1: 0.7088, Weighted-f1: 0.7952, Loss: 0.7362
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.4960, Macro-f1: 0.3489, Weighted-f1: 0.4637, Loss: 1.6325
+Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/newest.pt'.
+Saved model with best loss 1.6325 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8904, Macro-f1: 0.8224, Weighted-f1: 0.8788, Loss: 0.4834
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5084, Macro-f1: 0.3620, Weighted-f1: 0.4801, Loss: 1.5440
+Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/newest.pt'.
+Saved model with best loss 1.5440 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9372, Macro-f1: 0.9003, Weighted-f1: 0.9306, Loss: 0.3168
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5160, Macro-f1: 0.3723, Weighted-f1: 0.4901, Loss: 1.5586
+Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9711, Macro-f1: 0.9524, Weighted-f1: 0.9682, Loss: 0.2025
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5206, Macro-f1: 0.3770, Weighted-f1: 0.4960, Loss: 1.5850
+Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9815, Macro-f1: 0.9668, Weighted-f1: 0.9815, Loss: 0.1338
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5260, Macro-f1: 0.3827, Weighted-f1: 0.5021, Loss: 1.6060
+Saved models from epoch 7 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/music/newest.pt'.
+No improvement since 3 epochs (1.5440 loss). Early stop.
 OOD training completed for test topic music after 7 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1874f5e220> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1898e5ddf0> (dev).
-Starting training on ai data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f62af5ee4c0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f630e8150a0> (dev).
+Starting training on ['ai', 'literature', 'music', 'politics', 'science'] data with validation domain news.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Using criterion: <LabelLoss: loss=XEnt>.
 Optimizing using: AdamW with learning rate 2e-05.
-[Epoch 1/50] Train completed with Micro-f1: 0.3967, Macro-f1: 0.2312, Weighted-f1: 0.3310, Loss: 2.0813
-[Epoch 1/50] Evaluation completed with Micro-f1: 0.5342, Macro-f1: 0.3595, Weighted-f1: 0.4848, Loss: 1.6554
-Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/newest.pt'.
-Saved model with best loss 1.6554 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/best.pt'.
-[Epoch 2/50] Train completed with Micro-f1: 0.7261, Macro-f1: 0.5882, Weighted-f1: 0.6975, Loss: 1.0336
-[Epoch 2/50] Evaluation completed with Micro-f1: 0.5540, Macro-f1: 0.3867, Weighted-f1: 0.5106, Loss: 1.4470
-Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/newest.pt'.
-Saved model with best loss 1.4470 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/best.pt'.
-[Epoch 3/50] Train completed with Micro-f1: 0.8485, Macro-f1: 0.7465, Weighted-f1: 0.8336, Loss: 0.6091
-[Epoch 3/50] Evaluation completed with Micro-f1: 0.5679, Macro-f1: 0.4043, Weighted-f1: 0.5285, Loss: 1.3705
-Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/newest.pt'.
-Saved model with best loss 1.3705 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/best.pt'.
-[Epoch 4/50] Train completed with Micro-f1: 0.9167, Macro-f1: 0.8623, Weighted-f1: 0.9097, Loss: 0.3774
-[Epoch 4/50] Evaluation completed with Micro-f1: 0.5732, Macro-f1: 0.4158, Weighted-f1: 0.5387, Loss: 1.3813
-Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/newest.pt'.
-[Epoch 5/50] Train completed with Micro-f1: 0.9444, Macro-f1: 0.9037, Weighted-f1: 0.9397, Loss: 0.2602
-[Epoch 5/50] Evaluation completed with Micro-f1: 0.5826, Macro-f1: 0.4265, Weighted-f1: 0.5509, Loss: 1.3533
-Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/newest.pt'.
-Saved model with best loss 1.3533 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/best.pt'.
-[Epoch 6/50] Train completed with Micro-f1: 0.9796, Macro-f1: 0.9642, Weighted-f1: 0.9776, Loss: 0.1528
-[Epoch 6/50] Evaluation completed with Micro-f1: 0.5879, Macro-f1: 0.4317, Weighted-f1: 0.5574, Loss: 1.4656
-Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/newest.pt'.
-[Epoch 7/50] Train completed with Micro-f1: 0.9896, Macro-f1: 0.9804, Weighted-f1: 0.9892, Loss: 0.0995
-[Epoch 7/50] Evaluation completed with Micro-f1: 0.5928, Macro-f1: 0.4370, Weighted-f1: 0.5628, Loss: 1.4786
-Saved models from epoch 7 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/newest.pt'.
-[Epoch 8/50] Train completed with Micro-f1: 0.9924, Macro-f1: 0.9868, Weighted-f1: 0.9927, Loss: 0.0705
-[Epoch 8/50] Evaluation completed with Micro-f1: 0.5968, Macro-f1: 0.4425, Weighted-f1: 0.5681, Loss: 1.5367
-Saved models from epoch 8 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/news/newest.pt'.
-No improvement since 3 epochs (1.3533 loss). Early stop.
-OOD training completed for test topic news after 8 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f17bf53adc0> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1874f5e280> (dev).
-Starting training on ai data.
+[Epoch 1/50] Train completed with Micro-f1: 0.4337, Macro-f1: 0.2731, Weighted-f1: 0.3758, Loss: 1.9844
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5319, Macro-f1: 0.3648, Weighted-f1: 0.4878, Loss: 1.6179
+Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/newest.pt'.
+Saved model with best loss 1.6179 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7541, Macro-f1: 0.6295, Weighted-f1: 0.7266, Loss: 0.9751
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5525, Macro-f1: 0.3923, Weighted-f1: 0.5140, Loss: 1.4468
+Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/newest.pt'.
+Saved model with best loss 1.4468 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8609, Macro-f1: 0.7744, Weighted-f1: 0.8468, Loss: 0.5638
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5643, Macro-f1: 0.4074, Weighted-f1: 0.5294, Loss: 1.3906
+Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/newest.pt'.
+Saved model with best loss 1.3906 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9224, Macro-f1: 0.8658, Weighted-f1: 0.9171, Loss: 0.3426
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5733, Macro-f1: 0.4208, Weighted-f1: 0.5427, Loss: 1.3701
+Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/newest.pt'.
+Saved model with best loss 1.3701 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9576, Macro-f1: 0.9260, Weighted-f1: 0.9528, Loss: 0.2268
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5819, Macro-f1: 0.4299, Weighted-f1: 0.5528, Loss: 1.4139
+Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9809, Macro-f1: 0.9666, Weighted-f1: 0.9807, Loss: 0.1374
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5878, Macro-f1: 0.4370, Weighted-f1: 0.5607, Loss: 1.4511
+Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9909, Macro-f1: 0.9849, Weighted-f1: 0.9901, Loss: 0.0860
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5929, Macro-f1: 0.4428, Weighted-f1: 0.5665, Loss: 1.4631
+Saved models from epoch 7 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/news/newest.pt'.
+No improvement since 3 epochs (1.3701 loss). Early stop.
+OOD training completed for test topic news after 7 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f61d56ddbe0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f61d5d5efa0> (dev).
+Starting training on ['ai', 'literature', 'music', 'news', 'science'] data with validation domain politics.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Using criterion: <LabelLoss: loss=XEnt>.
 Optimizing using: AdamW with learning rate 2e-05.
-[Epoch 1/50] Train completed with Micro-f1: 0.3783, Macro-f1: 0.2330, Weighted-f1: 0.3163, Loss: 2.1113
-[Epoch 1/50] Evaluation completed with Micro-f1: 0.5033, Macro-f1: 0.3153, Weighted-f1: 0.4444, Loss: 1.7269
-Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/newest.pt'.
-Saved model with best loss 1.7269 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/best.pt'.
-[Epoch 2/50] Train completed with Micro-f1: 0.6626, Macro-f1: 0.5058, Weighted-f1: 0.6283, Loss: 1.2093
-[Epoch 2/50] Evaluation completed with Micro-f1: 0.5347, Macro-f1: 0.3525, Weighted-f1: 0.4855, Loss: 1.4468
-Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/newest.pt'.
-Saved model with best loss 1.4468 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/best.pt'.
-[Epoch 3/50] Train completed with Micro-f1: 0.8155, Macro-f1: 0.7036, Weighted-f1: 0.7981, Loss: 0.7567
-[Epoch 3/50] Evaluation completed with Micro-f1: 0.5525, Macro-f1: 0.3737, Weighted-f1: 0.5090, Loss: 1.3389
-Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/newest.pt'.
-Saved model with best loss 1.3389 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/best.pt'.
-[Epoch 4/50] Train completed with Micro-f1: 0.8821, Macro-f1: 0.8153, Weighted-f1: 0.8719, Loss: 0.5092
-[Epoch 4/50] Evaluation completed with Micro-f1: 0.5664, Macro-f1: 0.3906, Weighted-f1: 0.5289, Loss: 1.3038
-Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/newest.pt'.
-Saved model with best loss 1.3038 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/best.pt'.
-[Epoch 5/50] Train completed with Micro-f1: 0.9317, Macro-f1: 0.8888, Weighted-f1: 0.9275, Loss: 0.3299
-[Epoch 5/50] Evaluation completed with Micro-f1: 0.5762, Macro-f1: 0.4011, Weighted-f1: 0.5396, Loss: 1.3237
-Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/newest.pt'.
-[Epoch 6/50] Train completed with Micro-f1: 0.9587, Macro-f1: 0.9232, Weighted-f1: 0.9565, Loss: 0.2173
-[Epoch 6/50] Evaluation completed with Micro-f1: 0.5819, Macro-f1: 0.4085, Weighted-f1: 0.5475, Loss: 1.3402
-Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/newest.pt'.
-[Epoch 7/50] Train completed with Micro-f1: 0.9794, Macro-f1: 0.9626, Weighted-f1: 0.9765, Loss: 0.1443
-[Epoch 7/50] Evaluation completed with Micro-f1: 0.5880, Macro-f1: 0.4152, Weighted-f1: 0.5556, Loss: 1.3180
-Saved models from epoch 7 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/politics/newest.pt'.
-No improvement since 3 epochs (1.3038 loss). Early stop.
+[Epoch 1/50] Train completed with Micro-f1: 0.3986, Macro-f1: 0.2498, Weighted-f1: 0.3410, Loss: 2.1349
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5070, Macro-f1: 0.3231, Weighted-f1: 0.4512, Loss: 1.6967
+Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/newest.pt'.
+Saved model with best loss 1.6967 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6994, Macro-f1: 0.5651, Weighted-f1: 0.6673, Loss: 1.1285
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5339, Macro-f1: 0.3535, Weighted-f1: 0.4884, Loss: 1.4465
+Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/newest.pt'.
+Saved model with best loss 1.4465 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8319, Macro-f1: 0.7238, Weighted-f1: 0.8154, Loss: 0.6817
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5516, Macro-f1: 0.3776, Weighted-f1: 0.5113, Loss: 1.3630
+Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/newest.pt'.
+Saved model with best loss 1.3630 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9029, Macro-f1: 0.8315, Weighted-f1: 0.8933, Loss: 0.4183
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5637, Macro-f1: 0.3910, Weighted-f1: 0.5271, Loss: 1.3408
+Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/newest.pt'.
+Saved model with best loss 1.3408 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9457, Macro-f1: 0.9010, Weighted-f1: 0.9396, Loss: 0.2662
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5728, Macro-f1: 0.4027, Weighted-f1: 0.5395, Loss: 1.3408
+Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9734, Macro-f1: 0.9515, Weighted-f1: 0.9722, Loss: 0.1737
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5788, Macro-f1: 0.4110, Weighted-f1: 0.5471, Loss: 1.4311
+Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9854, Macro-f1: 0.9761, Weighted-f1: 0.9851, Loss: 0.1155
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5837, Macro-f1: 0.4162, Weighted-f1: 0.5527, Loss: 1.4228
+Saved models from epoch 7 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/politics/newest.pt'.
+No improvement since 3 epochs (1.3408 loss). Early stop.
 OOD training completed for test topic politics after 7 epochs.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1874dbdc70> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f1874e8f040> (dev).
-Starting training on ai data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f6297f4a8e0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f629c1e9cd0> (dev).
+Starting training on ['ai', 'literature', 'music', 'news', 'politics'] data with validation domain science.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Using criterion: <LabelLoss: loss=XEnt>.
 Optimizing using: AdamW with learning rate 2e-05.
-[Epoch 1/50] Train completed with Micro-f1: 0.3789, Macro-f1: 0.2099, Weighted-f1: 0.3121, Loss: 2.0771
-[Epoch 1/50] Evaluation completed with Micro-f1: 0.5358, Macro-f1: 0.3616, Weighted-f1: 0.4886, Loss: 1.6775
-Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/newest.pt'.
-Saved model with best loss 1.6775 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/best.pt'.
-[Epoch 2/50] Train completed with Micro-f1: 0.6983, Macro-f1: 0.5613, Weighted-f1: 0.6637, Loss: 1.0920
-[Epoch 2/50] Evaluation completed with Micro-f1: 0.5596, Macro-f1: 0.3850, Weighted-f1: 0.5192, Loss: 1.4254
-Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/newest.pt'.
-Saved model with best loss 1.4254 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/best.pt'.
-[Epoch 3/50] Train completed with Micro-f1: 0.8296, Macro-f1: 0.7271, Weighted-f1: 0.8094, Loss: 0.6753
-[Epoch 3/50] Evaluation completed with Micro-f1: 0.5733, Macro-f1: 0.4023, Weighted-f1: 0.5368, Loss: 1.3881
-Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/newest.pt'.
-Saved model with best loss 1.3881 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/best.pt'.
-[Epoch 4/50] Train completed with Micro-f1: 0.8895, Macro-f1: 0.8162, Weighted-f1: 0.8812, Loss: 0.4320
-[Epoch 4/50] Evaluation completed with Micro-f1: 0.5834, Macro-f1: 0.4144, Weighted-f1: 0.5492, Loss: 1.3691
-Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/newest.pt'.
-Saved model with best loss 1.3691 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/best.pt'.
-[Epoch 5/50] Train completed with Micro-f1: 0.9411, Macro-f1: 0.8902, Weighted-f1: 0.9357, Loss: 0.2854
-[Epoch 5/50] Evaluation completed with Micro-f1: 0.5902, Macro-f1: 0.4228, Weighted-f1: 0.5586, Loss: 1.3833
-Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/newest.pt'.
-[Epoch 6/50] Train completed with Micro-f1: 0.9661, Macro-f1: 0.9344, Weighted-f1: 0.9650, Loss: 0.1779
-[Epoch 6/50] Evaluation completed with Micro-f1: 0.5958, Macro-f1: 0.4300, Weighted-f1: 0.5656, Loss: 1.4218
-Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/newest.pt'.
-[Epoch 7/50] Train completed with Micro-f1: 0.9828, Macro-f1: 0.9706, Weighted-f1: 0.9808, Loss: 0.1163
-[Epoch 7/50] Evaluation completed with Micro-f1: 0.5998, Macro-f1: 0.4355, Weighted-f1: 0.5710, Loss: 1.5476
-Saved models from epoch 7 to 'data/predictions/almnps_4012/thesaurus_affinity/ood/science/newest.pt'.
-No improvement since 3 epochs (1.3691 loss). Early stop.
-OOD training completed for test topic science after 7 epochs.
+[Epoch 1/50] Train completed with Micro-f1: 0.4134, Macro-f1: 0.2511, Weighted-f1: 0.3475, Loss: 1.9752
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5376, Macro-f1: 0.3679, Weighted-f1: 0.4965, Loss: 1.6444
+Saved models from epoch 1 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/science/newest.pt'.
+Saved model with best loss 1.6444 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/science/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7140, Macro-f1: 0.5880, Weighted-f1: 0.6829, Loss: 1.0436
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5557, Macro-f1: 0.3902, Weighted-f1: 0.5212, Loss: 1.4518
+Saved models from epoch 2 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/science/newest.pt'.
+Saved model with best loss 1.4518 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/science/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8442, Macro-f1: 0.7576, Weighted-f1: 0.8330, Loss: 0.6461
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5708, Macro-f1: 0.4085, Weighted-f1: 0.5383, Loss: 1.4174
+Saved models from epoch 3 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/science/newest.pt'.
+Saved model with best loss 1.4174 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/science/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9037, Macro-f1: 0.8376, Weighted-f1: 0.8931, Loss: 0.4051
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5799, Macro-f1: 0.4194, Weighted-f1: 0.5485, Loss: 1.4573
+Saved models from epoch 4 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/science/newest.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9392, Macro-f1: 0.8922, Weighted-f1: 0.9327, Loss: 0.2557
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5880, Macro-f1: 0.4269, Weighted-f1: 0.5592, Loss: 1.4580
+Saved models from epoch 5 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/science/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9719, Macro-f1: 0.9439, Weighted-f1: 0.9704, Loss: 0.1620
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5942, Macro-f1: 0.4349, Weighted-f1: 0.5673, Loss: 1.5207
+Saved models from epoch 6 to 'data/predictions/almnps_4012/thesaurus_affinity/ood_validation/science/newest.pt'.
+No improvement since 3 epochs (1.4174 loss). Early stop.
+OOD training completed for test topic science after 6 epochs.
+TRAINING COMPLETED with:
+	Domains:		['ai', 'literature', 'music', 'news', 'politics', 'science']
+	OOD validaation:	True
+	Mapping type:		thesaurus_affinity

@@ -1,0 +1,53 @@
+{
+    "essay": [
+        "academicjournal",
+        "book",
+        "magazine",
+        "poem",
+        "theory"
+    ],
+    "songs": [
+        "album",
+        "band",
+        "musicgenre",
+        "literarygenre",
+        "musicalinstrument",
+        "song"
+    ],
+    "proteins": [
+        "algorithm",
+        "astronomicalobject",
+        "chemicalcompound",
+        "chemicalelement",
+        "enzyme",
+        "metrics",
+        "programlang",
+        "protein"
+    ],
+    "elections": [
+        "award",
+        "conference",
+        "election",
+        "event",
+        "location",
+        "organisation",
+        "person",
+        "politicalparty",
+        "task"
+    ],
+    "TELW": [
+        "country",
+        "discipline",
+        "field",
+        "misc",
+        "product",
+        "university"
+    ],
+    "journalist": [
+        "musicalartist",
+        "politician",
+        "researcher",
+        "scientist",
+        "writer"
+    ]
+}

@@ -1,10 +1,11 @@
 Loaded category mapping: thesaurus_affinity.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f65446d4c70> (test).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2cf2db2670> (test).
 Starting prediction on ['ai', 'literature', 'music', 'news', 'politics', 'science'] test data.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Loaded pre-trained classifier from 'data/predictions/almnps_5096/thesaurus_affinity/all/best.pt'.
 Using criterion: <LabelLoss: loss=XEnt>.
-Prediction completed with Micro-f1: 0.6157, Macro-f1: 0.4586, Weighted-f1: 0.6064, Loss: 1.3187 (mean over batches).
+Prediction completed with Micro-f1: 0.6021, Macro-f1: 0.4309, Weighted-f1: 0.5805, Loss: 1.3853 (mean over batches).
 Saved results from 'data/predictions/almnps_5096/thesaurus_affinity/all/predictions.csv'.
 All results saved. Exiting.

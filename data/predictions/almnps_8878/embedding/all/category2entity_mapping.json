@@ -1,0 +1,53 @@
+{
+    "journals": [
+        "academicjournal",
+        "book",
+        "magazine",
+        "theory"
+    ],
+    "songs": [
+        "album",
+        "band",
+        "musicgenre",
+        "literarygenre",
+        "musicalinstrument",
+        "poem",
+        "song"
+    ],
+    "proteins": [
+        "algorithm",
+        "chemicalcompound",
+        "chemicalelement",
+        "enzyme",
+        "metrics",
+        "programlang",
+        "protein"
+    ],
+    "IWEBE": [
+        "astronomicalobject",
+        "country",
+        "discipline",
+        "field",
+        "misc",
+        "product",
+        "task",
+        "university"
+    ],
+    "convention": [
+        "award",
+        "conference",
+        "election",
+        "event",
+        "location",
+        "organisation",
+        "person",
+        "politicalparty"
+    ],
+    "journalist": [
+        "musicalartist",
+        "politician",
+        "researcher",
+        "scientist",
+        "writer"
+    ]
+}

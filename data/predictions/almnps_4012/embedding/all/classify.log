@@ -1,35 +1,40 @@
 Saved arguments to data/predictions/almnps_4012/embedding/all/args.json.
 loading projection weights from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz
-KeyedVectors lifecycle event {'msg': 'loaded (3000000, 300) matrix of type float32 from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz', 'binary': True, 'encoding': 'utf8', 'datetime': '2023-05-07T01:30:05.425022', 'gensim': '4.3.0', 'python': '3.9.16 | packaged by conda-forge | (main, Feb  1 2023, 21:39:03) \n[GCC 11.3.0]', 'platform': 'Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.31', 'event': 'load_word2vec_format'}
-Saved category mapping to data/predictions/almnps_4012/embedding/all/mapping.json.
+KeyedVectors lifecycle event {'msg': 'loaded (3000000, 300) matrix of type float32 from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz', 'binary': True, 'encoding': 'utf8', 'datetime': '2023-05-13T19:29:19.124303', 'gensim': '4.3.0', 'python': '3.9.16 | packaged by conda-forge | (main, Feb  1 2023, 21:39:03) \n[GCC 11.3.0]', 'platform': 'Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.31', 'event': 'load_word2vec_format'}
+Saved category mapping to data/predictions/almnps_4012/embedding/all/entity2category_mapping.json.
 Loaded category mapping: embedding.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f195692d580> (train).
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f195692d550> (dev).
-Starting training on ai data.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f3965b4bc10> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f3965b4be20> (dev).
+Starting training on ['ai', 'literature', 'music', 'news', 'politics', 'science'] data.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Using criterion: <LabelLoss: loss=XEnt>.
 Optimizing using: AdamW with learning rate 2e-05.
-[Epoch 1/50] Train completed with Micro-f1: 0.3911, Macro-f1: 0.2417, Weighted-f1: 0.3294, Loss: 2.0203
-[Epoch 1/50] Evaluation completed with Micro-f1: 0.5164, Macro-f1: 0.3500, Weighted-f1: 0.4752, Loss: 1.6870
+[Epoch 1/50] Train completed with Micro-f1: 0.4090, Macro-f1: 0.2560, Weighted-f1: 0.3499, Loss: 1.9879
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5090, Macro-f1: 0.3518, Weighted-f1: 0.4719, Loss: 1.6654
 Saved models from epoch 1 to 'data/predictions/almnps_4012/embedding/all/newest.pt'.
-Saved model with best loss 1.6870 to 'data/predictions/almnps_4012/embedding/all/best.pt'.
-[Epoch 2/50] Train completed with Micro-f1: 0.6975, Macro-f1: 0.5515, Weighted-f1: 0.6654, Loss: 1.1048
-[Epoch 2/50] Evaluation completed with Micro-f1: 0.5408, Macro-f1: 0.3784, Weighted-f1: 0.5045, Loss: 1.4642
+Saved model with best loss 1.6654 to 'data/predictions/almnps_4012/embedding/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7331, Macro-f1: 0.5944, Weighted-f1: 0.7052, Loss: 1.0074
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5393, Macro-f1: 0.3850, Weighted-f1: 0.5065, Loss: 1.4359
 Saved models from epoch 2 to 'data/predictions/almnps_4012/embedding/all/newest.pt'.
-Saved model with best loss 1.4642 to 'data/predictions/almnps_4012/embedding/all/best.pt'.
-[Epoch 3/50] Train completed with Micro-f1: 0.8333, Macro-f1: 0.7300, Weighted-f1: 0.8177, Loss: 0.6946
-[Epoch 3/50] Evaluation completed with Micro-f1: 0.5529, Macro-f1: 0.3896, Weighted-f1: 0.5185, Loss: 1.4224
+Saved model with best loss 1.4359 to 'data/predictions/almnps_4012/embedding/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8479, Macro-f1: 0.7481, Weighted-f1: 0.8345, Loss: 0.5816
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5532, Macro-f1: 0.3975, Weighted-f1: 0.5228, Loss: 1.4249
 Saved models from epoch 3 to 'data/predictions/almnps_4012/embedding/all/newest.pt'.
-Saved model with best loss 1.4224 to 'data/predictions/almnps_4012/embedding/all/best.pt'.
-[Epoch 4/50] Train completed with Micro-f1: 0.8924, Macro-f1: 0.8196, Weighted-f1: 0.8825, Loss: 0.4511
-[Epoch 4/50] Evaluation completed with Micro-f1: 0.5593, Macro-f1: 0.3981, Weighted-f1: 0.5272, Loss: 1.4612
+Saved model with best loss 1.4249 to 'data/predictions/almnps_4012/embedding/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9231, Macro-f1: 0.8636, Weighted-f1: 0.9150, Loss: 0.3469
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5633, Macro-f1: 0.4078, Weighted-f1: 0.5346, Loss: 1.4616
 Saved models from epoch 4 to 'data/predictions/almnps_4012/embedding/all/newest.pt'.
-[Epoch 5/50] Train completed with Micro-f1: 0.9336, Macro-f1: 0.8819, Weighted-f1: 0.9274, Loss: 0.3126
-[Epoch 5/50] Evaluation completed with Micro-f1: 0.5662, Macro-f1: 0.4065, Weighted-f1: 0.5353, Loss: 1.4535
+[Epoch 5/50] Train completed with Micro-f1: 0.9565, Macro-f1: 0.9235, Weighted-f1: 0.9510, Loss: 0.2098
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5716, Macro-f1: 0.4179, Weighted-f1: 0.5448, Loss: 1.4873
 Saved models from epoch 5 to 'data/predictions/almnps_4012/embedding/all/newest.pt'.
-[Epoch 6/50] Train completed with Micro-f1: 0.9709, Macro-f1: 0.9452, Weighted-f1: 0.9666, Loss: 0.1888
-[Epoch 6/50] Evaluation completed with Micro-f1: 0.5701, Macro-f1: 0.4120, Weighted-f1: 0.5411, Loss: 1.4846
+[Epoch 6/50] Train completed with Micro-f1: 0.9806, Macro-f1: 0.9659, Weighted-f1: 0.9784, Loss: 0.1271
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5772, Macro-f1: 0.4246, Weighted-f1: 0.5522, Loss: 1.4865
 Saved models from epoch 6 to 'data/predictions/almnps_4012/embedding/all/newest.pt'.
-No improvement since 3 epochs (1.4224 loss). Early stop.
+No improvement since 3 epochs (1.4249 loss). Early stop.
 Training completed after 6 epochs.
+TRAINING COMPLETED with:
+	Domains:		['ai', 'literature', 'music', 'news', 'politics', 'science']
+	OOD validaation:	False
+	Mapping type:		embedding

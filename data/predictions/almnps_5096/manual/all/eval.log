@@ -1,10 +1,11 @@
 Loaded category mapping: manual.
-Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f90fffc8c70> (test).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7feb2c6b6670> (test).
 Starting prediction on ['ai', 'literature', 'music', 'news', 'politics', 'science'] test data.
+Read data from folder data/crossre_data/
 Loaded <TransformerEmbeddings: dim=768>.
 Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
 Loaded pre-trained classifier from 'data/predictions/almnps_5096/manual/all/best.pt'.
 Using criterion: <LabelLoss: loss=XEnt>.
-Prediction completed with Micro-f1: 0.6185, Macro-f1: 0.4475, Weighted-f1: 0.6014, Loss: 1.3507 (mean over batches).
+Prediction completed with Micro-f1: 0.6268, Macro-f1: 0.4558, Weighted-f1: 0.6111, Loss: 1.3022 (mean over batches).
 Saved results from 'data/predictions/almnps_5096/manual/all/predictions.csv'.
 All results saved. Exiting.

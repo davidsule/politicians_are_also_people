@@ -2,32 +2,17 @@
 Second Year Project repo
 
 ## File Structure
-- Baseline
-    - Contain a notebook explaining steps used to train a baseline classifier and produce baseline predictions on test data.
+- TBA
 - CrossRE
-    - Contains the CrossRE dataset and project scripts for a baseline classifier. Note, that we have modified some files to fit our objective and needs.
+    - Contains the CrossRE dataset and project scripts for reference.
 - project_rob
     - Contains project description and requirements.
 
 ## To-dos
 - Add requirements.txt
 - Add licence
-
-## Clustering of entity types
-### Sources
-1. Manual Grouping
-2. Word2vec
-    a. Embedding-based
-    b. Distance (similarity)-based
-3. Wordnet
-    a. Hypernym-based (select 2nd, 3rd ... level)
-    b. Distance (similarity)-based
-### Clustering methods
-- K-moids
-- DBSCAN
-- Spectral
-- Affinity Propagation
-- Some hierarchical method
+- Discuss eval of OOD clustering: diff nr of unique entitites + no unique to news
+- Rewrite README for reader of the project
 
 ## Project Work Schedule
 - Create Groups / Hierarchy (Manual task)
