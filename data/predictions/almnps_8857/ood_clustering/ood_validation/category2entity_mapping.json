@@ -1,0 +1,308 @@
+{
+    "ai": {
+        "songs": [
+            "album",
+            "band",
+            "musicgenre",
+            "literarygenre",
+            "musicalartist",
+            "song",
+            "musicalinstrument"
+        ],
+        "MDSY": [
+            "award",
+            "politicalparty",
+            "country",
+            "discipline",
+            "election",
+            "event",
+            "location",
+            "organisation",
+            "person",
+            "university",
+            "conference",
+            "field",
+            "metrics",
+            "product",
+            "task"
+        ],
+        "author": [
+            "book",
+            "academicjournal",
+            "magazine",
+            "poem",
+            "politician",
+            "scientist",
+            "theory",
+            "writer",
+            "researcher"
+        ],
+        "proteins": [
+            "chemicalcompound",
+            "chemicalelement",
+            "enzyme",
+            "astronomicalobject",
+            "misc",
+            "protein",
+            "algorithm",
+            "programlang"
+        ]
+    },
+    "literature": {
+        "songs": [
+            "album",
+            "band",
+            "musicgenre",
+            "literarygenre",
+            "musicalartist",
+            "song",
+            "musicalinstrument",
+            "book",
+            "poem"
+        ],
+        "proteins": [
+            "algorithm",
+            "chemicalcompound",
+            "chemicalelement",
+            "enzyme",
+            "programlang",
+            "metrics",
+            "protein",
+            "theory"
+        ],
+        "CALED": [
+            "award",
+            "politicalparty",
+            "conference",
+            "election",
+            "event",
+            "location",
+            "organisation",
+            "person",
+            "product",
+            "task",
+            "magazine"
+        ],
+        "IWEBE": [
+            "country",
+            "discipline",
+            "field",
+            "astronomicalobject",
+            "misc",
+            "university"
+        ],
+        "scholar": [
+            "academicjournal",
+            "politician",
+            "researcher",
+            "scientist",
+            "writer"
+        ]
+    },
+    "music": {
+        "algorithms": [
+            "algorithm",
+            "discipline",
+            "programlang",
+            "metrics",
+            "product"
+        ],
+        "mission": [
+            "award",
+            "politicalparty",
+            "conference",
+            "event",
+            "location",
+            "organisation",
+            "task"
+        ],
+        "essay": [
+            "book",
+            "academicjournal",
+            "magazine",
+            "poem",
+            "theory",
+            "album",
+            "song"
+        ],
+        "enzymes": [
+            "chemicalcompound",
+            "chemicalelement",
+            "enzyme",
+            "protein"
+        ],
+        "IWEBE": [
+            "country",
+            "field",
+            "astronomicalobject",
+            "musicgenre",
+            "literarygenre",
+            "misc",
+            "person",
+            "university",
+            "band"
+        ],
+        "journalist": [
+            "election",
+            "politician",
+            "researcher",
+            "scientist",
+            "writer",
+            "musicalartist",
+            "musicalinstrument"
+        ]
+    },
+    "news": {
+        "songs": [
+            "album",
+            "band",
+            "musicgenre",
+            "literarygenre",
+            "song",
+            "musicalinstrument"
+        ],
+        "proteins": [
+            "algorithm",
+            "chemicalcompound",
+            "chemicalelement",
+            "enzyme",
+            "astronomicalobject",
+            "programlang",
+            "metrics",
+            "protein"
+        ],
+        "candidate": [
+            "award",
+            "politicalparty",
+            "conference",
+            "election",
+            "event",
+            "location",
+            "organisation",
+            "person",
+            "politician",
+            "task"
+        ],
+        "essay": [
+            "book",
+            "academicjournal",
+            "magazine",
+            "poem",
+            "theory"
+        ],
+        "TELW": [
+            "country",
+            "discipline",
+            "field",
+            "misc",
+            "product",
+            "university"
+        ],
+        "journalist": [
+            "musicalartist",
+            "researcher",
+            "scientist",
+            "writer"
+        ]
+    },
+    "politics": {
+        "songwriter": [
+            "album",
+            "band",
+            "musicgenre",
+            "literarygenre",
+            "musicalartist",
+            "scientist",
+            "song",
+            "musicalinstrument",
+            "writer",
+            "politician"
+        ],
+        "proteins": [
+            "algorithm",
+            "chemicalcompound",
+            "chemicalelement",
+            "enzyme",
+            "astronomicalobject",
+            "programlang",
+            "metrics",
+            "product",
+            "protein"
+        ],
+        "UDBKL": [
+            "award",
+            "conference",
+            "country",
+            "discipline",
+            "event",
+            "field",
+            "location",
+            "misc",
+            "organisation",
+            "person",
+            "task",
+            "university",
+            "politicalparty",
+            "election"
+        ],
+        "essay": [
+            "book",
+            "academicjournal",
+            "magazine",
+            "poem",
+            "researcher",
+            "theory"
+        ]
+    },
+    "science": {
+        "songs": [
+            "album",
+            "band",
+            "book",
+            "musicgenre",
+            "literarygenre",
+            "poem",
+            "song",
+            "musicalinstrument",
+            "academicjournal"
+        ],
+        "proteins": [
+            "algorithm",
+            "programlang",
+            "metrics",
+            "product",
+            "enzyme",
+            "protein"
+        ],
+        "awards": [
+            "award",
+            "conference",
+            "event",
+            "location",
+            "magazine",
+            "organisation",
+            "task"
+        ],
+        "journalist": [
+            "politicalparty",
+            "election",
+            "musicalartist",
+            "person",
+            "politician",
+            "researcher",
+            "writer",
+            "scientist"
+        ],
+        "IWEBE": [
+            "country",
+            "field",
+            "misc",
+            "university",
+            "chemicalcompound",
+            "chemicalelement",
+            "discipline",
+            "astronomicalobject",
+            "theory"
+        ]
+    }
+}

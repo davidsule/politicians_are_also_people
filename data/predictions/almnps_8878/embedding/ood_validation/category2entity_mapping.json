@@ -1,8 +1,9 @@
 {
-    "journals": [
+    "essay": [
         "academicjournal",
         "book",
         "magazine",
+        "poem",
         "theory"
     ],
     "songs": [
@@ -11,7 +12,6 @@
         "musicgenre",
         "literarygenre",
         "musicalinstrument",
-        "poem",
         "song"
     ],
     "proteins": [
@@ -30,10 +30,9 @@
         "field",
         "misc",
         "product",
-        "task",
         "university"
     ],
-    "convention": [
+    "elections": [
         "award",
         "conference",
         "election",
@@ -41,7 +40,8 @@
         "location",
         "organisation",
         "person",
-        "politicalparty"
+        "politicalparty",
+        "task"
     ],
     "journalist": [
         "musicalartist",

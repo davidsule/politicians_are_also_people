@@ -1,0 +1,56 @@
+Loaded category mapping: no_mapping.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x0000027CE25E3FD0> (test).
+Starting prediction on ['ai'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\no_mapping\ood_validation\ai\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4004, Macro-f1: 0.2564, Weighted-f1: 0.3565, Loss: 2.0680 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\no_mapping\ood_validation\ai\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x0000027CE1402AF0> (test).
+Starting prediction on ['literature'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\no_mapping\ood_validation\literature\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4347, Macro-f1: 0.2939, Weighted-f1: 0.4130, Loss: 1.8332 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\no_mapping\ood_validation\literature\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x0000027C971B2A60> (test).
+Starting prediction on ['music'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\no_mapping\ood_validation\music\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6218, Macro-f1: 0.4565, Weighted-f1: 0.6285, Loss: 1.3006 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\no_mapping\ood_validation\music\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x0000027C96D97F10> (test).
+Starting prediction on ['news'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\no_mapping\ood_validation\news\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5072, Macro-f1: 0.2537, Weighted-f1: 0.4726, Loss: 1.7485 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\no_mapping\ood_validation\news\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x0000027CE4FC0760> (test).
+Starting prediction on ['politics'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\no_mapping\ood_validation\politics\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5673, Macro-f1: 0.3031, Weighted-f1: 0.5373, Loss: 1.4636 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\no_mapping\ood_validation\politics\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x0000027CE4E18520> (test).
+Starting prediction on ['science'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\no_mapping\ood_validation\science\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.3878, Macro-f1: 0.2634, Weighted-f1: 0.3679, Loss: 2.1963 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\no_mapping\ood_validation\science\predictions.csv'.
+All results saved. Exiting.

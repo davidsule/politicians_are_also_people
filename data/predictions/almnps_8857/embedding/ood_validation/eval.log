@@ -1,0 +1,56 @@
+Loaded category mapping: embedding.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001D02BC687F0> (test).
+Starting prediction on ['ai'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\embedding\ood_validation\ai\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4165, Macro-f1: 0.2955, Weighted-f1: 0.3893, Loss: 2.0419 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\embedding\ood_validation\ai\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001D02BB3AA00> (test).
+Starting prediction on ['literature'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\embedding\ood_validation\literature\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5078, Macro-f1: 0.3592, Weighted-f1: 0.4808, Loss: 1.5842 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\embedding\ood_validation\literature\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001D004E9F1F0> (test).
+Starting prediction on ['music'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\embedding\ood_validation\music\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6524, Macro-f1: 0.4481, Weighted-f1: 0.6376, Loss: 1.3105 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\embedding\ood_validation\music\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001D004E53970> (test).
+Starting prediction on ['news'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\embedding\ood_validation\news\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.3237, Macro-f1: 0.1905, Weighted-f1: 0.3003, Loss: 2.0165 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\embedding\ood_validation\news\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001D02E3C46A0> (test).
+Starting prediction on ['politics'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\embedding\ood_validation\politics\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5803, Macro-f1: 0.3483, Weighted-f1: 0.5560, Loss: 1.5147 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\embedding\ood_validation\politics\predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001D02E3A8280> (test).
+Starting prediction on ['science'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions\almnps_8857\embedding\ood_validation\science\best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4361, Macro-f1: 0.3027, Weighted-f1: 0.4177, Loss: 2.0293 (mean over batches).
+Saved results from 'data/predictions\almnps_8857\embedding\ood_validation\science\predictions.csv'.
+All results saved. Exiting.

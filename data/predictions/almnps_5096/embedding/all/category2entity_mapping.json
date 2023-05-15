@@ -20,7 +20,6 @@
         "chemicalcompound",
         "chemicalelement",
         "enzyme",
-        "metrics",
         "programlang",
         "protein"
     ],
@@ -39,6 +38,7 @@
         "country",
         "discipline",
         "field",
+        "metrics",
         "misc",
         "product",
         "university"

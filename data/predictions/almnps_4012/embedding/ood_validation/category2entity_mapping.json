@@ -16,14 +16,23 @@
     ],
     "proteins": [
         "algorithm",
-        "astronomicalobject",
         "chemicalcompound",
         "chemicalelement",
         "enzyme",
+        "metrics",
         "programlang",
         "protein"
     ],
-    "convention": [
+    "IWEBE": [
+        "astronomicalobject",
+        "country",
+        "discipline",
+        "field",
+        "misc",
+        "product",
+        "university"
+    ],
+    "elections": [
         "award",
         "conference",
         "election",
@@ -31,17 +40,8 @@
         "location",
         "organisation",
         "person",
-        "politicalparty"
-    ],
-    "TELW": [
-        "country",
-        "discipline",
-        "field",
-        "metrics",
-        "misc",
-        "product",
-        "task",
-        "university"
+        "politicalparty",
+        "task"
     ],
     "journalist": [
         "musicalartist",

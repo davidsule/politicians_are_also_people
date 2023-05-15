@@ -1,0 +1,224 @@
+Saved arguments to data/predictions\almnps_8857\embedding\ood_validation\args.json.
+Creating C:\Users\petko/gensim-data
+word2vec-google-news-300 downloaded
+loading projection weights from C:\Users\petko/gensim-data\word2vec-google-news-300\word2vec-google-news-300.gz
+KeyedVectors lifecycle event {'msg': 'loaded (3000000, 300) matrix of type float32 from C:\\Users\\petko/gensim-data\\word2vec-google-news-300\\word2vec-google-news-300.gz', 'binary': True, 'encoding': 'utf8', 'datetime': '2023-05-15T08:45:18.804385', 'gensim': '4.3.0', 'python': '3.9.16 (main, Mar  8 2023, 10:39:24) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22000-SP0', 'event': 'load_word2vec_format'}
+Saved category mapping to data/predictions\almnps_8857\embedding\ood_validation\entity2category_mapping.json.
+Loaded category mapping: embedding.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183DACBAF0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183DACBEB0> (dev).
+Starting training on ['literature', 'music', 'news', 'politics', 'science'] data with validation domain ai.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3950, Macro-f1: 0.2060, Weighted-f1: 0.3224, Loss: 2.0670
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4930, Macro-f1: 0.3066, Weighted-f1: 0.4332, Loss: 1.7528
+Saved models from epoch 1 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\newest.pt'.
+Saved model with best loss 1.7528 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7065, Macro-f1: 0.5422, Weighted-f1: 0.6690, Loss: 1.1012
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5197, Macro-f1: 0.3383, Weighted-f1: 0.4650, Loss: 1.5531
+Saved models from epoch 2 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\newest.pt'.
+Saved model with best loss 1.5531 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8197, Macro-f1: 0.7055, Weighted-f1: 0.8009, Loss: 0.6941
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5353, Macro-f1: 0.3609, Weighted-f1: 0.4850, Loss: 1.5146
+Saved models from epoch 3 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\newest.pt'.
+Saved model with best loss 1.5146 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8981, Macro-f1: 0.8242, Weighted-f1: 0.8876, Loss: 0.4399
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5483, Macro-f1: 0.3752, Weighted-f1: 0.5028, Loss: 1.4159
+Saved models from epoch 4 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\newest.pt'.
+Saved model with best loss 1.4159 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9493, Macro-f1: 0.9071, Weighted-f1: 0.9449, Loss: 0.2808
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5575, Macro-f1: 0.3881, Weighted-f1: 0.5153, Loss: 1.4714
+Saved models from epoch 5 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9734, Macro-f1: 0.9469, Weighted-f1: 0.9710, Loss: 0.1773
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5647, Macro-f1: 0.3982, Weighted-f1: 0.5257, Loss: 1.4702
+Saved models from epoch 6 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9877, Macro-f1: 0.9756, Weighted-f1: 0.9873, Loss: 0.1134
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5692, Macro-f1: 0.4053, Weighted-f1: 0.5314, Loss: 1.6220
+Saved models from epoch 7 to 'data/predictions\almnps_8857\embedding\ood_validation\ai\newest.pt'.
+No improvement since 3 epochs (1.4159 loss). Early stop.
+OOD training completed for test topic ai after 7 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183D52EB20> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183DACBE80> (dev).
+Starting training on ['ai', 'music', 'news', 'politics', 'science'] data with validation domain literature.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3402, Macro-f1: 0.1828, Weighted-f1: 0.2706, Loss: 2.1484
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4703, Macro-f1: 0.3158, Weighted-f1: 0.4335, Loss: 1.8318
+Saved models from epoch 1 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\newest.pt'.
+Saved model with best loss 1.8318 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6649, Macro-f1: 0.5409, Weighted-f1: 0.6338, Loss: 1.2109
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.4902, Macro-f1: 0.3361, Weighted-f1: 0.4560, Loss: 1.5712
+Saved models from epoch 2 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\newest.pt'.
+Saved model with best loss 1.5712 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8106, Macro-f1: 0.6976, Weighted-f1: 0.7985, Loss: 0.7466
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5018, Macro-f1: 0.3525, Weighted-f1: 0.4736, Loss: 1.5430
+Saved models from epoch 3 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\newest.pt'.
+Saved model with best loss 1.5430 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8956, Macro-f1: 0.8233, Weighted-f1: 0.8898, Loss: 0.4720
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5115, Macro-f1: 0.3633, Weighted-f1: 0.4843, Loss: 1.5532
+Saved models from epoch 4 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\newest.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9433, Macro-f1: 0.8985, Weighted-f1: 0.9406, Loss: 0.3042
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5202, Macro-f1: 0.3746, Weighted-f1: 0.4957, Loss: 1.5400
+Saved models from epoch 5 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\newest.pt'.
+Saved model with best loss 1.5400 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\best.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9711, Macro-f1: 0.9422, Weighted-f1: 0.9688, Loss: 0.1960
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5268, Macro-f1: 0.3824, Weighted-f1: 0.5040, Loss: 1.5576
+Saved models from epoch 6 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9862, Macro-f1: 0.9803, Weighted-f1: 0.9860, Loss: 0.1332
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5310, Macro-f1: 0.3878, Weighted-f1: 0.5090, Loss: 1.6342
+Saved models from epoch 7 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\newest.pt'.
+[Epoch 8/50] Train completed with Micro-f1: 0.9947, Macro-f1: 0.9853, Weighted-f1: 0.9941, Loss: 0.0897
+[Epoch 8/50] Evaluation completed with Micro-f1: 0.5349, Macro-f1: 0.3919, Weighted-f1: 0.5138, Loss: 1.6868
+Saved models from epoch 8 to 'data/predictions\almnps_8857\embedding\ood_validation\literature\newest.pt'.
+No improvement since 3 epochs (1.5400 loss). Early stop.
+OOD training completed for test topic literature after 8 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183C31E9A0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183BE06040> (dev).
+Starting training on ['ai', 'literature', 'news', 'politics', 'science'] data with validation domain music.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3250, Macro-f1: 0.1804, Weighted-f1: 0.2569, Loss: 2.1951
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4492, Macro-f1: 0.3119, Weighted-f1: 0.4155, Loss: 1.9154
+Saved models from epoch 1 to 'data/predictions\almnps_8857\embedding\ood_validation\music\newest.pt'.
+Saved model with best loss 1.9154 to 'data/predictions\almnps_8857\embedding\ood_validation\music\best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6664, Macro-f1: 0.5326, Weighted-f1: 0.6370, Loss: 1.2638
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.4717, Macro-f1: 0.3334, Weighted-f1: 0.4402, Loss: 1.6930
+Saved models from epoch 2 to 'data/predictions\almnps_8857\embedding\ood_validation\music\newest.pt'.
+Saved model with best loss 1.6930 to 'data/predictions\almnps_8857\embedding\ood_validation\music\best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.7928, Macro-f1: 0.6940, Weighted-f1: 0.7817, Loss: 0.8120
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.4898, Macro-f1: 0.3472, Weighted-f1: 0.4589, Loss: 1.5754
+Saved models from epoch 3 to 'data/predictions\almnps_8857\embedding\ood_validation\music\newest.pt'.
+Saved model with best loss 1.5754 to 'data/predictions\almnps_8857\embedding\ood_validation\music\best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8718, Macro-f1: 0.7970, Weighted-f1: 0.8611, Loss: 0.5290
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5021, Macro-f1: 0.3593, Weighted-f1: 0.4730, Loss: 1.5486
+Saved models from epoch 4 to 'data/predictions\almnps_8857\embedding\ood_validation\music\newest.pt'.
+Saved model with best loss 1.5486 to 'data/predictions\almnps_8857\embedding\ood_validation\music\best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9345, Macro-f1: 0.8885, Weighted-f1: 0.9276, Loss: 0.3333
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5108, Macro-f1: 0.3683, Weighted-f1: 0.4829, Loss: 1.5661
+Saved models from epoch 5 to 'data/predictions\almnps_8857\embedding\ood_validation\music\newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9673, Macro-f1: 0.9417, Weighted-f1: 0.9658, Loss: 0.2235
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5184, Macro-f1: 0.3743, Weighted-f1: 0.4909, Loss: 1.6112
+Saved models from epoch 6 to 'data/predictions\almnps_8857\embedding\ood_validation\music\newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9879, Macro-f1: 0.9786, Weighted-f1: 0.9863, Loss: 0.1440
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5240, Macro-f1: 0.3811, Weighted-f1: 0.4975, Loss: 1.6281
+Saved models from epoch 7 to 'data/predictions\almnps_8857\embedding\ood_validation\music\newest.pt'.
+No improvement since 3 epochs (1.5486 loss). Early stop.
+OOD training completed for test topic music after 7 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183BC7BD90> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183C336B50> (dev).
+Starting training on ['ai', 'literature', 'music', 'politics', 'science'] data with validation domain news.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3661, Macro-f1: 0.2091, Weighted-f1: 0.2972, Loss: 2.1251
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5064, Macro-f1: 0.3377, Weighted-f1: 0.4627, Loss: 1.6861
+Saved models from epoch 1 to 'data/predictions\almnps_8857\embedding\ood_validation\news\newest.pt'.
+Saved model with best loss 1.6861 to 'data/predictions\almnps_8857\embedding\ood_validation\news\best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.7113, Macro-f1: 0.5612, Weighted-f1: 0.6791, Loss: 1.0851
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5335, Macro-f1: 0.3658, Weighted-f1: 0.4920, Loss: 1.4681
+Saved models from epoch 2 to 'data/predictions\almnps_8857\embedding\ood_validation\news\newest.pt'.
+Saved model with best loss 1.4681 to 'data/predictions\almnps_8857\embedding\ood_validation\news\best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8430, Macro-f1: 0.7466, Weighted-f1: 0.8275, Loss: 0.6266
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5507, Macro-f1: 0.3889, Weighted-f1: 0.5150, Loss: 1.3850
+Saved models from epoch 3 to 'data/predictions\almnps_8857\embedding\ood_validation\news\newest.pt'.
+Saved model with best loss 1.3850 to 'data/predictions\almnps_8857\embedding\ood_validation\news\best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9171, Macro-f1: 0.8543, Weighted-f1: 0.9081, Loss: 0.3717
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5619, Macro-f1: 0.4032, Weighted-f1: 0.5283, Loss: 1.3477
+Saved models from epoch 4 to 'data/predictions\almnps_8857\embedding\ood_validation\news\newest.pt'.
+Saved model with best loss 1.3477 to 'data/predictions\almnps_8857\embedding\ood_validation\news\best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9536, Macro-f1: 0.9158, Weighted-f1: 0.9500, Loss: 0.2352
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5696, Macro-f1: 0.4133, Weighted-f1: 0.5387, Loss: 1.4187
+Saved models from epoch 5 to 'data/predictions\almnps_8857\embedding\ood_validation\news\newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9834, Macro-f1: 0.9706, Weighted-f1: 0.9829, Loss: 0.1399
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5761, Macro-f1: 0.4221, Weighted-f1: 0.5468, Loss: 1.5205
+Saved models from epoch 6 to 'data/predictions\almnps_8857\embedding\ood_validation\news\newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9926, Macro-f1: 0.9846, Weighted-f1: 0.9916, Loss: 0.0848
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5815, Macro-f1: 0.4297, Weighted-f1: 0.5538, Loss: 1.5290
+Saved models from epoch 7 to 'data/predictions\almnps_8857\embedding\ood_validation\news\newest.pt'.
+No improvement since 3 epochs (1.3477 loss). Early stop.
+OOD training completed for test topic news after 7 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183DBF1070> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x00000117539B4CA0> (dev).
+Starting training on ['ai', 'literature', 'music', 'news', 'science'] data with validation domain politics.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3564, Macro-f1: 0.2017, Weighted-f1: 0.2997, Loss: 2.2095
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4758, Macro-f1: 0.3006, Weighted-f1: 0.4287, Loss: 1.8425
+Saved models from epoch 1 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\newest.pt'.
+Saved model with best loss 1.8425 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6629, Macro-f1: 0.4996, Weighted-f1: 0.6227, Loss: 1.2400
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5063, Macro-f1: 0.3324, Weighted-f1: 0.4629, Loss: 1.5490
+Saved models from epoch 2 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\newest.pt'.
+Saved model with best loss 1.5490 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.7989, Macro-f1: 0.6823, Weighted-f1: 0.7780, Loss: 0.7883
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5285, Macro-f1: 0.3579, Weighted-f1: 0.4893, Loss: 1.4473
+Saved models from epoch 3 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\newest.pt'.
+Saved model with best loss 1.4473 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8797, Macro-f1: 0.7934, Weighted-f1: 0.8682, Loss: 0.5164
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5398, Macro-f1: 0.3712, Weighted-f1: 0.5027, Loss: 1.4399
+Saved models from epoch 4 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\newest.pt'.
+Saved model with best loss 1.4399 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9297, Macro-f1: 0.8800, Weighted-f1: 0.9230, Loss: 0.3329
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5491, Macro-f1: 0.3828, Weighted-f1: 0.5143, Loss: 1.4168
+Saved models from epoch 5 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\newest.pt'.
+Saved model with best loss 1.4168 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\best.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9589, Macro-f1: 0.9216, Weighted-f1: 0.9558, Loss: 0.2226
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5560, Macro-f1: 0.3912, Weighted-f1: 0.5223, Loss: 1.4752
+Saved models from epoch 6 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9805, Macro-f1: 0.9600, Weighted-f1: 0.9789, Loss: 0.1443
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5619, Macro-f1: 0.3980, Weighted-f1: 0.5299, Loss: 1.4629
+Saved models from epoch 7 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\newest.pt'.
+[Epoch 8/50] Train completed with Micro-f1: 0.9905, Macro-f1: 0.9829, Weighted-f1: 0.9899, Loss: 0.0968
+[Epoch 8/50] Evaluation completed with Micro-f1: 0.5669, Macro-f1: 0.4041, Weighted-f1: 0.5360, Loss: 1.4996
+Saved models from epoch 8 to 'data/predictions\almnps_8857\embedding\ood_validation\politics\newest.pt'.
+No improvement since 3 epochs (1.4168 loss). Early stop.
+OOD training completed for test topic politics after 8 epochs.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183C219FA0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x000001183DAC6760> (dev).
+Starting training on ['ai', 'literature', 'music', 'news', 'politics'] data with validation domain science.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3748, Macro-f1: 0.2143, Weighted-f1: 0.3047, Loss: 2.1202
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.5139, Macro-f1: 0.3305, Weighted-f1: 0.4642, Loss: 1.6714
+Saved models from epoch 1 to 'data/predictions\almnps_8857\embedding\ood_validation\science\newest.pt'.
+Saved model with best loss 1.6714 to 'data/predictions\almnps_8857\embedding\ood_validation\science\best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6780, Macro-f1: 0.5063, Weighted-f1: 0.6418, Loss: 1.1827
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5348, Macro-f1: 0.3563, Weighted-f1: 0.4906, Loss: 1.4598
+Saved models from epoch 2 to 'data/predictions\almnps_8857\embedding\ood_validation\science\newest.pt'.
+Saved model with best loss 1.4598 to 'data/predictions\almnps_8857\embedding\ood_validation\science\best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8150, Macro-f1: 0.6944, Weighted-f1: 0.7939, Loss: 0.7436
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5503, Macro-f1: 0.3755, Weighted-f1: 0.5100, Loss: 1.3857
+Saved models from epoch 3 to 'data/predictions\almnps_8857\embedding\ood_validation\science\newest.pt'.
+Saved model with best loss 1.3857 to 'data/predictions\almnps_8857\embedding\ood_validation\science\best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8890, Macro-f1: 0.7907, Weighted-f1: 0.8775, Loss: 0.4780
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5574, Macro-f1: 0.3859, Weighted-f1: 0.5199, Loss: 1.4039
+Saved models from epoch 4 to 'data/predictions\almnps_8857\embedding\ood_validation\science\newest.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9364, Macro-f1: 0.8867, Weighted-f1: 0.9321, Loss: 0.3063
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5653, Macro-f1: 0.3973, Weighted-f1: 0.5301, Loss: 1.4128
+Saved models from epoch 5 to 'data/predictions\almnps_8857\embedding\ood_validation\science\newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9625, Macro-f1: 0.9335, Weighted-f1: 0.9586, Loss: 0.2083
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5719, Macro-f1: 0.4067, Weighted-f1: 0.5393, Loss: 1.4581
+Saved models from epoch 6 to 'data/predictions\almnps_8857\embedding\ood_validation\science\newest.pt'.
+No improvement since 3 epochs (1.3857 loss). Early stop.
+OOD training completed for test topic science after 6 epochs.
+TRAINING COMPLETED with:
+	Domains:		['ai', 'literature', 'music', 'news', 'politics', 'science']
+	OOD validaation:	True
+	Mapping type:		embedding
