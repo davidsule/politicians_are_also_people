@@ -1,0 +1,59 @@
+{
+    "person": [
+        "politician",
+        "person",
+        "writer",
+        "researcher",
+        "scientist",
+        "musicalartist"
+    ],
+    "organisation": [
+        "organisation",
+        "politicalparty",
+        "university",
+        "band"
+    ],
+    "location": [
+        "country",
+        "location"
+    ],
+    "event": [
+        "event",
+        "election",
+        "award",
+        "conference"
+    ],
+    "artifact": [
+        "album",
+        "song",
+        "academicjournal",
+        "poem",
+        "magazine",
+        "book"
+    ],
+    "scientific": [
+        "metrics",
+        "enzyme",
+        "protein",
+        "chemicalcompound",
+        "chemicalelement",
+        "astronomicalobject"
+    ],
+    "concept": [
+        "theory",
+        "musicgenre",
+        "field",
+        "discipline",
+        "algorithm",
+        "literarygenre"
+    ],
+    "brand": [
+        "product",
+        "programlang"
+    ],
+    "misc": [
+        "misc",
+        "musicalinstrument",
+        "task"
+    ]
+}

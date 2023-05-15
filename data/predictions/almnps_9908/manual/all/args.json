@@ -1,0 +1,22 @@
+{
+    "exp_path": "data/predictions",
+    "data_path": "data/crossre_data/",
+    "language_model": "bert-base-cased",
+    "prediction_only": false,
+    "epochs": 50,
+    "batch_size": 32,
+    "learning_rate": 2e-05,
+    "early_stop": 3,
+    "seed": 9908,
+    "ood_validation": false,
+    "domains": [
+        "ai",
+        "literature",
+        "music",
+        "news",
+        "politics",
+        "science"
+    ],
+    "mapping_type": "manual",
+    "shuffle_data": true
+}

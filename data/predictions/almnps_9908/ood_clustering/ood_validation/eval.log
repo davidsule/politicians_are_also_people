@@ -1,0 +1,56 @@
+Loaded category mapping: ood_clustering.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f584f92e0d0> (test).
+Starting prediction on ['ai'] test data.
+Read data from folder data/predictions/ood_clustering_data/9908/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_9908/ood_clustering/ood_validation/ai/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.3766, Macro-f1: 0.2624, Weighted-f1: 0.3463, Loss: 2.0335 (mean over batches).
+Saved results from 'data/predictions/almnps_9908/ood_clustering/ood_validation/ai/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f584d1b90a0> (test).
+Starting prediction on ['literature'] test data.
+Read data from folder data/predictions/ood_clustering_data/9908/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_9908/ood_clustering/ood_validation/literature/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4004, Macro-f1: 0.2991, Weighted-f1: 0.3839, Loss: 1.7502 (mean over batches).
+Saved results from 'data/predictions/almnps_9908/ood_clustering/ood_validation/literature/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f58434e5130> (test).
+Starting prediction on ['music'] test data.
+Read data from folder data/predictions/ood_clustering_data/9908/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_9908/ood_clustering/ood_validation/music/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6428, Macro-f1: 0.4454, Weighted-f1: 0.6392, Loss: 1.3514 (mean over batches).
+Saved results from 'data/predictions/almnps_9908/ood_clustering/ood_validation/music/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f585181abe0> (test).
+Starting prediction on ['news'] test data.
+Read data from folder data/predictions/ood_clustering_data/9908/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_9908/ood_clustering/ood_validation/news/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4375, Macro-f1: 0.2385, Weighted-f1: 0.3812, Loss: 1.9209 (mean over batches).
+Saved results from 'data/predictions/almnps_9908/ood_clustering/ood_validation/news/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f58515a4dc0> (test).
+Starting prediction on ['politics'] test data.
+Read data from folder data/predictions/ood_clustering_data/9908/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_9908/ood_clustering/ood_validation/politics/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4930, Macro-f1: 0.3122, Weighted-f1: 0.4681, Loss: 1.7355 (mean over batches).
+Saved results from 'data/predictions/almnps_9908/ood_clustering/ood_validation/politics/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f584d0d3940> (test).
+Starting prediction on ['science'] test data.
+Read data from folder data/predictions/ood_clustering_data/9908/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_9908/ood_clustering/ood_validation/science/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4280, Macro-f1: 0.2738, Weighted-f1: 0.4022, Loss: 2.0486 (mean over batches).
+Saved results from 'data/predictions/almnps_9908/ood_clustering/ood_validation/science/predictions.csv'.
+All results saved. Exiting.

@@ -1,0 +1,53 @@
+{
+    "journals": [
+        "academicjournal",
+        "book",
+        "magazine",
+        "theory"
+    ],
+    "songs": [
+        "album",
+        "band",
+        "musicgenre",
+        "literarygenre",
+        "poem",
+        "song"
+    ],
+    "proteins": [
+        "algorithm",
+        "astronomicalobject",
+        "chemicalcompound",
+        "chemicalelement",
+        "enzyme",
+        "programlang",
+        "protein"
+    ],
+    "Nariang": [
+        "award",
+        "conference",
+        "country",
+        "election",
+        "event",
+        "location",
+        "organisation",
+        "person",
+        "politicalparty",
+        "task"
+    ],
+    "TELW": [
+        "discipline",
+        "field",
+        "metrics",
+        "misc",
+        "product",
+        "university"
+    ],
+    "violinist": [
+        "musicalartist",
+        "musicalinstrument",
+        "politician",
+        "researcher",
+        "scientist",
+        "writer"
+    ]
+}
