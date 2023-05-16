@@ -1,0 +1,128 @@
+{
+    "related-to": {
+        "precision": 0.1111111111111111,
+        "recall": 0.08333333333333333,
+        "f1-score": 0.09523809523809525,
+        "support": 72
+    },
+    "artifact": {
+        "precision": 0.41379310344827586,
+        "recall": 0.24,
+        "f1-score": 0.3037974683544304,
+        "support": 300
+    },
+    "cause-effect": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1
+    },
+    "compare": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 8
+    },
+    "general-affiliation": {
+        "precision": 0.7755102040816326,
+        "recall": 0.23170731707317074,
+        "f1-score": 0.35680751173708924,
+        "support": 328
+    },
+    "named": {
+        "precision": 0.6162790697674418,
+        "recall": 0.5638297872340425,
+        "f1-score": 0.5888888888888889,
+        "support": 94
+    },
+    "opposite": {
+        "precision": 0.4,
+        "recall": 0.14285714285714285,
+        "f1-score": 0.21052631578947364,
+        "support": 14
+    },
+    "origin": {
+        "precision": 0.15217391304347827,
+        "recall": 0.14893617021276595,
+        "f1-score": 0.15053763440860216,
+        "support": 47
+    },
+    "part-of": {
+        "precision": 0.16289592760180996,
+        "recall": 0.375,
+        "f1-score": 0.2271293375394322,
+        "support": 96
+    },
+    "physical": {
+        "precision": 0.8159509202453987,
+        "recall": 0.764367816091954,
+        "f1-score": 0.7893175074183976,
+        "support": 174
+    },
+    "role": {
+        "precision": 0.2982456140350877,
+        "recall": 0.6719367588932806,
+        "f1-score": 0.4131227217496962,
+        "support": 253
+    },
+    "social": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 47
+    },
+    "temporal": {
+        "precision": 0.59375,
+        "recall": 0.6551724137931034,
+        "f1-score": 0.6229508196721311,
+        "support": 29
+    },
+    "topic": {
+        "precision": 0.16216216216216217,
+        "recall": 0.14285714285714285,
+        "f1-score": 0.1518987341772152,
+        "support": 42
+    },
+    "type-of": {
+        "precision": 0.7,
+        "recall": 0.7777777777777778,
+        "f1-score": 0.7368421052631577,
+        "support": 18
+    },
+    "usage": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2
+    },
+    "win-defeat": {
+        "precision": 0.6666666666666666,
+        "recall": 0.5773195876288659,
+        "f1-score": 0.6187845303867403,
+        "support": 97
+    },
+    "micro avg": {
+        "precision": 0.4088050314465409,
+        "recall": 0.4007398273736128,
+        "f1-score": 0.40473225404732255,
+        "support": 1622
+    },
+    "macro avg": {
+        "precision": 999999,
+        "recall": 999999,
+        "f1-score": 0.3097553923896088,
+        "support": 1622
+    },
+    "weighted avg": {
+        "precision": 0.4880108023706961,
+        "recall": 0.4007398273736128,
+        "f1-score": 0.3956866394898243,
+        "support": 1622
+    },
+    "samples avg": {
+        "precision": 0.4088050314465409,
+        "recall": 0.4024109014675052,
+        "f1-score": 0.40450733752620543,
+        "support": 1622
+    }
+}

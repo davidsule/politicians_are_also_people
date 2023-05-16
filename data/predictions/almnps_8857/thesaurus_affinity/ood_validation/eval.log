@@ -1,0 +1,56 @@
+Loaded category mapping: thesaurus_affinity.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fbde5b5e070> (test).
+Starting prediction on ['ai'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/ai/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4552, Macro-f1: 0.3110, Weighted-f1: 0.4289, Loss: 2.0092 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/ai/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fbde5b5e8b0> (test).
+Starting prediction on ['literature'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/literature/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6619, Macro-f1: 0.4812, Weighted-f1: 0.6431, Loss: 1.1834 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/literature/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fbdd856a880> (test).
+Starting prediction on ['music'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/music/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6855, Macro-f1: 0.5027, Weighted-f1: 0.6761, Loss: 1.2234 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/music/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fbde7b26dc0> (test).
+Starting prediction on ['news'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/news/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4518, Macro-f1: 0.2592, Weighted-f1: 0.4096, Loss: 1.7686 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/news/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fbde33d7fa0> (test).
+Starting prediction on ['politics'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/politics/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.5632, Macro-f1: 0.3544, Weighted-f1: 0.5467, Loss: 1.6176 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/politics/predictions.csv'.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fbde7b26670> (test).
+Starting prediction on ['science'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/science/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4156, Macro-f1: 0.2939, Weighted-f1: 0.4005, Loss: 2.0289 (mean over batches).
+Saved results from 'data/predictions/almnps_8857/thesaurus_affinity/ood_validation/science/predictions.csv'.
+All results saved. Exiting.
