@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 import nltk
 nltk.download('wordnet')
+nltk.download('omw-1.4') # Required for wordnet either in newer versions or on windows, i'm not sure which
 from nltk.corpus import wordnet
 
 from umap import UMAP
