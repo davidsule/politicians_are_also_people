@@ -1,0 +1,17 @@
+{
+    "album": "songs",
+    "band": "songs",
+    "musicalartist": "songs",
+    "musicalinstrument": "songs",
+    "musicgenre": "songs",
+    "literarygenre": "songs",
+    "song": "songs",
+    "award": "Magazine",
+    "event": "Magazine",
+    "magazine": "Magazine",
+    "organisation": "Magazine",
+    "country": "locale",
+    "location": "locale",
+    "misc": "locale",
+    "person": "locale"
+}

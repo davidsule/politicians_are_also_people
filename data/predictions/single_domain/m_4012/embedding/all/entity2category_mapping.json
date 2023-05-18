@@ -1,0 +1,17 @@
+{
+    "album": "songs",
+    "band": "songs",
+    "musicalartist": "songs",
+    "musicalinstrument": "songs",
+    "musicgenre": "songs",
+    "literarygenre": "songs",
+    "song": "songs",
+    "award": "WNCAP",
+    "country": "WNCAP",
+    "event": "WNCAP",
+    "location": "WNCAP",
+    "magazine": "WNCAP",
+    "misc": "WNCAP",
+    "organisation": "WNCAP",
+    "person": "WNCAP"
+}

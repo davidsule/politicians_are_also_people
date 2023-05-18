@@ -1,0 +1,11 @@
+{
+    "nation": [
+        "country",
+        "organisation"
+    ],
+    "someone": [
+        "location",
+        "misc",
+        "person"
+    ]
+}

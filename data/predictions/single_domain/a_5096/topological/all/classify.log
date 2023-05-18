@@ -1,0 +1,87 @@
+Saved arguments to data/predictions/single_domain/a_5096/topological/all/args.json.
+Saved category mapping to data/predictions/single_domain/a_5096/topological/all/entity2category_mapping.json.
+Loaded category mapping: topological.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f471f82d1c0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f471f6c7790> (dev).
+Starting training on ['ai'] data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.1936, Macro-f1: 0.0748, Weighted-f1: 0.1369, Loss: 2.5882
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.2264, Macro-f1: 0.0425, Weighted-f1: 0.1066, Loss: 2.4023
+Saved models from epoch 1 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 2.4023 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.3439, Macro-f1: 0.1429, Weighted-f1: 0.2440, Loss: 2.0394
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.2762, Macro-f1: 0.0983, Weighted-f1: 0.1869, Loss: 2.1525
+Saved models from epoch 2 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 2.1525 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.6545, Macro-f1: 0.4783, Weighted-f1: 0.5963, Loss: 1.5380
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.3281, Macro-f1: 0.1469, Weighted-f1: 0.2513, Loss: 1.9541
+Saved models from epoch 3 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.9541 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.7540, Macro-f1: 0.6069, Weighted-f1: 0.7070, Loss: 1.1662
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.3645, Macro-f1: 0.1827, Weighted-f1: 0.2958, Loss: 1.8425
+Saved models from epoch 4 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.8425 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.8314, Macro-f1: 0.7459, Weighted-f1: 0.8048, Loss: 0.8769
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.3907, Macro-f1: 0.2079, Weighted-f1: 0.3276, Loss: 1.7417
+Saved models from epoch 5 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.7417 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9000, Macro-f1: 0.8480, Weighted-f1: 0.8845, Loss: 0.6841
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.4101, Macro-f1: 0.2282, Weighted-f1: 0.3514, Loss: 1.6909
+Saved models from epoch 6 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.6909 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9489, Macro-f1: 0.9185, Weighted-f1: 0.9447, Loss: 0.4950
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.4237, Macro-f1: 0.2422, Weighted-f1: 0.3680, Loss: 1.6712
+Saved models from epoch 7 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.6712 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 8/50] Train completed with Micro-f1: 0.9598, Macro-f1: 0.9512, Weighted-f1: 0.9563, Loss: 0.3802
+[Epoch 8/50] Evaluation completed with Micro-f1: 0.4335, Macro-f1: 0.2532, Weighted-f1: 0.3805, Loss: 1.6577
+Saved models from epoch 8 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.6577 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 9/50] Train completed with Micro-f1: 0.9858, Macro-f1: 0.9757, Weighted-f1: 0.9835, Loss: 0.2818
+[Epoch 9/50] Evaluation completed with Micro-f1: 0.4400, Macro-f1: 0.2621, Weighted-f1: 0.3899, Loss: 1.6437
+Saved models from epoch 9 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.6437 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 10/50] Train completed with Micro-f1: 0.9972, Macro-f1: 0.9982, Weighted-f1: 0.9972, Loss: 0.2171
+[Epoch 10/50] Evaluation completed with Micro-f1: 0.4465, Macro-f1: 0.2704, Weighted-f1: 0.3987, Loss: 1.6426
+Saved models from epoch 10 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.6426 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 11/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.1752
+[Epoch 11/50] Evaluation completed with Micro-f1: 0.4523, Macro-f1: 0.2769, Weighted-f1: 0.4063, Loss: 1.6458
+Saved models from epoch 11 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+[Epoch 12/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.1391
+[Epoch 12/50] Evaluation completed with Micro-f1: 0.4572, Macro-f1: 0.2826, Weighted-f1: 0.4127, Loss: 1.6354
+Saved models from epoch 12 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.6354 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 13/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.1118
+[Epoch 13/50] Evaluation completed with Micro-f1: 0.4613, Macro-f1: 0.2877, Weighted-f1: 0.4184, Loss: 1.6433
+Saved models from epoch 13 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+[Epoch 14/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.0932
+[Epoch 14/50] Evaluation completed with Micro-f1: 0.4653, Macro-f1: 0.2925, Weighted-f1: 0.4232, Loss: 1.6283
+Saved models from epoch 14 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.6283 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 15/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.0781
+[Epoch 15/50] Evaluation completed with Micro-f1: 0.4685, Macro-f1: 0.2969, Weighted-f1: 0.4274, Loss: 1.6442
+Saved models from epoch 15 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+[Epoch 16/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.0652
+[Epoch 16/50] Evaluation completed with Micro-f1: 0.4719, Macro-f1: 0.2996, Weighted-f1: 0.4316, Loss: 1.6263
+Saved models from epoch 16 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+Saved model with best loss 1.6263 to 'data/predictions/single_domain/a_5096/topological/all/best.pt'.
+[Epoch 17/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.0560
+[Epoch 17/50] Evaluation completed with Micro-f1: 0.4748, Macro-f1: 0.3032, Weighted-f1: 0.4351, Loss: 1.6450
+Saved models from epoch 17 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+[Epoch 18/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.0492
+[Epoch 18/50] Evaluation completed with Micro-f1: 0.4776, Macro-f1: 0.3072, Weighted-f1: 0.4387, Loss: 1.6493
+Saved models from epoch 18 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+[Epoch 19/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.0431
+[Epoch 19/50] Evaluation completed with Micro-f1: 0.4799, Macro-f1: 0.3094, Weighted-f1: 0.4416, Loss: 1.6683
+Saved models from epoch 19 to 'data/predictions/single_domain/a_5096/topological/all/newest.pt'.
+No improvement since 3 epochs (1.6263 loss). Early stop.
+Training completed after 19 epochs.
+TRAINING COMPLETED with:
+	Domains:		['ai']
+	OOD validaation:	False
+	Mapping type:		topological

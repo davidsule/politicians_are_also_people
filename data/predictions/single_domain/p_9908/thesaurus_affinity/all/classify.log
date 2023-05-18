@@ -1,0 +1,44 @@
+Saved arguments to data/predictions/single_domain/p_9908/thesaurus_affinity/all/args.json.
+loading projection weights from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz
+KeyedVectors lifecycle event {'msg': 'loaded (3000000, 300) matrix of type float32 from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz', 'binary': True, 'encoding': 'utf8', 'datetime': '2023-05-17T14:37:35.373774', 'gensim': '4.3.0', 'python': '3.9.16 | packaged by conda-forge | (main, Feb  1 2023, 21:39:03) \n[GCC 11.3.0]', 'platform': 'Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.31', 'event': 'load_word2vec_format'}
+Saved category mapping to data/predictions/single_domain/p_9908/thesaurus_affinity/all/entity2category_mapping.json.
+Loaded category mapping: thesaurus_affinity.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2fef11af70> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f2fef11a8e0> (dev).
+Starting training on ['politics'] data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.2720, Macro-f1: 0.0653, Weighted-f1: 0.1703, Loss: 2.4204
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.3983, Macro-f1: 0.0655, Weighted-f1: 0.2348, Loss: 2.0767
+Saved models from epoch 1 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 2.0767 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.5476, Macro-f1: 0.3117, Weighted-f1: 0.4616, Loss: 1.5904
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.4268, Macro-f1: 0.1423, Weighted-f1: 0.3036, Loss: 1.8731
+Saved models from epoch 2 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.8731 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.6879, Macro-f1: 0.4789, Weighted-f1: 0.6255, Loss: 1.1051
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.4381, Macro-f1: 0.1718, Weighted-f1: 0.3346, Loss: 1.8412
+Saved models from epoch 3 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.8412 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8157, Macro-f1: 0.6918, Weighted-f1: 0.7832, Loss: 0.7720
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.4481, Macro-f1: 0.1928, Weighted-f1: 0.3551, Loss: 1.7475
+Saved models from epoch 4 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.7475 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.8704, Macro-f1: 0.7677, Weighted-f1: 0.8467, Loss: 0.5522
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.4532, Macro-f1: 0.2059, Weighted-f1: 0.3682, Loss: 1.8258
+Saved models from epoch 5 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9229, Macro-f1: 0.8405, Weighted-f1: 0.9081, Loss: 0.3955
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.4603, Macro-f1: 0.2188, Weighted-f1: 0.3821, Loss: 1.7816
+Saved models from epoch 6 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9746, Macro-f1: 0.9378, Weighted-f1: 0.9701, Loss: 0.2663
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.4651, Macro-f1: 0.2290, Weighted-f1: 0.3914, Loss: 1.7954
+Saved models from epoch 7 to 'data/predictions/single_domain/p_9908/thesaurus_affinity/all/newest.pt'.
+No improvement since 3 epochs (1.7475 loss). Early stop.
+Training completed after 7 epochs.
+TRAINING COMPLETED with:
+	Domains:		['politics']
+	OOD validaation:	False
+	Mapping type:		thesaurus_affinity

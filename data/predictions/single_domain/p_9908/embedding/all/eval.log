@@ -1,0 +1,11 @@
+Loaded category mapping: embedding.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f66c472a490> (test).
+Starting prediction on ['politics'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/single_domain/p_9908/embedding/all/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4607, Macro-f1: 0.2741, Weighted-f1: 0.4526, Loss: 1.8191 (mean over batches).
+Saved results from 'data/predictions/single_domain/p_9908/embedding/all/predictions.csv'.
+All results saved. Exiting.

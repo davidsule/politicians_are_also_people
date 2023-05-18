@@ -1,0 +1,53 @@
+{
+    "journals": [
+        "album",
+        "book",
+        "musicalinstrument",
+        "academicjournal",
+        "magazine",
+        "product"
+    ],
+    "pleiotropy": [
+        "algorithm",
+        "discipline",
+        "election",
+        "event",
+        "field",
+        "musicgenre",
+        "literarygenre",
+        "metrics",
+        "misc",
+        "task",
+        "theory"
+    ],
+    "poems": [
+        "award",
+        "programlang",
+        "poem",
+        "song"
+    ],
+    "group": [
+        "band",
+        "conference",
+        "country",
+        "astronomicalobject",
+        "organisation",
+        "politicalparty",
+        "university"
+    ],
+    "enzymes": [
+        "chemicalcompound",
+        "chemicalelement",
+        "enzyme",
+        "protein"
+    ],
+    "journalist": [
+        "location",
+        "musicalartist",
+        "person",
+        "politician",
+        "researcher",
+        "scientist",
+        "writer"
+    ]
+}

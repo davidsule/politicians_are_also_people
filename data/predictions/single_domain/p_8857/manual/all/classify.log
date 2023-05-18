@@ -1,0 +1,42 @@
+Saved arguments to data/predictions/single_domain/p_8857/manual/all/args.json.
+Saved category mapping to data/predictions/single_domain/p_8857/manual/all/entity2category_mapping.json.
+Loaded category mapping: manual.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f69013aefd0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f69013b7850> (dev).
+Starting training on ['politics'] data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3034, Macro-f1: 0.0561, Weighted-f1: 0.1653, Loss: 2.3026
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4007, Macro-f1: 0.0998, Weighted-f1: 0.2665, Loss: 1.9859
+Saved models from epoch 1 to 'data/predictions/single_domain/p_8857/manual/all/newest.pt'.
+Saved model with best loss 1.9859 to 'data/predictions/single_domain/p_8857/manual/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.5732, Macro-f1: 0.3283, Weighted-f1: 0.4856, Loss: 1.4902
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.4406, Macro-f1: 0.1743, Weighted-f1: 0.3408, Loss: 1.7811
+Saved models from epoch 2 to 'data/predictions/single_domain/p_8857/manual/all/newest.pt'.
+Saved model with best loss 1.7811 to 'data/predictions/single_domain/p_8857/manual/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.7099, Macro-f1: 0.5152, Weighted-f1: 0.6482, Loss: 1.0201
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.4704, Macro-f1: 0.2197, Weighted-f1: 0.3890, Loss: 1.7560
+Saved models from epoch 3 to 'data/predictions/single_domain/p_8857/manual/all/newest.pt'.
+Saved model with best loss 1.7560 to 'data/predictions/single_domain/p_8857/manual/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.8370, Macro-f1: 0.6970, Weighted-f1: 0.8022, Loss: 0.6806
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.4858, Macro-f1: 0.2447, Weighted-f1: 0.4139, Loss: 1.6883
+Saved models from epoch 4 to 'data/predictions/single_domain/p_8857/manual/all/newest.pt'.
+Saved model with best loss 1.6883 to 'data/predictions/single_domain/p_8857/manual/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9034, Macro-f1: 0.8239, Weighted-f1: 0.8898, Loss: 0.4809
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.4953, Macro-f1: 0.2610, Weighted-f1: 0.4297, Loss: 1.7515
+Saved models from epoch 5 to 'data/predictions/single_domain/p_8857/manual/all/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9387, Macro-f1: 0.8539, Weighted-f1: 0.9271, Loss: 0.3518
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.5019, Macro-f1: 0.2722, Weighted-f1: 0.4412, Loss: 1.7381
+Saved models from epoch 6 to 'data/predictions/single_domain/p_8857/manual/all/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9707, Macro-f1: 0.9206, Weighted-f1: 0.9653, Loss: 0.2489
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.5059, Macro-f1: 0.2831, Weighted-f1: 0.4493, Loss: 1.7974
+Saved models from epoch 7 to 'data/predictions/single_domain/p_8857/manual/all/newest.pt'.
+No improvement since 3 epochs (1.6883 loss). Early stop.
+Training completed after 7 epochs.
+TRAINING COMPLETED with:
+	Domains:		['politics']
+	OOD validaation:	False
+	Mapping type:		manual

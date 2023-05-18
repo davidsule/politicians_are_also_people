@@ -1,0 +1,14 @@
+Saved arguments to data/predictions/single_domain/n_9908/topological/all/args.json.
+Saved category mapping to data/predictions/single_domain/n_9908/topological/all/entity2category_mapping.json.
+Loaded category mapping: topological.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fb8451c5cd0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fb845129e50> (dev).
+Starting training on ['news'] data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.2684, Macro-f1: 0.0986, Weighted-f1: 0.1942, Loss: 2.6074
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.3688, Macro-f1: 0.1550, Weighted-f1: 0.2819, Loss: 2.5178
+Saved models from epoch 1 to 'data/predictions/single_domain/n_9908/topological/all/newest.pt'.

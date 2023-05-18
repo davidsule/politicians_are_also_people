@@ -1,0 +1,20 @@
+{
+    "academicjournal": "theorist",
+    "book": "theorist",
+    "discipline": "theorist",
+    "scientist": "theorist",
+    "theory": "theorist",
+    "astronomicalobject": "proteins",
+    "chemicalcompound": "proteins",
+    "chemicalelement": "proteins",
+    "enzyme": "proteins",
+    "misc": "proteins",
+    "protein": "proteins",
+    "award": "institution",
+    "country": "institution",
+    "event": "institution",
+    "location": "institution",
+    "organisation": "institution",
+    "person": "institution",
+    "university": "institution"
+}

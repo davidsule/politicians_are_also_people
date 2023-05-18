@@ -1,0 +1,53 @@
+Saved arguments to data/predictions/single_domain/m_8878/topological/all/args.json.
+Saved category mapping to data/predictions/single_domain/m_8878/topological/all/entity2category_mapping.json.
+Loaded category mapping: topological.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fb41749e280> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fb41749e850> (dev).
+Starting training on ['music'] data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.3568, Macro-f1: 0.1355, Weighted-f1: 0.2526, Loss: 2.3153
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4051, Macro-f1: 0.1824, Weighted-f1: 0.2998, Loss: 1.8537
+Saved models from epoch 1 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+Saved model with best loss 1.8537 to 'data/predictions/single_domain/m_8878/topological/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6452, Macro-f1: 0.3744, Weighted-f1: 0.5693, Loss: 1.3070
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5077, Macro-f1: 0.2652, Weighted-f1: 0.4143, Loss: 1.4522
+Saved models from epoch 2 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+Saved model with best loss 1.4522 to 'data/predictions/single_domain/m_8878/topological/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.7997, Macro-f1: 0.6080, Weighted-f1: 0.7618, Loss: 0.7823
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5444, Macro-f1: 0.2975, Weighted-f1: 0.4632, Loss: 1.3016
+Saved models from epoch 3 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+Saved model with best loss 1.3016 to 'data/predictions/single_domain/m_8878/topological/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9219, Macro-f1: 0.8478, Weighted-f1: 0.9114, Loss: 0.4862
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.5750, Macro-f1: 0.3382, Weighted-f1: 0.5032, Loss: 1.2006
+Saved models from epoch 4 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+Saved model with best loss 1.2006 to 'data/predictions/single_domain/m_8878/topological/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9409, Macro-f1: 0.8998, Weighted-f1: 0.9318, Loss: 0.3258
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.5932, Macro-f1: 0.3624, Weighted-f1: 0.5275, Loss: 1.1693
+Saved models from epoch 5 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+Saved model with best loss 1.1693 to 'data/predictions/single_domain/m_8878/topological/all/best.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9590, Macro-f1: 0.9043, Weighted-f1: 0.9525, Loss: 0.2328
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.6054, Macro-f1: 0.3754, Weighted-f1: 0.5442, Loss: 1.1801
+Saved models from epoch 6 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9863, Macro-f1: 0.9797, Weighted-f1: 0.9855, Loss: 0.1659
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.6171, Macro-f1: 0.3904, Weighted-f1: 0.5595, Loss: 1.1328
+Saved models from epoch 7 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+Saved model with best loss 1.1328 to 'data/predictions/single_domain/m_8878/topological/all/best.pt'.
+[Epoch 8/50] Train completed with Micro-f1: 0.9802, Macro-f1: 0.9686, Weighted-f1: 0.9797, Loss: 0.1323
+[Epoch 8/50] Evaluation completed with Micro-f1: 0.6251, Macro-f1: 0.3998, Weighted-f1: 0.5702, Loss: 1.1456
+Saved models from epoch 8 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+[Epoch 9/50] Train completed with Micro-f1: 0.9883, Macro-f1: 0.9865, Weighted-f1: 0.9889, Loss: 0.1144
+[Epoch 9/50] Evaluation completed with Micro-f1: 0.6313, Macro-f1: 0.4062, Weighted-f1: 0.5783, Loss: 1.1463
+Saved models from epoch 9 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+[Epoch 10/50] Train completed with Micro-f1: 0.9922, Macro-f1: 0.9832, Weighted-f1: 0.9903, Loss: 0.0880
+[Epoch 10/50] Evaluation completed with Micro-f1: 0.6367, Macro-f1: 0.4137, Weighted-f1: 0.5853, Loss: 1.1746
+Saved models from epoch 10 to 'data/predictions/single_domain/m_8878/topological/all/newest.pt'.
+No improvement since 3 epochs (1.1328 loss). Early stop.
+Training completed after 10 epochs.
+TRAINING COMPLETED with:
+	Domains:		['music']
+	OOD validaation:	False
+	Mapping type:		topological

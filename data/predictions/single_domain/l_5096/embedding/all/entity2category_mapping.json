@@ -1,0 +1,21 @@
+{
+    "album": "songs",
+    "band": "songs",
+    "musicgenre": "songs",
+    "literarygenre": "songs",
+    "song": "songs",
+    "award": "venue",
+    "country": "venue",
+    "event": "venue",
+    "location": "venue",
+    "organisation": "venue",
+    "book": "memoir",
+    "magazine": "memoir",
+    "poem": "memoir",
+    "writer": "memoir",
+    "misc": "Kacskos",
+    "person": "Kacskos",
+    "programlang": "Kacskos",
+    "scientist": "Kacskos",
+    "university": "Kacskos"
+}

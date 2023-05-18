@@ -1,0 +1,26 @@
+{
+    "institute": [
+        "academicjournal",
+        "country",
+        "field",
+        "researcher",
+        "university"
+    ],
+    "algorithms": [
+        "algorithm",
+        "metrics",
+        "product",
+        "programlang"
+    ],
+    "symposium": [
+        "conference",
+        "event",
+        "organisation",
+        "task"
+    ],
+    "someone": [
+        "location",
+        "misc",
+        "person"
+    ]
+}

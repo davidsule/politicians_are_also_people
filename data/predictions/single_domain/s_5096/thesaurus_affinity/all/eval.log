@@ -1,0 +1,11 @@
+Loaded category mapping: thesaurus_affinity.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fab79270430> (test).
+Starting prediction on ['science'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/single_domain/s_5096/thesaurus_affinity/all/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.3793, Macro-f1: 0.2301, Weighted-f1: 0.3663, Loss: 2.1686 (mean over batches).
+Saved results from 'data/predictions/single_domain/s_5096/thesaurus_affinity/all/predictions.csv'.
+All results saved. Exiting.

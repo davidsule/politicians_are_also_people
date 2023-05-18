@@ -1,0 +1,69 @@
+Saved arguments to data/predictions/single_domain/l_8878/manual/all/args.json.
+Saved category mapping to data/predictions/single_domain/l_8878/manual/all/entity2category_mapping.json.
+Loaded category mapping: manual.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f36cb01cfd0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f36cb0256d0> (dev).
+Starting training on ['literature'] data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.2208, Macro-f1: 0.0872, Weighted-f1: 0.1488, Loss: 2.6423
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.2449, Macro-f1: 0.0673, Weighted-f1: 0.1294, Loss: 2.4254
+Saved models from epoch 1 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 2.4254 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.3970, Macro-f1: 0.1688, Weighted-f1: 0.2896, Loss: 1.9708
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.3361, Macro-f1: 0.1462, Weighted-f1: 0.2460, Loss: 2.0116
+Saved models from epoch 2 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 2.0116 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.6507, Macro-f1: 0.4519, Weighted-f1: 0.5954, Loss: 1.4640
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.3946, Macro-f1: 0.1939, Weighted-f1: 0.3165, Loss: 1.7743
+Saved models from epoch 3 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 1.7743 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.7899, Macro-f1: 0.6433, Weighted-f1: 0.7516, Loss: 1.0366
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.4298, Macro-f1: 0.2267, Weighted-f1: 0.3595, Loss: 1.6303
+Saved models from epoch 4 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 1.6303 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.8356, Macro-f1: 0.6695, Weighted-f1: 0.8049, Loss: 0.7908
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.4538, Macro-f1: 0.2484, Weighted-f1: 0.3891, Loss: 1.5464
+Saved models from epoch 5 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 1.5464 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.8979, Macro-f1: 0.8055, Weighted-f1: 0.8813, Loss: 0.5943
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.4727, Macro-f1: 0.2653, Weighted-f1: 0.4106, Loss: 1.5081
+Saved models from epoch 6 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 1.5081 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9447, Macro-f1: 0.9020, Weighted-f1: 0.9379, Loss: 0.4355
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.4892, Macro-f1: 0.2835, Weighted-f1: 0.4301, Loss: 1.4413
+Saved models from epoch 7 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 1.4413 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 8/50] Train completed with Micro-f1: 0.9604, Macro-f1: 0.8994, Weighted-f1: 0.9541, Loss: 0.3401
+[Epoch 8/50] Evaluation completed with Micro-f1: 0.5014, Macro-f1: 0.2963, Weighted-f1: 0.4441, Loss: 1.4420
+Saved models from epoch 8 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+[Epoch 9/50] Train completed with Micro-f1: 0.9808, Macro-f1: 0.9495, Weighted-f1: 0.9759, Loss: 0.2534
+[Epoch 9/50] Evaluation completed with Micro-f1: 0.5118, Macro-f1: 0.3081, Weighted-f1: 0.4562, Loss: 1.4404
+Saved models from epoch 9 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 1.4404 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 10/50] Train completed with Micro-f1: 0.9928, Macro-f1: 0.9824, Weighted-f1: 0.9905, Loss: 0.1946
+[Epoch 10/50] Evaluation completed with Micro-f1: 0.5209, Macro-f1: 0.3173, Weighted-f1: 0.4667, Loss: 1.4204
+Saved models from epoch 10 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 1.4204 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 11/50] Train completed with Micro-f1: 0.9952, Macro-f1: 0.9891, Weighted-f1: 0.9941, Loss: 0.1625
+[Epoch 11/50] Evaluation completed with Micro-f1: 0.5285, Macro-f1: 0.3247, Weighted-f1: 0.4755, Loss: 1.4026
+Saved models from epoch 11 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+Saved model with best loss 1.4026 to 'data/predictions/single_domain/l_8878/manual/all/best.pt'.
+[Epoch 12/50] Train completed with Micro-f1: 0.9976, Macro-f1: 0.9872, Weighted-f1: 0.9976, Loss: 0.1231
+[Epoch 12/50] Evaluation completed with Micro-f1: 0.5336, Macro-f1: 0.3294, Weighted-f1: 0.4819, Loss: 1.4572
+Saved models from epoch 12 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+[Epoch 13/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.0994
+[Epoch 13/50] Evaluation completed with Micro-f1: 0.5381, Macro-f1: 0.3340, Weighted-f1: 0.4873, Loss: 1.4631
+Saved models from epoch 13 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+[Epoch 14/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.0870
+[Epoch 14/50] Evaluation completed with Micro-f1: 0.5436, Macro-f1: 0.3397, Weighted-f1: 0.4936, Loss: 1.4123
+Saved models from epoch 14 to 'data/predictions/single_domain/l_8878/manual/all/newest.pt'.
+No improvement since 3 epochs (1.4026 loss). Early stop.
+Training completed after 14 epochs.
+TRAINING COMPLETED with:
+	Domains:		['literature']
+	OOD validaation:	False
+	Mapping type:		manual

@@ -1,0 +1,17 @@
+{
+    "exp_path": "data/predictions/single_domain",
+    "data_path": "data/crossre_data/",
+    "language_model": "bert-base-cased",
+    "prediction_only": false,
+    "epochs": 50,
+    "batch_size": 32,
+    "learning_rate": 2e-05,
+    "early_stop": 3,
+    "seed": 4012,
+    "ood_validation": false,
+    "domains": [
+        "ai"
+    ],
+    "mapping_type": "embedding",
+    "shuffle_data": true
+}

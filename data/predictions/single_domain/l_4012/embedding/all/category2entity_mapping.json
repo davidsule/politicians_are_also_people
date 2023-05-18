@@ -1,0 +1,29 @@
+{
+    "songs": [
+        "album",
+        "band",
+        "musicgenre",
+        "literarygenre",
+        "poem",
+        "song"
+    ],
+    "Magazine": [
+        "award",
+        "event",
+        "magazine",
+        "organisation"
+    ],
+    "author": [
+        "book",
+        "programlang",
+        "scientist",
+        "writer"
+    ],
+    "campus": [
+        "country",
+        "location",
+        "misc",
+        "person",
+        "university"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "professor": [
+        "academicjournal",
+        "researcher",
+        "university"
+    ],
+    "algorithms": [
+        "algorithm",
+        "metrics",
+        "product",
+        "programlang"
+    ],
+    "symposium": [
+        "conference",
+        "event",
+        "organisation",
+        "task"
+    ],
+    "HYEOF": [
+        "country",
+        "field",
+        "location",
+        "misc",
+        "person"
+    ]
+}

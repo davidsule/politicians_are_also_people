@@ -1,0 +1,21 @@
+{
+    "album": "songs",
+    "band": "songs",
+    "musicgenre": "songs",
+    "literarygenre": "songs",
+    "song": "songs",
+    "award": "Magazine",
+    "event": "Magazine",
+    "magazine": "Magazine",
+    "organisation": "Magazine",
+    "book": "novelist",
+    "poem": "novelist",
+    "programlang": "novelist",
+    "scientist": "novelist",
+    "writer": "novelist",
+    "country": "campus",
+    "location": "campus",
+    "misc": "campus",
+    "person": "campus",
+    "university": "campus"
+}

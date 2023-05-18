@@ -1,0 +1,42 @@
+Saved arguments to data/predictions/single_domain/n_8878/no_mapping/all/args.json.
+Saved category mapping to data/predictions/single_domain/n_8878/no_mapping/all/entity2category_mapping.json.
+Loaded category mapping: no_mapping.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fb7103befd0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fb7103c66d0> (dev).
+Starting training on ['news'] data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.2208, Macro-f1: 0.0799, Weighted-f1: 0.1443, Loss: 2.5424
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.2490, Macro-f1: 0.0929, Weighted-f1: 0.1203, Loss: 2.4224
+Saved models from epoch 1 to 'data/predictions/single_domain/n_8878/no_mapping/all/newest.pt'.
+Saved model with best loss 2.4224 to 'data/predictions/single_domain/n_8878/no_mapping/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.3701, Macro-f1: 0.1347, Weighted-f1: 0.2557, Loss: 1.9763
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.2615, Macro-f1: 0.0985, Weighted-f1: 0.1327, Loss: 2.2161
+Saved models from epoch 2 to 'data/predictions/single_domain/n_8878/no_mapping/all/newest.pt'.
+Saved model with best loss 2.2161 to 'data/predictions/single_domain/n_8878/no_mapping/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.5507, Macro-f1: 0.3039, Weighted-f1: 0.4706, Loss: 1.6226
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.2812, Macro-f1: 0.1273, Weighted-f1: 0.1675, Loss: 2.1911
+Saved models from epoch 3 to 'data/predictions/single_domain/n_8878/no_mapping/all/newest.pt'.
+Saved model with best loss 2.1911 to 'data/predictions/single_domain/n_8878/no_mapping/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.6424, Macro-f1: 0.3567, Weighted-f1: 0.5745, Loss: 1.3299
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.2922, Macro-f1: 0.1434, Weighted-f1: 0.1851, Loss: 2.1727
+Saved models from epoch 4 to 'data/predictions/single_domain/n_8878/no_mapping/all/newest.pt'.
+Saved model with best loss 2.1727 to 'data/predictions/single_domain/n_8878/no_mapping/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.7153, Macro-f1: 0.4698, Weighted-f1: 0.6563, Loss: 1.1134
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.3015, Macro-f1: 0.1623, Weighted-f1: 0.1975, Loss: 2.2725
+Saved models from epoch 5 to 'data/predictions/single_domain/n_8878/no_mapping/all/newest.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.7569, Macro-f1: 0.5456, Weighted-f1: 0.7040, Loss: 0.9200
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.3073, Macro-f1: 0.1693, Weighted-f1: 0.2060, Loss: 2.3168
+Saved models from epoch 6 to 'data/predictions/single_domain/n_8878/no_mapping/all/newest.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.8000, Macro-f1: 0.5634, Weighted-f1: 0.7581, Loss: 0.7306
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.3141, Macro-f1: 0.1780, Weighted-f1: 0.2145, Loss: 2.2703
+Saved models from epoch 7 to 'data/predictions/single_domain/n_8878/no_mapping/all/newest.pt'.
+No improvement since 3 epochs (2.1727 loss). Early stop.
+Training completed after 7 epochs.
+TRAINING COMPLETED with:
+	Domains:		['news']
+	OOD validaation:	False
+	Mapping type:		None

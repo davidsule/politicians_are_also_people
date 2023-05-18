@@ -1,0 +1,21 @@
+{
+    "album": "songs",
+    "band": "songs",
+    "musicgenre": "songs",
+    "literarygenre": "songs",
+    "song": "songs",
+    "award": "venue",
+    "event": "venue",
+    "location": "venue",
+    "organisation": "venue",
+    "book": "memoir",
+    "magazine": "memoir",
+    "poem": "memoir",
+    "writer": "memoir",
+    "country": "student",
+    "misc": "student",
+    "person": "student",
+    "programlang": "student",
+    "scientist": "student",
+    "university": "student"
+}

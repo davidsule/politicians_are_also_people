@@ -1,0 +1,11 @@
+Loaded category mapping: manual.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f934b8af460> (test).
+Starting prediction on ['politics'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/single_domain/p_5096/manual/all/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.4828, Macro-f1: 0.2768, Weighted-f1: 0.4555, Loss: 1.7113 (mean over batches).
+Saved results from 'data/predictions/single_domain/p_5096/manual/all/predictions.csv'.
+All results saved. Exiting.

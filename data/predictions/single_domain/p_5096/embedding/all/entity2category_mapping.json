@@ -1,0 +1,17 @@
+{
+    "album": "songs",
+    "book": "songs",
+    "musicalartist": "songs",
+    "musicalinstrument": "songs",
+    "song": "songs",
+    "country": "community",
+    "event": "community",
+    "location": "community",
+    "organisation": "community",
+    "politicalparty": "community",
+    "university": "community",
+    "election": "politican",
+    "misc": "politican",
+    "person": "politican",
+    "politician": "politican"
+}

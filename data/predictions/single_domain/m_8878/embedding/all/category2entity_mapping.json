@@ -1,0 +1,23 @@
+{
+    "songs": [
+        "album",
+        "band",
+        "musicalartist",
+        "musicalinstrument",
+        "musicgenre",
+        "literarygenre",
+        "song"
+    ],
+    "Magazine": [
+        "award",
+        "country",
+        "event",
+        "magazine",
+        "organisation"
+    ],
+    "someone": [
+        "location",
+        "misc",
+        "person"
+    ]
+}

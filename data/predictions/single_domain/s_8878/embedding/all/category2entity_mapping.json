@@ -1,0 +1,26 @@
+{
+    "scholar": [
+        "academicjournal",
+        "book",
+        "discipline",
+        "scientist",
+        "theory",
+        "university"
+    ],
+    "proteins": [
+        "astronomicalobject",
+        "chemicalcompound",
+        "chemicalelement",
+        "enzyme",
+        "misc",
+        "protein"
+    ],
+    "venue": [
+        "award",
+        "country",
+        "event",
+        "location",
+        "organisation",
+        "person"
+    ]
+}

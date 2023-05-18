@@ -1,0 +1,23 @@
+{
+    "songs": [
+        "album",
+        "book",
+        "musicalartist",
+        "musicalinstrument",
+        "song"
+    ],
+    "group": [
+        "country",
+        "event",
+        "organisation",
+        "politicalparty",
+        "university"
+    ],
+    "candidate": [
+        "election",
+        "location",
+        "misc",
+        "person",
+        "politician"
+    ]
+}

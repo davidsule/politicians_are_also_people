@@ -1,0 +1,72 @@
+Saved arguments to data/predictions/single_domain/a_5096/thesaurus_affinity/all/args.json.
+loading projection weights from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz
+KeyedVectors lifecycle event {'msg': 'loaded (3000000, 300) matrix of type float32 from /home/davidsule/gensim-data/word2vec-google-news-300/word2vec-google-news-300.gz', 'binary': True, 'encoding': 'utf8', 'datetime': '2023-05-16T21:01:07.951223', 'gensim': '4.3.0', 'python': '3.9.16 | packaged by conda-forge | (main, Feb  1 2023, 21:39:03) \n[GCC 11.3.0]', 'platform': 'Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.31', 'event': 'load_word2vec_format'}
+Saved category mapping to data/predictions/single_domain/a_5096/thesaurus_affinity/all/entity2category_mapping.json.
+Loaded category mapping: thesaurus_affinity.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f7b90938250> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f7b90938580> (dev).
+Starting training on ['ai'] data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.2256, Macro-f1: 0.1044, Weighted-f1: 0.1761, Loss: 2.6062
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.2440, Macro-f1: 0.0522, Weighted-f1: 0.1229, Loss: 2.3427
+Saved models from epoch 1 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 2.3427 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.3544, Macro-f1: 0.1563, Weighted-f1: 0.2567, Loss: 2.0377
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.2673, Macro-f1: 0.0986, Weighted-f1: 0.1844, Loss: 2.1588
+Saved models from epoch 2 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 2.1588 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.6252, Macro-f1: 0.4464, Weighted-f1: 0.5544, Loss: 1.5829
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.3199, Macro-f1: 0.1441, Weighted-f1: 0.2425, Loss: 1.9263
+Saved models from epoch 3 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.9263 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.7318, Macro-f1: 0.5696, Weighted-f1: 0.6884, Loss: 1.2198
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.3579, Macro-f1: 0.1797, Weighted-f1: 0.2911, Loss: 1.7760
+Saved models from epoch 4 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.7760 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.8116, Macro-f1: 0.6759, Weighted-f1: 0.7785, Loss: 0.9058
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.3847, Macro-f1: 0.2075, Weighted-f1: 0.3225, Loss: 1.6939
+Saved models from epoch 5 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.6939 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.8938, Macro-f1: 0.8572, Weighted-f1: 0.8799, Loss: 0.6876
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.4057, Macro-f1: 0.2297, Weighted-f1: 0.3486, Loss: 1.6325
+Saved models from epoch 6 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.6325 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9087, Macro-f1: 0.8650, Weighted-f1: 0.8944, Loss: 0.5200
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.4196, Macro-f1: 0.2457, Weighted-f1: 0.3662, Loss: 1.6189
+Saved models from epoch 7 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.6189 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 8/50] Train completed with Micro-f1: 0.9799, Macro-f1: 0.9560, Weighted-f1: 0.9750, Loss: 0.3794
+[Epoch 8/50] Evaluation completed with Micro-f1: 0.4312, Macro-f1: 0.2572, Weighted-f1: 0.3807, Loss: 1.6045
+Saved models from epoch 8 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.6045 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 9/50] Train completed with Micro-f1: 0.9744, Macro-f1: 0.9519, Weighted-f1: 0.9699, Loss: 0.3061
+[Epoch 9/50] Evaluation completed with Micro-f1: 0.4396, Macro-f1: 0.2677, Weighted-f1: 0.3915, Loss: 1.5878
+Saved models from epoch 9 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.5878 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 10/50] Train completed with Micro-f1: 0.9858, Macro-f1: 0.9612, Weighted-f1: 0.9843, Loss: 0.2398
+[Epoch 10/50] Evaluation completed with Micro-f1: 0.4477, Macro-f1: 0.2768, Weighted-f1: 0.4013, Loss: 1.5851
+Saved models from epoch 10 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.5851 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 11/50] Train completed with Micro-f1: 0.9941, Macro-f1: 0.9946, Weighted-f1: 0.9941, Loss: 0.1904
+[Epoch 11/50] Evaluation completed with Micro-f1: 0.4547, Macro-f1: 0.2852, Weighted-f1: 0.4106, Loss: 1.5726
+Saved models from epoch 11 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+Saved model with best loss 1.5726 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/best.pt'.
+[Epoch 12/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.1461
+[Epoch 12/50] Evaluation completed with Micro-f1: 0.4605, Macro-f1: 0.2925, Weighted-f1: 0.4184, Loss: 1.5762
+Saved models from epoch 12 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+[Epoch 13/50] Train completed with Micro-f1: 1.0000, Macro-f1: 1.0000, Weighted-f1: 1.0000, Loss: 0.1216
+[Epoch 13/50] Evaluation completed with Micro-f1: 0.4656, Macro-f1: 0.2987, Weighted-f1: 0.4249, Loss: 1.5883
+Saved models from epoch 13 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+[Epoch 14/50] Train completed with Micro-f1: 0.9972, Macro-f1: 0.9963, Weighted-f1: 0.9968, Loss: 0.0997
+[Epoch 14/50] Evaluation completed with Micro-f1: 0.4700, Macro-f1: 0.3035, Weighted-f1: 0.4311, Loss: 1.6131
+Saved models from epoch 14 to 'data/predictions/single_domain/a_5096/thesaurus_affinity/all/newest.pt'.
+No improvement since 3 epochs (1.5726 loss). Early stop.
+Training completed after 14 epochs.
+TRAINING COMPLETED with:
+	Domains:		['ai']
+	OOD validaation:	False
+	Mapping type:		thesaurus_affinity

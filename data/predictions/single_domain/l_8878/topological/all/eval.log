@@ -1,0 +1,11 @@
+Loaded category mapping: topological.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7f199af95670> (test).
+Starting prediction on ['literature'] test data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Loaded pre-trained classifier from 'data/predictions/single_domain/l_8878/topological/all/best.pt'.
+Using criterion: <LabelLoss: loss=XEnt>.
+Prediction completed with Micro-f1: 0.6628, Macro-f1: 0.4679, Weighted-f1: 0.6292, Loss: 1.1526 (mean over batches).
+Saved results from 'data/predictions/single_domain/l_8878/topological/all/predictions.csv'.
+All results saved. Exiting.

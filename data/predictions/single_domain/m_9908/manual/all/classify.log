@@ -1,0 +1,50 @@
+Saved arguments to data/predictions/single_domain/m_9908/manual/all/args.json.
+Saved category mapping to data/predictions/single_domain/m_9908/manual/all/entity2category_mapping.json.
+Loaded category mapping: manual.
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fea35306fd0> (train).
+Loaded <torch.utils.data.dataloader.DataLoader object at 0x7fea3530f6d0> (dev).
+Starting training on ['music'] data.
+Read data from folder data/crossre_data/
+Loaded <TransformerEmbeddings: dim=768>.
+Using classifier: <LinearClassifier: emb_model = <TransformerEmbeddings: dim=768>>
+Using criterion: <LabelLoss: loss=XEnt>.
+Optimizing using: AdamW with learning rate 2e-05.
+[Epoch 1/50] Train completed with Micro-f1: 0.2762, Macro-f1: 0.1079, Weighted-f1: 0.1852, Loss: 2.2926
+[Epoch 1/50] Evaluation completed with Micro-f1: 0.4980, Macro-f1: 0.2364, Weighted-f1: 0.3860, Loss: 1.8461
+Saved models from epoch 1 to 'data/predictions/single_domain/m_9908/manual/all/newest.pt'.
+Saved model with best loss 1.8461 to 'data/predictions/single_domain/m_9908/manual/all/best.pt'.
+[Epoch 2/50] Train completed with Micro-f1: 0.6747, Macro-f1: 0.3983, Weighted-f1: 0.6033, Loss: 1.2841
+[Epoch 2/50] Evaluation completed with Micro-f1: 0.5700, Macro-f1: 0.3093, Weighted-f1: 0.4816, Loss: 1.4013
+Saved models from epoch 2 to 'data/predictions/single_domain/m_9908/manual/all/newest.pt'.
+Saved model with best loss 1.4013 to 'data/predictions/single_domain/m_9908/manual/all/best.pt'.
+[Epoch 3/50] Train completed with Micro-f1: 0.8122, Macro-f1: 0.6226, Weighted-f1: 0.7762, Loss: 0.7537
+[Epoch 3/50] Evaluation completed with Micro-f1: 0.5972, Macro-f1: 0.3355, Weighted-f1: 0.5207, Loss: 1.2301
+Saved models from epoch 3 to 'data/predictions/single_domain/m_9908/manual/all/newest.pt'.
+Saved model with best loss 1.2301 to 'data/predictions/single_domain/m_9908/manual/all/best.pt'.
+[Epoch 4/50] Train completed with Micro-f1: 0.9043, Macro-f1: 0.7905, Weighted-f1: 0.8890, Loss: 0.4761
+[Epoch 4/50] Evaluation completed with Micro-f1: 0.6184, Macro-f1: 0.3633, Weighted-f1: 0.5507, Loss: 1.1392
+Saved models from epoch 4 to 'data/predictions/single_domain/m_9908/manual/all/newest.pt'.
+Saved model with best loss 1.1392 to 'data/predictions/single_domain/m_9908/manual/all/best.pt'.
+[Epoch 5/50] Train completed with Micro-f1: 0.9490, Macro-f1: 0.8858, Weighted-f1: 0.9433, Loss: 0.3228
+[Epoch 5/50] Evaluation completed with Micro-f1: 0.6296, Macro-f1: 0.3779, Weighted-f1: 0.5652, Loss: 1.1313
+Saved models from epoch 5 to 'data/predictions/single_domain/m_9908/manual/all/newest.pt'.
+Saved model with best loss 1.1313 to 'data/predictions/single_domain/m_9908/manual/all/best.pt'.
+[Epoch 6/50] Train completed with Micro-f1: 0.9531, Macro-f1: 0.9263, Weighted-f1: 0.9500, Loss: 0.2358
+[Epoch 6/50] Evaluation completed with Micro-f1: 0.6425, Macro-f1: 0.3939, Weighted-f1: 0.5828, Loss: 1.0821
+Saved models from epoch 6 to 'data/predictions/single_domain/m_9908/manual/all/newest.pt'.
+Saved model with best loss 1.0821 to 'data/predictions/single_domain/m_9908/manual/all/best.pt'.
+[Epoch 7/50] Train completed with Micro-f1: 0.9763, Macro-f1: 0.9625, Weighted-f1: 0.9726, Loss: 0.1573
+[Epoch 7/50] Evaluation completed with Micro-f1: 0.6512, Macro-f1: 0.4072, Weighted-f1: 0.5959, Loss: 1.0996
+Saved models from epoch 7 to 'data/predictions/single_domain/m_9908/manual/all/newest.pt'.
+[Epoch 8/50] Train completed with Micro-f1: 0.9824, Macro-f1: 0.9769, Weighted-f1: 0.9813, Loss: 0.1208
+[Epoch 8/50] Evaluation completed with Micro-f1: 0.6590, Macro-f1: 0.4181, Weighted-f1: 0.6063, Loss: 1.1114
+Saved models from epoch 8 to 'data/predictions/single_domain/m_9908/manual/all/newest.pt'.
+[Epoch 9/50] Train completed with Micro-f1: 0.9785, Macro-f1: 0.9536, Weighted-f1: 0.9776, Loss: 0.1038
+[Epoch 9/50] Evaluation completed with Micro-f1: 0.6634, Macro-f1: 0.4244, Weighted-f1: 0.6128, Loss: 1.1180
+Saved models from epoch 9 to 'data/predictions/single_domain/m_9908/manual/all/newest.pt'.
+No improvement since 3 epochs (1.0821 loss). Early stop.
+Training completed after 9 epochs.
+TRAINING COMPLETED with:
+	Domains:		['music']
+	OOD validaation:	False
+	Mapping type:		manual

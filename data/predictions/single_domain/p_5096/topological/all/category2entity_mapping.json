@@ -1,0 +1,59 @@
+{
+    "object": [
+        "album",
+        "book",
+        "musicalinstrument",
+        "academicjournal",
+        "location",
+        "magazine",
+        "product"
+    ],
+    "psychological_feature": [
+        "algorithm",
+        "discipline",
+        "election",
+        "event",
+        "field",
+        "musicgenre",
+        "literarygenre",
+        "task",
+        "theory"
+    ],
+    "communication": [
+        "award",
+        "programlang",
+        "poem",
+        "song"
+    ],
+    "group": [
+        "band",
+        "conference",
+        "country",
+        "astronomicalobject",
+        "organisation",
+        "politicalparty",
+        "university"
+    ],
+    "matter": [
+        "chemicalcompound",
+        "chemicalelement",
+        "enzyme"
+    ],
+    "measure": [
+        "metrics"
+    ],
+    "assorted": [
+        "misc"
+    ],
+    "causal_agent": [
+        "musicalartist",
+        "person",
+        "politician",
+        "researcher",
+        "scientist",
+        "writer"
+    ],
+    "thing": [
+        "protein"
+    ]
+}
