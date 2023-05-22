@@ -18,7 +18,7 @@ def parse_arguments():
 
     arg_parser.add_argument('--data_path', type=str, required=True, help='Path to the raw data folder')
     arg_parser.add_argument('--exp_path',type=str ,help='Path to the experiment directory')
-    arg_parser.add_argument('--out_path', type=str, required=True, help='Pathto directory where to save scores')
+    arg_parser.add_argument('--out_path', type=str, required=True, help='Path to directory where to save scores')
     arg_parser.add_argument('-ood_val', '--ood_validation', action='store_true', default=False, help='Whether OOD validation was used')
     arg_parser.add_argument('-d', '--domains', type=str, nargs='+', default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help="list of domains")
     arg_parser.add_argument('-rs', '--seeds', type=int, nargs='+', help='Seeds used / to average over')

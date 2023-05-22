@@ -153,3 +153,9 @@ python main.py --exp_path data/predictions --data_path data/crossre_data/ -rs 99
 python main.py --exp_path data/predictions --data_path data/crossre_data/ -rs 9908 -shuffle -po -ood_val -map ood_clustering
 python main.py --exp_path data/predictions --data_path data/crossre_data/ -rs 9908 -shuffle -po -ood_val -map topological
 python main.py --exp_path data/predictions --data_path data/crossre_data/ -rs 9908 -shuffle -po -ood_val -map thesaurus_affinity
+
+
+
+# Eval command
+ython evaluate.py --data_path data/crossre_data --exp_path data/predictions --out_path data/results -rs 4012 5096 8857 8878 9908 -map ood_clustering None manual embedding thesaurus_affinity topological
+ython evaluate.py --data_path data/crossre_data --exp_path data/predictions --out_path data/results -rs 4012 5096 8857 8878 9908 -map ood_clustering None manual embedding thesaurus_affinity topological -ood_val
