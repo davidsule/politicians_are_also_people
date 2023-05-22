@@ -20,7 +20,7 @@ Can we group entities in a meaningful way in cross-domain setups and inject thes
     - helper functions to check results
 
 
-## How to run the training
+## How to run the project
 
 Download requirements
 ```bash
