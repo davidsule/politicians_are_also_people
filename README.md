@@ -22,6 +22,18 @@ Can we group entities in a meaningful way in cross-domain setups and inject thes
 
 ## How to run the training
 
+Download requirements
+```bash
+pip install -r requirements.txt
+
+```
+
+Run training, predictions and calculate f1-scores
+```bash
+bash run.sh
+```
+
+
 ## To-dos
 - Add requirements.txt
 - Add licence
