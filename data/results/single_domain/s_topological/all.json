@@ -1,0 +1,137 @@
+{
+    "seeds": [
+        4012,
+        5096,
+        8857,
+        8878,
+        9908
+    ],
+    "average": {
+        "related-to": {
+            "precision": 0.34089939864617974,
+            "recall": 0.5968253968253968,
+            "f1-score": 0.4323424432405657,
+            "support": 630
+        },
+        "artifact": {
+            "precision": 0.13183484776024232,
+            "recall": 0.10303030303030306,
+            "f1-score": 0.11124324324324324,
+            "support": 165
+        },
+        "cause-effect": {
+            "precision": 0.2,
+            "recall": 0.002631578947368421,
+            "f1-score": 0.005194805194805195,
+            "support": 380
+        },
+        "compare": {
+            "precision": 0.5584761904761905,
+            "recall": 0.40512820512820513,
+            "f1-score": 0.4539849903271754,
+            "support": 195
+        },
+        "general-affiliation": {
+            "precision": 0.33422647015247126,
+            "recall": 0.21369863013698626,
+            "f1-score": 0.2568808280299623,
+            "support": 365
+        },
+        "named": {
+            "precision": 0.4487586251509401,
+            "recall": 0.6574074074074074,
+            "f1-score": 0.5323527411429332,
+            "support": 540
+        },
+        "opposite": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 25
+        },
+        "origin": {
+            "precision": 0.2873782171191468,
+            "recall": 0.27234042553191484,
+            "f1-score": 0.2768518176949192,
+            "support": 470
+        },
+        "part-of": {
+            "precision": 0.12250510822738123,
+            "recall": 0.2511111111111111,
+            "f1-score": 0.16196138549688702,
+            "support": 450
+        },
+        "physical": {
+            "precision": 0.6557421896476094,
+            "recall": 0.8107142857142857,
+            "f1-score": 0.7229797117146163,
+            "support": 1120
+        },
+        "role": {
+            "precision": 0.37407492727498926,
+            "recall": 0.36643356643356645,
+            "f1-score": 0.3694133684961102,
+            "support": 1430
+        },
+        "social": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 70
+        },
+        "temporal": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 130
+        },
+        "topic": {
+            "precision": 0.968051948051948,
+            "recall": 0.35454545454545455,
+            "f1-score": 0.50692925325662,
+            "support": 330
+        },
+        "type-of": {
+            "precision": 0.75,
+            "recall": 0.020512820512820513,
+            "f1-score": 0.039756176146112154,
+            "support": 585
+        },
+        "usage": {
+            "precision": 0.015384615384615385,
+            "recall": 0.008333333333333333,
+            "f1-score": 0.010810810810810811,
+            "support": 120
+        },
+        "win-defeat": {
+            "precision": 0.8002706552706552,
+            "recall": 0.6272727272727272,
+            "f1-score": 0.6994030283950528,
+            "support": 220
+        },
+        "micro avg": {
+            "precision": 0.40905172413793106,
+            "recall": 0.3940484429065744,
+            "f1-score": 0.4014099400775467,
+            "support": 7225
+        },
+        "macro avg": {
+            "precision": 999999.0,
+            "recall": 999999.0,
+            "f1-score": 0.26941791783469493,
+            "support": 7225
+        },
+        "weighted avg": {
+            "precision": 0.44033368129789185,
+            "recall": 0.3940484429065744,
+            "f1-score": 0.36666786269024565,
+            "support": 7225
+        },
+        "samples avg": {
+            "precision": 0.40905172413793106,
+            "recall": 0.3910919540229885,
+            "f1-score": 0.39707854406130266,
+            "support": 7225
+        }
+    }
+}

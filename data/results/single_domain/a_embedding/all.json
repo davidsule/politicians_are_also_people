@@ -1,0 +1,137 @@
+{
+    "seeds": [
+        4012,
+        5096,
+        8857,
+        8878,
+        9908
+    ],
+    "average": {
+        "related-to": {
+            "precision": 0.2840340611769183,
+            "recall": 0.3037037037037037,
+            "f1-score": 0.29205497251897994,
+            "support": 540
+        },
+        "artifact": {
+            "precision": 0.4355699593812116,
+            "recall": 0.4975609756097561,
+            "f1-score": 0.4606459073164957,
+            "support": 205
+        },
+        "cause-effect": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 25
+        },
+        "compare": {
+            "precision": 0.6,
+            "recall": 0.041666666666666664,
+            "f1-score": 0.07753846153846153,
+            "support": 120
+        },
+        "general-affiliation": {
+            "precision": 0.32999999999999996,
+            "recall": 0.010666666666666668,
+            "f1-score": 0.020326449033977352,
+            "support": 375
+        },
+        "named": {
+            "precision": 0.6292899509549819,
+            "recall": 0.7352517985611511,
+            "f1-score": 0.6771482534433353,
+            "support": 695
+        },
+        "opposite": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 55
+        },
+        "origin": {
+            "precision": 0.518050766283525,
+            "recall": 0.3887640449438202,
+            "f1-score": 0.44244348129051747,
+            "support": 445
+        },
+        "part-of": {
+            "precision": 0.347494288072029,
+            "recall": 0.7102803738317757,
+            "f1-score": 0.4663625279200194,
+            "support": 1070
+        },
+        "physical": {
+            "precision": 0.8609920461710073,
+            "recall": 0.6764705882352942,
+            "f1-score": 0.7569096991536903,
+            "support": 510
+        },
+        "role": {
+            "precision": 0.5665981979270457,
+            "recall": 0.6293577981651377,
+            "f1-score": 0.5956053993954823,
+            "support": 545
+        },
+        "social": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 5
+        },
+        "temporal": {
+            "precision": 0.5633333333333332,
+            "recall": 0.3904761904761905,
+            "f1-score": 0.4538913344578176,
+            "support": 105
+        },
+        "topic": {
+            "precision": 0.7933333333333332,
+            "recall": 0.14146341463414636,
+            "f1-score": 0.2390751257024549,
+            "support": 205
+        },
+        "type-of": {
+            "precision": 0.29036506421917585,
+            "recall": 0.24074074074074076,
+            "f1-score": 0.2587725033083113,
+            "support": 270
+        },
+        "usage": {
+            "precision": 0.29704756596060944,
+            "recall": 0.04426229508196721,
+            "f1-score": 0.07661970201447288,
+            "support": 610
+        },
+        "win-defeat": {
+            "precision": 0.6,
+            "recall": 0.11428571428571428,
+            "f1-score": 0.18888888888888888,
+            "support": 35
+        },
+        "micro avg": {
+            "precision": 0.45661047027506657,
+            "recall": 0.4424763542562339,
+            "f1-score": 0.4494323144104804,
+            "support": 5815
+        },
+        "macro avg": {
+            "precision": 999999.0,
+            "recall": 999999.0,
+            "f1-score": 0.2944872179989944,
+            "support": 5815
+        },
+        "weighted avg": {
+            "precision": 0.4692022540295051,
+            "recall": 0.4424763542562339,
+            "f1-score": 0.4068956157323275,
+            "support": 5815
+        },
+        "samples avg": {
+            "precision": 0.45661047027506657,
+            "recall": 0.4470570837030464,
+            "f1-score": 0.45019225081336883,
+            "support": 5815
+        }
+    }
+}

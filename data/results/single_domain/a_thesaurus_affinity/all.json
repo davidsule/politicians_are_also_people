@@ -1,0 +1,137 @@
+{
+    "seeds": [
+        4012,
+        5096,
+        8857,
+        8878,
+        9908
+    ],
+    "average": {
+        "related-to": {
+            "precision": 0.2540778812087801,
+            "recall": 0.2759259259259259,
+            "f1-score": 0.2619272260742444,
+            "support": 540
+        },
+        "artifact": {
+            "precision": 0.4858273767576093,
+            "recall": 0.526829268292683,
+            "f1-score": 0.5051577033166867,
+            "support": 205
+        },
+        "cause-effect": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 25
+        },
+        "compare": {
+            "precision": 0.2,
+            "recall": 0.008333333333333333,
+            "f1-score": 0.015999999999999997,
+            "support": 120
+        },
+        "general-affiliation": {
+            "precision": 0.8333333333333333,
+            "recall": 0.026666666666666665,
+            "f1-score": 0.05161505161505162,
+            "support": 375
+        },
+        "named": {
+            "precision": 0.6649077314319076,
+            "recall": 0.7352517985611511,
+            "f1-score": 0.6967079485410559,
+            "support": 695
+        },
+        "opposite": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 55
+        },
+        "origin": {
+            "precision": 0.4942121540969294,
+            "recall": 0.41348314606741576,
+            "f1-score": 0.44961982962297425,
+            "support": 445
+        },
+        "part-of": {
+            "precision": 0.36110901742222284,
+            "recall": 0.7299065420560747,
+            "f1-score": 0.4830949253118818,
+            "support": 1070
+        },
+        "physical": {
+            "precision": 0.8030963477161256,
+            "recall": 0.6725490196078432,
+            "f1-score": 0.7304256298242686,
+            "support": 510
+        },
+        "role": {
+            "precision": 0.6001214630677975,
+            "recall": 0.6513761467889908,
+            "f1-score": 0.6240375464210954,
+            "support": 545
+        },
+        "social": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 5
+        },
+        "temporal": {
+            "precision": 0.6204195804195803,
+            "recall": 0.34285714285714286,
+            "f1-score": 0.4387418300653595,
+            "support": 105
+        },
+        "topic": {
+            "precision": 0.9095238095238095,
+            "recall": 0.12195121951219512,
+            "f1-score": 0.2143175043683832,
+            "support": 205
+        },
+        "type-of": {
+            "precision": 0.21735999942605563,
+            "recall": 0.2074074074074074,
+            "f1-score": 0.2025984208760474,
+            "support": 270
+        },
+        "usage": {
+            "precision": 0.27401368792497827,
+            "recall": 0.05737704918032786,
+            "f1-score": 0.09124116427297721,
+            "support": 610
+        },
+        "win-defeat": {
+            "precision": 0.36,
+            "recall": 0.22857142857142856,
+            "f1-score": 0.2787878787878788,
+            "support": 35
+        },
+        "micro avg": {
+            "precision": 0.461756876663709,
+            "recall": 0.44746345657781605,
+            "f1-score": 0.4544978165938865,
+            "support": 5815
+        },
+        "macro avg": {
+            "precision": 999999.0,
+            "recall": 999999.0,
+            "f1-score": 0.2967219211234062,
+            "support": 5815
+        },
+        "weighted avg": {
+            "precision": 0.49327530863818075,
+            "recall": 0.44746345657781605,
+            "f1-score": 0.41104296960971765,
+            "support": 5815
+        },
+        "samples avg": {
+            "precision": 0.461756876663709,
+            "recall": 0.4521443359952676,
+            "f1-score": 0.45530908015380056,
+            "support": 5815
+        }
+    }
+}

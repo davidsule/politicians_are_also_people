@@ -20,7 +20,7 @@ def parse_arguments():
     arg_parser.add_argument('--exp_path',type=str ,help='Path to the experiment directory')
     arg_parser.add_argument('--out_path', type=str, required=True, help='Path to directory where to save scores')
     arg_parser.add_argument('-ood_val', '--ood_validation', action='store_true', default=False, help='Whether OOD validation was used')
-    arg_parser.add_argument('-d', '--domains', type=str, nargs='+', default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help="list of domains")
+    arg_parser.add_argument('-d', '--domains', type=str, nargs='+', default=['ai', 'literature', 'music', 'news', 'politics', 'science'], help="List of domains.")
     arg_parser.add_argument('-rs', '--seeds', type=int, nargs='+', help='Seeds used / to average over')
     arg_parser.add_argument('-map', '--mapping_types', type=str, nargs='+', help='Mappings used in training evaluation will go through all, one of None, "manual", "elisa", "embedding", "ood_clustering", "topological", "thesaurus_affinity". ood_clustering can only be used if --ood_validation is True.')
 
@@ -126,6 +126,7 @@ if __name__ == '__main__':
                             if metric not in results[domain][metric_group]:
                                 results[domain][metric_group][metric] = []
                             # We use lists, because we only add the value, if the label actually occured (support != 0)
+                            # then the length of the list determines the denominator for the mean
                             if metrics["support"] != 0:
                                 results[seed]["average"][metric_group][metric].append(value)
                                 results[domain][metric_group][metric].append(value)
@@ -150,8 +151,11 @@ if __name__ == '__main__':
             
             # If 'all' (not ood eval)
             else:
+                # Create a temporary file cancatenating test data from all included domains
                 temp_path = os.path.join(exp_path, "temp.json")
+                # Copy first domains's file
                 shutil.copyfile(os.path.join(args.data_path, f"{args.domains[0]}-test.json"), temp_path)
+                # Append rest
                 with open(temp_path, "a") as f:
                     for domain in args.domains[1:]:
                         with open(os.path.join(args.data_path, f"{domain}-test.json")) as f2:
@@ -161,6 +165,8 @@ if __name__ == '__main__':
                 gold_path = temp_path
                 logging.info(f"Evaluating {gold_path} and {pred_path}.")
                 metrics, macro = get_metrics(gold_path, pred_path)
+                # Replace macro f1 measure with the one that removes 0 support labels (as in CrossRE)
+                # Set precision and recall to invalid value (since those are not replaced)
                 metrics["macro avg"]["precision"] = 999999
                 metrics["macro avg"]["recall"] = 999999
                 metrics["macro avg"]["f1-score"] = macro

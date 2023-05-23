@@ -1,0 +1,137 @@
+{
+    "seeds": [
+        4012,
+        5096,
+        8857,
+        8878,
+        9908
+    ],
+    "average": {
+        "related-to": {
+            "precision": 0.0907142857142857,
+            "recall": 0.01388888888888889,
+            "f1-score": 0.023328056815264824,
+            "support": 360
+        },
+        "artifact": {
+            "precision": 0.8014929038971863,
+            "recall": 0.954,
+            "f1-score": 0.8708478094978688,
+            "support": 1500
+        },
+        "cause-effect": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 5
+        },
+        "compare": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 40
+        },
+        "general-affiliation": {
+            "precision": 0.7964426944112448,
+            "recall": 0.8841463414634146,
+            "f1-score": 0.8377864113818785,
+            "support": 1640
+        },
+        "named": {
+            "precision": 0.42557512309389567,
+            "recall": 0.5680851063829787,
+            "f1-score": 0.48121753831345043,
+            "support": 470
+        },
+        "opposite": {
+            "precision": 0.2,
+            "recall": 0.014285714285714285,
+            "f1-score": 0.026666666666666665,
+            "support": 70
+        },
+        "origin": {
+            "precision": 0.2,
+            "recall": 0.00425531914893617,
+            "f1-score": 0.008333333333333335,
+            "support": 235
+        },
+        "part-of": {
+            "precision": 0.26067172240947195,
+            "recall": 0.08333333333333333,
+            "f1-score": 0.1256810960000206,
+            "support": 480
+        },
+        "physical": {
+            "precision": 0.7409466312842016,
+            "recall": 0.8045977011494253,
+            "f1-score": 0.7713044042171134,
+            "support": 870
+        },
+        "role": {
+            "precision": 0.6287691721898182,
+            "recall": 0.6798418972332015,
+            "f1-score": 0.6530649069210923,
+            "support": 1265
+        },
+        "social": {
+            "precision": 0.4438815258485196,
+            "recall": 0.49361702127659574,
+            "f1-score": 0.4620393030081309,
+            "support": 235
+        },
+        "temporal": {
+            "precision": 0.44462629923156244,
+            "recall": 0.4896551724137931,
+            "f1-score": 0.4638579064383605,
+            "support": 145
+        },
+        "topic": {
+            "precision": 0.1477692482955641,
+            "recall": 0.06190476190476191,
+            "f1-score": 0.08508662201859005,
+            "support": 210
+        },
+        "type-of": {
+            "precision": 0.8969696969696969,
+            "recall": 0.4666666666666666,
+            "f1-score": 0.6100842911877395,
+            "support": 90
+        },
+        "usage": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 10
+        },
+        "win-defeat": {
+            "precision": 0.6589104081796914,
+            "recall": 0.8268041237113403,
+            "f1-score": 0.7309483676016892,
+            "support": 485
+        },
+        "micro avg": {
+            "precision": 0.6789937106918239,
+            "recall": 0.6655980271270037,
+            "f1-score": 0.6722291407222915,
+            "support": 8110
+        },
+        "macro avg": {
+            "precision": 999999.0,
+            "recall": 999999.0,
+            "f1-score": 0.36177921843536465,
+            "support": 8110
+        },
+        "weighted avg": {
+            "precision": 0.6124950874210711,
+            "recall": 0.6655980271270037,
+            "f1-score": 0.6262946985371238,
+            "support": 8110
+        },
+        "samples avg": {
+            "precision": 0.6789937106918239,
+            "recall": 0.6715723270440253,
+            "f1-score": 0.6740251572327043,
+            "support": 8110
+        }
+    }
+}

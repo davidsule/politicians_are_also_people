@@ -1,0 +1,137 @@
+{
+    "seeds": [
+        4012,
+        5096,
+        8857,
+        8878,
+        9908
+    ],
+    "average": {
+        "related-to": {
+            "precision": 0.23664283024620603,
+            "recall": 0.2796296296296296,
+            "f1-score": 0.25462672232287825,
+            "support": 540
+        },
+        "artifact": {
+            "precision": 0.5046182886880561,
+            "recall": 0.5853658536585367,
+            "f1-score": 0.5401681174261819,
+            "support": 205
+        },
+        "cause-effect": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 25
+        },
+        "compare": {
+            "precision": 0.2,
+            "recall": 0.008333333333333333,
+            "f1-score": 0.015999999999999997,
+            "support": 120
+        },
+        "general-affiliation": {
+            "precision": 0.42833333333333334,
+            "recall": 0.034666666666666665,
+            "f1-score": 0.06272518540063624,
+            "support": 375
+        },
+        "named": {
+            "precision": 0.6327481070903112,
+            "recall": 0.6863309352517986,
+            "f1-score": 0.6551009941893995,
+            "support": 695
+        },
+        "opposite": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 55
+        },
+        "origin": {
+            "precision": 0.4844158692185008,
+            "recall": 0.3685393258426966,
+            "f1-score": 0.41816033667381636,
+            "support": 445
+        },
+        "part-of": {
+            "precision": 0.3798500631247907,
+            "recall": 0.7205607476635513,
+            "f1-score": 0.49624393443168924,
+            "support": 1070
+        },
+        "physical": {
+            "precision": 0.8589585707608614,
+            "recall": 0.7137254901960786,
+            "f1-score": 0.7793943935913573,
+            "support": 510
+        },
+        "role": {
+            "precision": 0.5713947206363221,
+            "recall": 0.6605504587155963,
+            "f1-score": 0.6122255228595415,
+            "support": 545
+        },
+        "social": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 5
+        },
+        "temporal": {
+            "precision": 0.7118437118437118,
+            "recall": 0.47619047619047616,
+            "f1-score": 0.567782021899669,
+            "support": 105
+        },
+        "topic": {
+            "precision": 0.9846153846153847,
+            "recall": 0.22926829268292687,
+            "f1-score": 0.36197979797979796,
+            "support": 205
+        },
+        "type-of": {
+            "precision": 0.28505832923855456,
+            "recall": 0.26296296296296295,
+            "f1-score": 0.26895953312198123,
+            "support": 270
+        },
+        "usage": {
+            "precision": 0.2618353158505359,
+            "recall": 0.05901639344262295,
+            "f1-score": 0.0934112207865633,
+            "support": 610
+        },
+        "win-defeat": {
+            "precision": 0.45,
+            "recall": 0.14285714285714285,
+            "f1-score": 0.20353535353535354,
+            "support": 35
+        },
+        "micro avg": {
+            "precision": 0.46672582076308783,
+            "recall": 0.4522785898538263,
+            "f1-score": 0.4593886462882096,
+            "support": 5815
+        },
+        "macro avg": {
+            "precision": 999999.0,
+            "recall": 999999.0,
+            "f1-score": 0.31354783142463916,
+            "support": 5815
+        },
+        "weighted avg": {
+            "precision": 0.4739686105374622,
+            "recall": 0.4522785898538263,
+            "f1-score": 0.42093431932023917,
+            "support": 5815
+        },
+        "samples avg": {
+            "precision": 0.46672582076308783,
+            "recall": 0.4575273587695947,
+            "f1-score": 0.4605442176870748,
+            "support": 5815
+        }
+    }
+}
