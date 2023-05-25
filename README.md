@@ -5,9 +5,10 @@ This repistory contains the data, code, and paper for the Second Year Project as
 *What is the performance impact of clustering domain-specific named entity types in cross-domain relation-classification setups and what benchmark can be established for future research?*
 
 ## Abstract
-Relation Extraction is an evolving field within natural language processing. As its last step, Relation Classification (RC) aims to identify the relation type to which two semantically related named entities belong. Cross-domain setups are especially challenging, even more so when domain-specific entity types are used. Research is scarce in the area and mostly focused on using generic entity types or simply fine-tune the model on a single target domain. This might still offer challenger, however, when annotated data is not accessible for fine-tuning.
+Relation Extraction is an evolving field within natural language processing. As its last step, Relation Classification (RC) aims to identify the relation type to which two semantically related named entities belong. Cross-domain setups are especially challenging, even more so when domain-specific entity types are used. Research is scarce in the area and mostly focuses on using generic entity types or simply fine-tune the model on a single target domain. This might still offer challenges, 
+when annotated data is not accessible for fine-tuning.
 
-In this paper we explore ways of clustering domain-specific named entity types to reduce cross-domain complexity and improve performance on previously unseen domains. We propose four different, generalizable methods of grouping entity types and evaluate them in multi-domain and out-of-domain scenarios using our two new benchmarks. In conclusion, we find that all our entity mapping methods outperform the baseline, which contains unique unseen entity types in the test domain.
+In this paper we explore ways of clustering domain-specific named entity types to reduce cross-domain complexity and improve performance on previously unseen domains. We propose five different methods of grouping entity types and evaluate them in multi-domain and out-of-domain scenarios using our two new benchmarks. In conclusion, we find that all our entity mapping methods outperform the baseline in the out-of-domain setting, with the best performing model improving on the baseline by $8.7$ percentage points in weighted F1.
 
 ## Attribution
 Our work relied heavily on the CrossRE project by Elisa Bassignana and Barbara Plank: [CrossRE: A Cross-Domain Dataset for Relation Extraction](https://aclanthology.org/2022.findings-emnlp.263) (Bassignana & Plank, Findings 2022), and [their repistory](https://github.com/mainlp/CrossRE).
@@ -40,6 +41,8 @@ pip install -r requirements.txt
 - util
     - Helper functions to check validity of results.
 
+(Note: 'ood validation' stands for OOD evaluation and 'all' stands for the multi-domain results in the file names.)
+
 ## Cite
 ```
 @misc{politicians-are-people,
@@ -50,6 +53,7 @@ pip install -r requirements.txt
   school       = "IT University of Copenhagen",
   address      = "Copenhagen, Denmark",
   note         = "Second Year Project course report",
-  abstract     = "Relation Extraction is an evolving field within natural language processing. As its last step, Relation Classification (RC) aims to identify the relation type to which two semantically related named entities belong. Cross-domain setups are especially challenging, even more so when domain-specific entity types are used. Research is scarce in the area and mostly focused on using generic entity types or simply fine-tune the model on a single target domain. This might still offer challenger, however, when annotated data is not accessible for fine-tuning. In this paper we explore ways of clustering domain-specific named entity types to reduce cross-domain complexity and improve performance on previously unseen domains. We propose four different, generalizable methods of grouping entity types and evaluate them in multi-domain and out-of-domain scenarios using our two new benchmarks. In conclusion, we find that all our entity mapping methods outperform the baseline, which contains unique unseen entity types in the test domain."
+  abstract     = "Relation Extraction is an evolving field within natural language processing. As its last step, Relation Classification (RC) aims to identify the relation type to which two semantically related named entities belong. Cross-domain setups are especially challenging, even more so when domain-specific entity types are used. Research is scarce in the area and mostly focuses on using generic entity types or simply fine-tune the model on a single target domain. This might still offer challenges, 
+when annotated data is not accessible for fine-tuning. In this paper we explore ways of clustering domain-specific named entity types to reduce cross-domain complexity and improve performance on previously unseen domains. We propose five different methods of grouping entity types and evaluate them in multi-domain and out-of-domain scenarios using our two new benchmarks. In conclusion, we find that all our entity mapping methods outperform the baseline in the out-of-domain setting, with the best performing model improving on the baseline by 8.7 percentage points in weighted F1.
 }
 ```
