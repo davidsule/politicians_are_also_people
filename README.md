@@ -1,4 +1,5 @@
 # Politicians Are Also People: Mapping Is All You Need
+###### Clustering Entity Types in Cross-Domain Relation Classification Setups
 This repistory contains the data, code, and paper for the Second Year Project assignment of David Peter Süle, Mie Jonasson, and Nicklas Koch Rasmussen at the IT University of Copenhagen.
 
 ## Research Question
