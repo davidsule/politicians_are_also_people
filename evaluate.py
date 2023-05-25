@@ -1,3 +1,6 @@
+# This script builds on the code from the CrossRE project (Bassignana and Plank, 2022)
+# See README for details.
+
 import os
 import csv
 import json

@@ -1,3 +1,6 @@
+# This script is a modified version of the code from the CrossRE project (Bassignana and Plank, 2022)
+# See README for details.
+
 import json
 from dotenv import load_dotenv
 import torch

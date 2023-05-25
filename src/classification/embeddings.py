@@ -1,3 +1,6 @@
+# This script is from the CrossRE project (Bassignana and Plank, 2022), with very slight modifications
+# See README for details.
+
 import os
 import torch
 import torch.nn as nn

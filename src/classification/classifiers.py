@@ -1,3 +1,6 @@
+# This script is from the CrossRE project (Bassignana and Plank, 2022)
+# See README for details.
+
 import torch
 import torch.nn as nn
 from src.classification.embeddings import get_marker_embeddings
