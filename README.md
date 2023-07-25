@@ -47,7 +47,7 @@ pip install -r requirements.txt
 @misc{politicians-are-people,
   title        = "Politicians Are Also People: Mapping Is All You Need",
   author       = "S{\"u}le, David Peter and Jonasson, Mie and Rasmussen, Nicklas Koch",
-  howpublished = "\url{https://github.itu.dk/dasy/2yp_project}",
+  howpublished = "\url{https://github.com/davidsule/politicians_are_also_people}",
   year         = "2023",
   school       = "IT University of Copenhagen",
   address      = "Copenhagen, Denmark",
